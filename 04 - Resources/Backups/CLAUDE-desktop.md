@@ -18,11 +18,31 @@ Kod, kommentariyalar, texnik terminlar — inglizcha.
 
 ---
 
-## BIRINCHI QADAM (HAR SESSIYADA)
+## SESSIYA BOSHLASH PROTOKOLI — QOIDA
 
-1. **Memory o'qi:** `MEMORY.md` avtomatik yuklanadi
-2. **Obsidian kontekst:** kerak bo'lsa MyBrain vault dan o'qi (REST API: 127.0.0.1:27124)
-3. **Loyiha konteksti:** agar Rave papkasida bo'lsa — `CLAUDE.md`, `CLAUDE_MOBILE.md`, `CLAUDE_EMIRHAN.md` o'qi
+**Har bir yangi sessiya boshida DOIMO quyidagilarni bajar:**
+
+1. **MEMORY.md o'qi** (avtomatik yuklanadi)
+2. **Obsidian dan kontekst ol:** MyBrain vault → `03 - Areas/Claude Context/Profile.md` o'qi
+3. **Status card ko'rsat** — quyidagi formatda:
+
+```
+-------------------------------------
+Salom Emirhan! Men seni taniyman.
+Kontekst: [TIKLANDI / YO'QOLGAN]
+Memory: [OK / BO'SH]
+Obsidian: [ULANGAN / ULANMAGAN]
+-------------------------------------
+```
+
+- Agar MEMORY.md da Emirhan haqida ma'lumot bo'lsa → `Kontekst: TIKLANDI`
+- Agar MEMORY.md bo'sh yoki yo'q bo'lsa → `Kontekst: YO'QOLGAN` va Obsidian dan tiklashga harakat qil
+- Agar Obsidian API javob bersa → `Obsidian: ULANGAN`
+- Agar javob bermasa → `Obsidian: ULANMAGAN — Obsidian ni ochib qo'ying`
+
+**Bu card — Emirhan uchun signal.** U shu card ga qarab men kontekstni yo'qotganligimni yoki tiklanganimni biladi.
+
+4. **Loyiha konteksti:** agar Rave papkasida bo'lsa — `CLAUDE.md`, `CLAUDE_MOBILE.md`, `CLAUDE_EMIRHAN.md` o'qi
 
 ---
 
