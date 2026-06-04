@@ -11,6 +11,7 @@ Xush kelibsiz! Bu sizning shaxsiy bilimlar bazangiz.
 - [[Projects MOC]] — Loyihalar xaritasi
 - [[Areas MOC]] — Hayot sohalari
 - [[Resources MOC]] — Foydali manbalar
+- [[Mars MOC]] — Mars skilllar va avtomatizatsiya
 
 ---
 
@@ -33,5 +34,6 @@ Xush kelibsiz! Bu sizning shaxsiy bilimlar bazangiz.
 | 02 - Projects | Faol loyihalar |
 | 03 - Areas | Hayot sohalari (sog'liq, moliya, kasb) |
 | 04 - Resources | Foydali materiallar va ma'lumotnomalar |
-| 05 - Archive | Tugallangan loyihalar |
+| 05 - Mars Space | Mars.core.uz skilllar va avtomatizatsiya |
+| 06 - Archive | Tugallangan loyihalar |
 | Templates | Shablonlar |
