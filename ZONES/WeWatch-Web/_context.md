@@ -1,6 +1,13 @@
+---
+type: zone-context
+zone: WeWatch-Web
+owner: Emirhan
+updated: 2026-06-21
+---
+
 # WeWatch Web — Zone Context
 
-## Oxirgi sessiya: 2026-06-14
+## Oxirgi sessiya: 2026-06-21
 
 ### Holat: i18n to'liq tugallandi
 

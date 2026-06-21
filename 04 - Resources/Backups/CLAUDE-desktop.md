@@ -77,6 +77,10 @@ EOF
 | Obsidian | MyBrain vault o'qish/yozish | Kontekst, memory, notalar |
 | Playwright | Sayt ochish, screenshot, test | UI tekshirish, web test |
 | Filesystem | Fayl/papka boshqarish | Loyiha tuzilmasi |
+| Context7 | Kutubxona docs (React, Express, etc.) | Kod yozishda real-time docs |
+| MongoDB | DB boshqarish | Schema, query tekshirish |
+| GitHub | Repo, PR, issue | Code review, PR yaratish |
+| Sequential Thinking | Murakkab fikrlash | Arxitektura qarorlari |
 
 ---
 
@@ -131,4 +135,4 @@ EOF
 | WeWatch Obsidian | `C:/Users/User/OneDrive/Рабочий стол/weWatch-obsidian/` | Obsidian vault (loyiha) |
 
 ---
-*CLAUDE.md | Desktop Global | v1.0 | 2026-06-04*
+*CLAUDE.md | Desktop Global | v1.1 | 2026-06-21 (backup yangilandi)*
