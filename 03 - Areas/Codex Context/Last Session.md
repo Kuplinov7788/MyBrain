@@ -14,6 +14,8 @@ Emirhan Codex’ni loyiha uchun emas, kundalik qulay ishlatish uchun sozlashni s
 - [[03 - Areas/Codex Context/Preferences|Preferences]] va [[03 - Areas/Codex Context/Comfort Setup|Comfort Setup]] yaratildi.
 - `emirhan-obsidian` va `comfort-tools-check` shaxsiy skilllari yaratildi.
 - Ikkala skill format validatsiyasidan o‘tdi; qaydlar va yangi ichki havolalar tekshirildi.
+- Biznes arxitekturasi skilllari o‘rnatildi va to‘liq o‘qildi: `business-model`, `startup-canvas`, `monetization-strategy`, `org-design`, `drawio-bpmn`.
+- Obsidian Git sozlamalari tekshirildi: 10 daqiqalik auto-commit/auto-push, pull-before-push yoqilgan.
 
 ## Cheklovlar
 

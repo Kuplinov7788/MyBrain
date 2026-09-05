@@ -10,6 +10,8 @@ Maqsad: Emirhan har safar o‘zini tanishtirmasdan, o‘zbekcha topshiriq berib,
 
 ## 2026-09-05 tekshiruvi
 
+Biznes arxitekturasi uchun o‘rnatilgan skilllar: `business-model`, `startup-canvas`, `monetization-strategy`, `org-design`, `drawio-bpmn`. Beshala `SKILL.md` fayli to‘liq o‘qildi. Saytdagi `business-model-designer` repo ichida skill emas, command bo‘lgani uchun unga yaqin ishlaydigan `business-model` tanlandi.
+
 `codex plugin list` 18 ta pluginni `installed, enabled` deb qaytardi. Bu holat barcha akkauntlar avtorizatsiyasi yoki har bir funksiyaning sinovdan o‘tganini anglatmaydi.
 
 | Plugin | Versiya | Vazifasi |
@@ -34,6 +36,10 @@ Maqsad: Emirhan har safar o‘zini tanishtirmasdan, o‘zbekcha topshiriq berib,
 | test-android-apps | 0.1.2 | Android sinovlari; kundalik qulaylik sozlamasi emas |
 
 GitHub, Expo va Test Android Apps oldingi bosqichda o‘rnatilgan. Foydalanuvchi keyin maqsad kundalik qulaylik ekanini aniqlashtirdi. Ularni o‘chirish so‘ralmagan, shuning uchun saqlandi. Bu bosqichda yangi plugin o‘rnatilmadi.
+
+## Vault sinxronizatsiyasi
+
+Obsidian Git sozlamalari o‘qildi: auto-save/commit `10` daqiqa, auto-push `10` daqiqa, pushdan oldin pull yoqilgan, push o‘chirilmagan. Remote: `https://github.com/Kuplinov7788/MyBrain.git`. Shu sababli Obsidian Git yangi o‘zgarishlarni davriy commit va push qiladi. Hozirgi qaydlar `9c4b968` commitida avtomatik saqlangan; push natijasi alohida tekshiriladi. Bu Codex har bir satr o‘zgarishida alohida commit qiladi degani emas.
 
 ## MCP va amaliy kirish
 
