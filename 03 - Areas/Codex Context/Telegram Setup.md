@@ -50,3 +50,10 @@ Hozir 1–3-qadamlarning xavfsiz qismi tayyorlandi; API qiymatlarini va telefonn
 - [[Context MOC|Kontekstlar xaritasi]]
 - [[Comfort Setup|Codex qulay ish muhiti]]
 - `Desktop/emir-telegram-mcp.tar.gz` — original arxiv
+
+## 2026-09-05 — Shaxsiy akkaunt autentifikatsiyasi
+
+- Telegram personal MCP uchun lokal sessiya muvaffaqiyatli yaratildi: `~/.codex/telegram-personal/emir_personal.session`
+- `telegram_personal` MCP Codex konfiguratsiyasida yoqilgan.
+- API ma’lumotlari va 2FA parol Obsidian/Git’ga yozilmadi.
+- SMS/2FA ma’lumotlari chatda oshkor qilinganligi sababli keyinroq Telegram 2FA parolini yangilash tavsiya qilinadi.
