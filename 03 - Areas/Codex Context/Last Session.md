@@ -1,0 +1,24 @@
+---
+type: session-handoff
+updated: 2026-09-05
+---
+
+# Oxirgi Codex sessiyasi
+
+Emirhan Codex’ni loyiha uchun emas, kundalik qulay ishlatish uchun sozlashni so‘radi. Plugin, MCP va skilllarni tekshirish, keraklisini yaratish, Obsidian’ga yozish topshirildi.
+
+## Bajarildi
+
+- Plugin/MCP/skill inventari tekshirildi; brauzer/native app holati muvaffaqiyatli olindi.
+- Global `~/.codex/AGENTS.md` yaratildi — o‘zbekcha muloqot va MyBrain’dan kontekst olish.
+- [[03 - Areas/Codex Context/Preferences|Preferences]] va [[03 - Areas/Codex Context/Comfort Setup|Comfort Setup]] yaratildi.
+- `emirhan-obsidian` va `comfort-tools-check` shaxsiy skilllari yaratildi.
+- Ikkala skill format validatsiyasidan o‘tdi; qaydlar va yangi ichki havolalar tekshirildi.
+
+## Cheklovlar
+
+- Yangi sessiyada global ko‘rsatma va yangi skilllarning avtomatik yuklanishi hali sinovdan o‘tkazilmadi.
+- Email/kalendar akkaunti ulanmagan, rejalashtirilgan eslatma yo‘q.
+- Lokal Obsidian fayllari ishlaydi; alohida Obsidian MCP kerak bo‘lmadi.
+- GitHub akkauntiga kirish bu bosqichda tekshirilmadi.
+- Git commit/push bajarilmadi.
