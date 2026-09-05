@@ -54,6 +54,7 @@ Obsidian Git sozlamalari o‘qildi: auto-save/commit `10` daqiqa, auto-push `10`
 - Server: `http://127.0.0.1:8766`; `com.protochka.codex-rag` LaunchAgent sifatida `running`.
 - Qayta indekslash: `com.protochka.codex-rag-reindex`, har 600 soniyada; atomik index almashtirish.
 - Qidiruv helperi: `/Users/protochka/.codex/rag/rag-search.sh "savol" 5`.
+- Tezkor holat: `/Users/protochka/.codex/rag/rag-status.sh`.
 - Tekshiruv: `health` 135 bo‘lak va model yuklanganini qaytardi; AiCamera va WeWatch savollarida tegishli contextlar topildi.
 - Reranker hozir yuklanmagan; fallback qidiruv cosine + authority bilan ishlayapti.
 - RAG avtomatik prompt hooki emas: Codex workflow kerakli context savolida helperni chaqiradi. Shu sabab u natijani recall deb beradi, joriy holatni esa fayl/repo bilan tekshirish kerak.
