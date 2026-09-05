@@ -28,3 +28,7 @@ Emirhan Codex’ni loyiha uchun emas, kundalik qulay ishlatish uchun sozlashni s
 - Lokal Obsidian fayllari ishlaydi; alohida Obsidian MCP kerak bo‘lmadi.
 - GitHub akkauntiga kirish bu bosqichda tekshirilmadi.
 - Git commit/push bajarilmadi.
+
+## Keyin qaytish kerak
+
+- Telegram personal MCP’ni kengaytirish: avtomatik monitoring, media/voice transkripsiya, Telegram → RAG → Obsidian oqimi va xavfsiz yuborish workflow’ini keyin davom ettirish.
