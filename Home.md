@@ -9,6 +9,7 @@ Xush kelibsiz! Bu sizning shaxsiy bilimlar bazangiz.
 - [[03 - Areas/Codex Context/Comfort Setup|Codex — qulay ish muhiti]]
 - [[03 - Areas/Codex Context/Preferences|Codex — profil va qoidalar]]
 - [[03 - Areas/Codex Context/Last Session|Codex — oxirgi sessiya]]
+- [[ZONES/AiCamera/AiCamera|AiCamera loyihasi]]
 - [[Inbox]] — Yangi g'oyalar va yozuvlar
 - [[Daily Notes]] — Kundalik yozuvlar
 - [[Projects MOC]] — Loyihalar xaritasi
