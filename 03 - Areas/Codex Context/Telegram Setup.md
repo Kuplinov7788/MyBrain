@@ -20,6 +20,14 @@ Desktopdagi `emir-telegram-mcp.tar.gz` ichidagi `TELEGRAM-MCP.md` o‘qildi. Bu 
 
 Hali ulanmagan. Sabab: `api_id`, `api_hash`, telefon va Telegram login kodi foydalanuvchining maxfiy ma’lumotlari. Ular chatga yozilmaydi va Obsidian’ga saqlanmaydi. Arxiv kodi `people_lint` modulini ixtiyoriy try/except ichida chaqiradi; shu sababli asosiy o‘qish funksiyalari uchun u majburiy emas.
 
+## Codex scaffold
+
+- Server: `/Users/protochka/.codex/telegram-personal/server.py`
+- Login: `/Users/protochka/.codex/telegram-personal/login.py`
+- Virtual muhit: `/Users/protochka/.codex/telegram-personal/venv` (`telethon==1.43.2`, `mcp==1.27.2`)
+- Codex MCP nomi: `telegram_personal` (`/Users/protochka/.codex/config.toml`)
+- Maxfiy fayl: `/Users/protochka/.codex/telegram-personal/credentials.json` — placeholder bilan tayyor; `.gitignore` session va credential fayllarini yopadi.
+
 ## Ulanish uchun kerak bo‘ladigan ishlar
 
 1. `my.telegram.org` → API development tools’dan shaxsiy `api_id` va `api_hash` olish.
@@ -27,6 +35,8 @@ Hali ulanmagan. Sabab: `api_id`, `api_hash`, telefon va Telegram login kodi foyd
 3. `login.py` ni lokal terminalda ishga tushirish; SMS kodi va 2FA parolini faqat foydalanuvchi o‘zi kiritadi.
 4. Codex `config.toml` ga lokal stdio MCP serverini qo‘shish.
 5. Yangi Codex sessiyasida server holatini tekshirish.
+
+Hozir 1–3-qadamlarning xavfsiz qismi tayyorlandi; API qiymatlarini va telefonni lokal `credentials.json` fayliga kiritish, keyin `login.py` ni o‘zingiz ishga tushirish qolgan.
 
 ## Xavfsizlik
 
