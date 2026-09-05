@@ -11,6 +11,7 @@ Bu sahifa MyBrain’dagi loyiha va vosita kontekstlarini bir joydan ochish uchun
 
 - [[Preferences|Emirhan profili va ishlash afzalliklari]]
 - [[Comfort Setup|Plugin, MCP va skilllar holati]]
+- [[Telegram Setup|Telegram MCP tekshiruvi]]
 - [[Last Session|Oxirgi sessiya]]
 - [[../Claude Context/Profile|Batafsil eski profil]]
 - [[../Claude Context/How-To-Use-Claude|Ishlash qo‘llanmasi]]

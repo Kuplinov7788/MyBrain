@@ -16,6 +16,7 @@ Emirhan Codex’ni loyiha uchun emas, kundalik qulay ishlatish uchun sozlashni s
 - Ikkala skill format validatsiyasidan o‘tdi; qaydlar va yangi ichki havolalar tekshirildi.
 - Biznes arxitekturasi skilllari o‘rnatildi va to‘liq o‘qildi: `business-model`, `startup-canvas`, `monetization-strategy`, `org-design`, `drawio-bpmn`.
 - Obsidian Git sozlamalari tekshirildi: 10 daqiqalik auto-commit/auto-push, pull-before-push yoqilgan.
+- Desktopdagi `emir-telegram-mcp.tar.gz` va `emir-setup.tar.gz` o‘qildi. Telegram ulanishi maxfiy API va login ma’lumotlari talab qilgani uchun pending qoldirildi; RAG va xavfli bypass sozlamalari avtomatik ishga tushirilmadi.
 
 ## Cheklovlar
 
