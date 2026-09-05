@@ -8,6 +8,8 @@ scope: shaxsiy kundalik qulaylik
 
 Maqsad: Emirhan har safar o‘zini tanishtirmasdan, o‘zbekcha topshiriq berib, qaydlar, brauzer, kompyuter va hujjatlar bilan ishlashi.
 
+Kontekstlar markaziy xaritasi: [[Context MOC|Barcha kontekstlar xaritasi]].
+
 ## 2026-09-05 tekshiruvi
 
 Biznes arxitekturasi uchun o‘rnatilgan skilllar: `business-model`, `startup-canvas`, `monetization-strategy`, `org-design`, `drawio-bpmn`. Beshala `SKILL.md` fayli to‘liq o‘qildi va format validatsiyasidan o‘tdi. `drawio-bpmn` dagi validatorga mos kelmagan `version` frontmatter maydoni olib tashlandi. Saytdagi `business-model-designer` repo ichida skill emas, command bo‘lgani uchun unga yaqin ishlaydigan `business-model` tanlandi.
