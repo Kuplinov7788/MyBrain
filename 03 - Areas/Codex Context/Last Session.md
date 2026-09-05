@@ -18,6 +18,7 @@ Emirhan Codex’ni loyiha uchun emas, kundalik qulay ishlatish uchun sozlashni s
 - Obsidian Git sozlamalari tekshirildi: 10 daqiqalik auto-commit/auto-push, pull-before-push yoqilgan.
 - Desktopdagi `emir-telegram-mcp.tar.gz` va `emir-setup.tar.gz` o‘qildi. Telegram ulanishi maxfiy API va login ma’lumotlari talab qilgani uchun pending qoldirildi; RAG va xavfli bypass sozlamalari avtomatik ishga tushirilmadi.
 - Desktop paketining foydali workflow g‘oyalari Codex uchun `emirhan-workflow` skilli, global AGENTS qoidalari va [[Operating System|Operating System]] qaydiga birlashtirildi.
+- RAG MyBrain’ga moslab o‘rnatildi: 135 bo‘lak indeks, lokal server va 10 daqiqalik reindex LaunchAgent ishlayapti. Qidiruv testlari AiCamera va WeWatch’da muvaffaqiyatli; reranker fallback rejimida.
 
 ## Cheklovlar
 
