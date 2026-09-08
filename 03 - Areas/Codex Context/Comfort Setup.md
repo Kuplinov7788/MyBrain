@@ -78,7 +78,7 @@ Mavjud yo‘nalishlar tekshirildi: imagegen, OpenAI Docs, skill/plugin yaratish 
 
 Yangi shaxsiy skilllar:
 
-- `/Users/protochka/.codex/skills/emirhan-obsidian/SKILL.md` — kontekstni tiklash, xotira, sessiya qaydi va mavjud vazifalardan kunlik reja.
+- `/Users/protochka/.codex/skills/obsidyan-skill/SKILL.md` — kontekstni tiklash, xotira, sessiya qaydi va mavjud vazifalardan kunlik reja. 2026-09-08: foydalanuvchi so‘rovi bilan eski `emirhan-obsidian` nomi almashtirildi.
 - `/Users/protochka/.codex/skills/comfort-tools-check/SKILL.md` — plugin/MCP/skill inventari, holatlarni ajratish va ushbu qaydni yangilash.
 
 Global ko‘rsatma: `/Users/protochka/.codex/AGENTS.md`. Yangi suhbatda [[03 - Areas/Codex Context/Preferences|Preferences]] ni o‘qishni belgilaydi. Ushbu sessiyada fayl yaratildi; yangi sessiyadagi avtomatik yuklanish alohida tekshirilishi kerak. Bu fon xizmati yoki avtomatik eslatma emas.

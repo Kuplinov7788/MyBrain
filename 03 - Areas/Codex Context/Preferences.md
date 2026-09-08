@@ -1,6 +1,6 @@
 ---
 type: preferences
-updated: 2026-09-05
+updated: 2026-09-07
 source: Emirhan bilan bevosita suhbat
 ---
 
@@ -13,6 +13,7 @@ source: Emirhan bilan bevosita suhbat
 - Kundalik yordam so‘rovlarini loyiha ishlari deb talqin qilma. 2026-09-05 da pluginlarni aynan shaxsiy qulaylik uchun sozlashni so‘radi.
 - Kerak bo‘lsa plugin, MCP va skilllarni tekshirish/yaratish hamda natijasini Obsidian’ga yozish so‘ralgan.
 - Qisqa natija yoki vaziyatga mos tushuntirish; bir xil ma’lumotni qayta so‘ramaslik.
+- 2026-09-07: Beluga javoblari qisqa, tushunarli, tabiiy o‘zbekcha va o‘qishga qulay bo‘lsin. Javob tayyorlanayotganda Telegram typing/holat ko‘rsatkichi kerak. Davom ettirish topshirig‘idan keyin ownerga javoblar «Emirhan, …» bilan boshlanishi qo‘llandi; boshqa recipientga yuboriladigan matnga bu murojaat qo‘shilmaydi.
 - Profil, muhim qarorlar va ishlash qoidalarini qaydlar orqali davom ettirish kerak. Yozilgan fayl — doim ishlaydigan fon xotirasi yoki rejalashtirilgan avtomatizatsiya degani emas.
 
 ## Manbalar

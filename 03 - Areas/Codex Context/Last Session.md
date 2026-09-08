@@ -1,9 +1,117 @@
 ---
 type: session-handoff
-updated: 2026-09-05
+updated: 2026-09-08
 ---
 
 # Oxirgi Codex sessiyasi
+
+## 2026-09-08 — Beluga agentini yuqori darajaga olib chiqish uchun keyingi audit
+
+- Emirhan keyingi sessiyada Beluga agentlarini chuqur audit qilib, ishlashini yuqori darajaga olib chiqishni so‘radi. Hozircha kod o‘zgartirilmay, vazifa saqlab qo‘yildi.
+- Rasmiy OpenAI Agents SDK hujjatlari o‘qildi: agent modeli + instructions + tools + state/session + guardrails + handoffs + tracing asosida quriladi; `Runner` turn va tool oqimini boshqaradi. Sening tiziming custom Codex `app-server` + Python orchestration orqali ishlaydi, native Agents SDK emas.
+- Joriy audit dalili: Beluga agent va worker `launchd` ostida running; RAG `ok=true`, 267 chunk, model/reranker yuklangan; queue 0; 49 lokal test o‘tdi.
+- Kuchli tomonlar: bitta persistent Telegram/terminal thread, MyBrain/RAG context, JSON output schema, SQLite state, lock, recipient policy va read-only Telegram approval cheklovi.
+- Keyingi audit va tuzatish tartibi: (1) backup/snapshot, (2) `/status`dagi `runtime: notLoaded` tafovutini tuzatish, (3) ruxsat va write-action guardrailsni kuchaytirish, (4) tracing/audit log va eval smoke testlar qo‘shish, (5) worker logidagi eski xatolarni ajratish, (6) keyin native Agents SDK migratsiyasi zarurligini baholash.
+- Muhim chegara: hozirgi tizim ishlayotgan, lekin “to‘liq OpenAI Agents SDK darajasida” emas. `approval_policy=never`, custom orchestration va app-server health/status tafovuti keyingi auditda alohida ko‘riladi.
+
+## 2026-09-08 — Mac nomi: Muralgin, restartdan keyin davom
+
+- User suhbatni saqlab, keyin davom etishni so‘radi. Oxirgi CLI tekshiruvi: UID 501, RecordName `protochka`, RealName `Muralgin`, NFSHomeDirectory `/Users/protochka`; ComputerName `MacBook Air — Emirhan`. Demak ko‘rinadigan ism o‘zgargan, texnik akkaunt/uy papkasi va qurilma nomi hali almashtirilmagan.
+- User bloklash ekranida Protochka qolayotganini aytdi. Ishlarni saqlab restart qilish tavsiya etildi; restart bajarilgani yoki ekran nomi yangilangani hali tekshirilmagan. Davom etishda avval shu natijani so‘rash va joriy akkaunt yozuvini tekshirish.
+- `migrationadmin` (Migration Admin, UID 502) yaratildi va admin a’zoligi tekshirildi. Parolni user tizim oynasida belgilagan; qaydlarda parol yo‘q. Uy papkasi migratsiyasi amalga oshirilmadi.
+- Time Machine backup manziliga ulana olmadi; user tashqi disk yo‘qligini aytdi. To‘liq zaxirasiz ko‘chirishga rozilik haqidagi savol javobsiz qolgan; restart yoki «saqla» topshirig‘i bu rozilik emas. Ko‘chirish/recovery rejasi `/Users/Shared/Muralgin-Migration.md`da.
+- Beluga/RAG/Codex/Obsidian’da eski uy yo‘liga bog‘liqliklar bor. Asosiy user faol paytida uy papkasini qo‘lda almashtirmaslik; kelajak migratsiya boshqa admindan, yo‘llarni moslash va tekshiruv bilan bajariladi. Hozir bu xizmatlar nom almashtirish uchun o‘zgartirilmadi.
+- Oradagi Steam so‘rovi: rus tiliga o‘tkazish Computer Use ekran tutish xatosi bilan bajarilmadi. Steam Family va Far Cry ulashish cheklovlari tushuntirildi; ilovada sozlama o‘zgargani tasdiqlanmagan.
+- Obsidian skilli user so‘roviga binoan `obsidyan-skill` deb qayta nomlandi, `.codex/AGENTS.md` va Comfort Setup havolasi moslandi. Oldingi katalogdagi `emirhan-obsidian` — eski nom. Skill validator PyYAML yetishmagani uchun bajarilmadi; frontmatter va havolalar qo‘lda qayta o‘qildi.
+- Academy implementatsiyasi hali pauzada; [[05 - Mars Space/Academy Architecture|arxitektura va ochiq savollar]] saqlangan. Davom etish user tanlagan Mac yoki Academy vazifasiga qarab bo‘ladi.
+
+
+## 2026-09-08 — Academy rejasi saqlandi, implementatsiya keyin
+
+- Emirhan Beluga ichida Academy moduli taklifini ma’qulladi va hozir faqat Obsidian’da arxitekturani to‘ldirib saqlashni so‘radi. [[05 - Mars Space/Academy Architecture|Academy arxitekturasi]] yaratildi: Mars skill, adapter, sanali SQLite ma’lumotlari, scheduler, RAG vazifasi, Telegram boshqaruvi va etap tekshiruvlari.
+- Dars oldidan, darsdan keyin, kechki/haftalik va oy yakuni otchotlari taklif sifatida saqlandi; hech qanday Academy avtomatizatsiyasi yoqilmadi. Mavjud Beluga xizmati bu saqlash vazifasida o‘zgartirilmadi.
+- Keyingi suhbat: eng ko‘p vaqt oladigan ish, otchot vaqti va faqat o‘z guruhlari yoki umumiy Tutor qamrovi haqidagi uch ochiq savol. So‘ng birinchi texnik etap — Telegramdan Marsning yangi read-only ma’lumotini olib, saytga solishtirish.
+- Oldingi auditdagi tuzatish: oylik to‘langan darslar asosida; eng past reyting eng katta moliyaviy yo‘qotish degani emas. Fon brauzeri ulanishi, audit/jarima qoidalari va hisob tafovutlari hali tekshirilishi kerak. Eski MarsDC credentiallarini tozalash/RAG tekshiruvi rejalashtirilgan.
+
+
+## 2026-09-07 — Telegram chatlarini o‘qishda tasdiq blokini tuzatish
+
+- Beluga Corvin chatini o‘qishda `MCP tool call requires approval, but approval policy is never` xatosini olgan. App-serverdagi haqiqiy read_messages tool natijasi failed ekanligi tekshirildi.
+- User oldin bergan barcha mavjud chatlarni so‘rov bo‘yicha o‘qish ruxsatini runtimega moslash uchun beshta read-only toolga aniq approval_mode=approve qo‘shildi: get_account_status, list_dialogs, find_recipient, read_messages, search_messages. Send vositasining ruxsati kengaytirilmadi.
+- `Beluga/telegram-read-policy.json` resumed thread configida yuklanadi; app-server LaunchAgentiga ham ayni beshta override kiritildi va xizmat idle paytda qayta yuklandi. Global Codex tasdiq rejimi o‘zgartirilmadi.
+- Tuzatishdan keyin ayni Beluga thread’i orqali Corvinning oxirgi 3 xabari o‘qildi; MCP read_messages status=completed, error=None. Shaxsiy mazmun vaultga ko‘chirilmadi. 49 test, Node syntax va plist validatsiyasi o‘tdi.
+- Xizmat restartidan keyin Telegramdan yuborilgan jonli sinov ham o‘tdi: read_messages completed va bot o‘qish muvaffaqiyatli ekanini qaytardi.
+- Manba: [OpenAI MCP per-tool configuration](https://learn.chatgpt.com/docs/extend/mcp?surface=cli).
+
+
+## 2026-09-07 — Joriy holat: murojaat va terminal bildirishnomasi
+
+- Oldingi murojaat va notification haqidagi ochiq bandlar ushbu etap bilan yangilandi. Ownerga javob «Emirhan, …» bilan boshlanadi; Telegram host formati va native Codex yo‘riqnomasi qo‘shildi. Boshqalarga yuboriladigan matn o‘zgarmaydi.
+- `beluga` terminalidagi yangi turn yakunlanganda bot owner private chatiga qisqa natija yuboradi. Terminal yopiq bo‘lsa ham worker kuzatadi. Bu alohida Codex desktop chatiga tegishli emas.
+- `terminal_notifications.py` har 8 soniyada saqlangan turnlarni o‘qiydi, AI chaqirmaydi. Birinchi ishga tushishda eski tugagan tarixni yubormaydi; Telegram-host turnlari alohida javob olgani uchun skip qilinadi. SQLite jurnal tarmoq natijasi noaniq bo‘lsa qayta yuborishni to‘xtatadi.
+- Live test: haqiqiy native terminalda qisqa sun’iy topshiriq berildi, Ctrl+D bilan chiqildi. Murojaatli final javob va Telegramga avtomatik natija qayta o‘qib tekshirildi; jurnal `sent`, bitta notification. 47 test, Python compile va Node syntax o‘tdi.
+- RAG saqlandi; oldingi typing va navbat funksiyalari qolgan. Keyingi ochiq etaplar: scheduler/kunlik hisobot, Mac uyqu/reboot va topiclar. Telefon bildirishnoma ovozi Telegram notification sozlamalariga bog‘liq.
+
+
+## 2026-09-07 — Eng so‘nggi to‘xtash nuqtasi: comfort sozlamalari
+
+- User o‘zgarishlarni Obsidian’da saqlab, keyingi davom ettirishda eslatishni so‘radi. Hozir yangi funksiyani boshlamaslik; amaldagi fon xizmatini to‘xtatish so‘ralmagan.
+- Qo‘shildi: qisqa va tushunarli javob uslubi, pending ishda Telegram typing (har 4 soniya), boshqa job kutayotgan bo‘lsa ovozsiz navbat xabari. 39 test va compile o‘tdi; typing API True; worker idle paytda qayta ishga tushirildi. Telefon UI va yangi model ohangining jonli bahosi hali qolgan.
+- ESLATISH: “Har javob «Emirhan, …» deb boshlansinmi?” savoliga javob olinmagan; murojaat prefiksi hali qo‘shilmadi.
+- Keyingi taklif: terminaldan boshlangan ish tugaganda Telegramga avtomatik natija bildirishnomasi. Bu hali qo‘shilmagan; Telegramdan berilgan topshiriq javobi esa Telegramga qaytadi.
+- Tafsilot: [[03 - Areas/Codex Context/Beluga Plan|Beluga Plan]]. Vaqtli eslatma rejalashtirilmagan; bu keyingi sessiya handoff’i.
+
+
+2026-09-07 yakuniy tekshiruv: native Codex + Telegram + RAG etapi tekshirildi. Uchala xizmat running; RAG yangi [[03 - Areas/Codex Context/Beluga Usage|foydalanish qo‘llanmasi]]ni qidiruvda topdi, job navbati bo‘sh. Quyidagi 2026-09-06 dalillari saqlanadi; bu alohida Codex desktop chatini ulash yoki scheduler tayyor degani emas.
+
+## 2026-09-06 — Native Codex + Telegram + RAG (eng yangi)
+
+Ushbu bo‘lim eski Python terminali va “Codex terminali ulanmagan” qaydlaridan ustun.
+
+- `beluga` endi haqiqiy Codex terminalini lokal app-serverga ulab, mavjud Beluga suhbatini davom ettiradi. `Ctrl+D` terminaldan ajratadi; fondagi turn davom etadi. Alohida Codex desktop chat avtomatik ulanmagan.
+- `com.protochka.beluga-agent` (127.0.0.1:4501) va `com.protochka.beluga` worker alohida LaunchAgentlar. RAG 8766 da saqlandi; health va real agent qidiruvi tekshirildi.
+- Telegram inbox `jobs.sqlite`, turn jurnallari `state/job-*.json`; faol ish paytida worker restart testi o‘tdi, turn ID o‘zgarmadi, bitta natija keldi. Noaniq send natijasi avtomatik qaytarilmaydi.
+- `/status`, `/stop`, `/usage`; `/status` faol task paytida live javob berdi. Oddiy owner so‘rovlari RAG kontekstini oladi; terminal recall uchun context.py ishlatadi. Kontekst limiti 30,000 dan 8,000 belgiga tushirildi; jami model input hajmi emas.
+- Native terminal → terminaldan chiqish → jonli Telegram kontekst sinovi o‘tdi. 36 test, compile va Node syntax o‘tdi. App-server transporti experimental; Mac sleep/reboot, yangi boshqa-recipient send va avtomatik eslatmalar hali sinalmagan/qo‘shilmagan.
+- Qo‘llanma: [[03 - Areas/Codex Context/Beluga Usage|Beluga’dan foydalanish]]. Keyin: kunlik assistent rejalari, scheduler va ishlar bo‘yicha alohida threadlar. Hozirgi asosiy etap umumiy sessiya + RAG + tiklanish.
+
+
+## 2026-09-06 — Joriy Beluga handoff
+
+Bu bo‘lim quyidagi eski etap qaydlaridan ustun; eski «ulanmagan» va «allowlist bo‘sh» yozuvlari tarixiy.
+
+- Telegram worker Mac LaunchAgent orqali fonda ishlashga sozlangan. Terminalni ochish talab qilinmaydi; Terminalni yopish yoki terminal agentida `/quit` yozish Telegram xizmatini to‘xtatmaydi. Mac yoqilgan, user login qilingan, uyquda bo‘lmagan va internetga ulangan bo‘lishi kerak. Mac uyqu/rebootdan qaytish sinovi hali alohida tekshirilmagan.
+- Terminalda `beluga` agent suhbatini ochadi. Telegram va shu terminal agenti bitta persistent thread’dan foydalanadi; hozirgi interaktiv Codex oynasi shu threadga bevosita ulanmagan.
+- Oddiy suhbat va «@username ga ... yubor» uchun `/task` kerak emas. `/task ...` Beluga/MyBrain texnik vazifalari uchun; `/quit` faqat terminal suhbatidan chiqish.
+- Owner barcha mavjud Telegram chat/topic/kanal/kontaktlarni so‘rov bo‘yicha o‘qish va tahlil qilishga ruxsat berdi. Keyin aniq owner topshirig‘ida ism yoki username orqali topib yuborishni ham tasdiqladi. Tashabbusli auto-reply yoqilmagan.
+- `send_named.py`, `recipient_lookup.py`, `unified_agent.py` va `bot.py` orqali ism/username qidiruvi yuborish yo‘liga ulandi. Bir nechta mos natija bo‘lsa aniqlik so‘raladi. Yuborish shaxsiy Telegram akkauntidan amalga oshiriladi.
+- Oxirgi tekshiruv: 28 test o‘tdi; haqiqiy ism va username qidiruvi bir xil recipientni topdi; LaunchAgent `running` edi. Yangi adapter orqali boshqa odamga jonli yuborish testi bajarilmadi. Topic tanlash va Beluga ichida to‘liq chat o‘qish integratsiyasi hali qolgan.
+- Davom ettirishda: [[03 - Areas/Codex Context/Beluga Plan|Beluga Plan]] va amaldagi kod/loglarni tekshirish; eski topshiriqlarni qayta yubormaslik. Keyingi ish — yangi yuborish yo‘lining owner topshirig‘i bilan natijasini tekshirish.
+
+## 2026-09-06 — Beluga davom ettirish
+
+- TO‘XTASH NUQTASI: Emirhan Saved Messages ishlaganini tasdiqladi; shu etapda rivojlantirish pauza qilindi. Ishlayotgan worker o‘chirilmadi.
+- Keyingi talab: Beluga owner private chatda butun MyBrain’dan tegishli kontekstni olish. RAG hali botga ulanmagan.
+- Eng yaqin etap: Codex UI’dan mustaqil Mac LaunchAgent + `/status` + qayta start/xato bildirishnomasi. Hozir faqat terminal worker bor; Codex yopilganda yoki yangi sessiya ochilganda avtomatik ishga tushish kafolati yo‘q. Yangi worker boshlashdan oldin mavjud processni tekshir.
+- Yangilandi: Mac LaunchAgent yuklandi, `launchctl` running va worker startup xabari “Kontekst: tiklandi / MyBrain o‘qishga tayyor / RAG ishlayapti” deb Telegram’dan tekshirildi. `/status` mavjud. Tafsilotlar Beluga Plan jurnalida.
+- `@mokhinur_ertan` chatining oxirgi 100 xabari tahlil qilindi. Emirhan uning ayoli ekanini tasdiqladi; recipient allowlistga aniq owner command talab qilinadigan write ruxsati qo‘shildi, auto-reply o‘chiq. Tafsilot: [[03 - Areas/Codex Context/Mokhinur Chat Analysis|Mokhinur tahlili]].
+- Mokhinur uchun personal send adapteri qo‘shildi va jami 23 ta Beluga testi o‘tdi; jonli unga test xabari yuborilmadi. Keyingi aniq owner topshirig‘igacha auto-reply o‘chiq.
+- Beluga’dan Codex Operator’ga `/task` end-to-end harmless testi o‘tdi: README o‘qildi, o‘zgartirishsiz hisobot qaytdi. LaunchAgent PATH muammosi tuzatildi; 24/24 test, service running. Operator — interaktiv Codex oynasidan alohida persistent sessiya.
+- Arxitektura birlashtirildi: Telegram reply va `/task` endi `unified-agent.sqlite` dagi bitta persistent agent thread’dan foydalanadi. Telegram orqali `/task` testi o‘tdi. Ochiq interaktiv Codex oynasiga aynan shu thread bridge’i hali qolgan.
+- Terminal bridge ham qo‘shildi: `python3 /Users/protochka/Beluga/agent_terminal.py`; oddiy matn suhbat, `/task ...` texnik ish, `/quit` chiqish. 25/25 test, compile va `--once` testi o‘tdi; LaunchAgent running, RAG 188 chunk.
+- Muhim chegara: Telegram + Terminal bitta persistent agent. Hozirgi ochiq Codex UI oynasi esa hali shu threadga bevosita ulanmagan; buning uchun keyingi app-server/queue bridge kerak.
+- Qulaylik uchun `/Users/protochka/.local/bin/beluga` launcher qo‘shildi. Terminalda `beluga` yozilsa agent ochiladi; `command -v beluga` va `beluga --once` bilan tekshirildi.
+- Telegram javobsiz qolishining sababi topildi: `bot.py` eski `decide()` chaqirig‘ini ishlatgan. Unified API’ga tuzatildi; 25/25 test, compile va LaunchAgent restart/status tekshiruvi o‘tdi. Yangi Telegram xabari bilan live tekshiruv kerak.
+
+- Eng so‘nggi tuzatish: Beluga private chat uchun persistent Codex session/resume, faqat Saved Messages’ga shaxsiy send qo‘shildi. 21 test va 2-turn AI xotira testi o‘tdi; Saved test xabari qayta o‘qib tekshirildi. Mac worker qayta ishga tushirildi. Tafsilot: Beluga Plan oxirgi jurnal yozuvi.
+
+- Joriy talablar va etap jurnali: [[03 - Areas/Codex Context/Beluga Plan|Beluga Plan]]. `beluga-assistant` skill yozildi; bu ishlayotgan bot emas.
+- Telegram login, dialog o‘qish va yubormaydigan preview shu suhbatda tekshirildi. Quyidagi eski placeholder/pending qaydlari tarixiy.
+- TezCode topiclari topildi; Learning/News tahlili so‘ralgan. Fon monitoring va avtomatik javob hali yoqilmagan.
+- Foydalanuvchi kichik offline testlardan boshlashni, TezCode’da test yubormaslikni va har etapni Obsidian’da qayd etishni belgiladi.
+- Botga reply/mention va owner belgilagan odamlarga shaxsiy avtomatik javob talabi yozildi. Recipientlar hali belgilanmagan.
+- `/Users/protochka/Beluga` offline prototype yaratildi, 12 routing/dedup/retry test o‘tdi. Lokal token bilan read-only bot identity/webhook health o‘tdi. Telegram’ga xabar yuborilmadi.
+- Mac uchun Codex AI draft testi o‘tdi, 17 lokal test o‘tdi. `Beluga/bot.py` owner-only vaqtincha terminal worker ishga tushirildi; jonli user xabari testi kutilmoqda. PC integratsiyasi keyin. LaunchAgent va RAG hali botga ulanmagan. Tafsilotlar Beluga Plan jurnalida.
 
 Emirhan Codex’ni loyiha uchun emas, kundalik qulay ishlatish uchun sozlashni so‘radi. Plugin, MCP va skilllarni tekshirish, keraklisini yaratish, Obsidian’ga yozish topshirildi.
 
