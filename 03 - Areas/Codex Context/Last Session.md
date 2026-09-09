@@ -5,6 +5,28 @@ updated: 2026-09-09
 
 # Oxirgi Codex sessiyasi
 
+## 2026-09-09 — Beluga/Hermes runtime audit
+
+- Runtime qayta tekshirildi: Telegram `true`, Beluga LaunchAgent bitta nusxada `running`, Hermes backend `openai-codex/gpt-5.5`, queue `0`, `needs_review=0`, `failed=0`, RAG `ok=true` va model/reranker loaded (319 chunk).
+- Beluga 59/59 test, Python compile va Node syntax checkdan o‘tdi. Hermes config version `41` valid; built-in memory, USER profile va approval-gated writes (`write_approval=true`) faol.
+- Hermes `telegram_personal` read-only smoke testi `ACCESS_OK` qaytardi. Gateway va cron ishlamayapti; bu hozir kamchilik emas, chunki Telegram transportni Beluga boshqaryapti.
+- Continue contract/offline testlar tekshirilgan, lekin haqiqiy recipientga xabar yuborish testi ataylab bajarilmadi. Shu sabab “o‘qish va tayyorlash” tasdiqlangan, “real personal send” esa staged live test sifatida qolmoqda.
+
+## 2026-09-09 — Media forward oqimi
+
+- Video/fayl ko‘rinmasligining sababi topildi: Beluga `allowed()` faqat `message.text`ni qabul qilgan; media message’lar esa Telegram cursorida o‘tib ketgan va `send_named.py` faqat text yuborgan.
+- Media pipeline qo‘shildi: video/document/photo/audio/voice metadata qabul qilinadi, Bot API `getFile` orqali max. 50 MB pending queue’ga yuklanadi. Keyingi aniq recipient+forward buyrug‘i Hermes’ga `media_contact` action sifatida beriladi.
+- Beluga host media path’ni `/Users/protochka/Beluga/state/media` bilan cheklaydi, Telethon orqali upload qiladi va faqat muvaffaqiyatli deliverydan keyin pending faylni tozalaydi. 62/62 test o‘tdi; real external media send ataylab bajarilmadi.
+
+## 2026-09-09 — Explicit suhbat davom ettirish va Hermes self-learning auditi
+
+- Beluga/Hermes uchun `continue` action qo‘shildi: owner “Mokhinur bilan suhbatni davom ettir” kabi aniq buyruq bersa, Hermes so‘nggi chat kontekstini o‘qib outgoing draft qaytaradi; yuborishni faqat Beluga host bajaradi.
+- `continue_enabled` alohida permission sifatida qo‘shildi va hozir `@mokhinur_ertan` uchun yoqildi. Noaniq “shu odam” yoki topilmagan recipient yuborilmaydi; unsolicited auto-reply o‘chiq.
+- Beluga testlari `59/59`, Python compile va Hermes `config check` o‘tdi. Hermes default provider/model `openai-codex` + `gpt-5.5`ga moslandi; Telegram worker LaunchAgent holati oldingi tekshiruvda running edi.
+- Hermes auditi: built-in memory va USER profile yoqilgan; `MEMORY.md`/`USER.md` sessionlar orasida kontekst beradi. Noto‘g‘ri yoki maxfiy xulosa avtomatik saqlanmasligi uchun `memory.write_approval=true` qilindi: yozuvlar avval pending bo‘ladi va `/memory approve|reject` bilan boshqariladi. Bu model weightsini qayta o‘qitish emas, curated memory va reusable skill yaratishdir. `/learn`, `/journey` nazorat yo‘llari ham mavjud.
+- Hermes cron 0, gateway stopped, external memory provider yo‘q, active session 0. Demak o‘zini mustaqil ravishda doimiy “o‘qitib”, kodini yoki ruxsatlarini o‘zgartiradigan nazoratsiz self-improvement yoqilmagan.
+- Read-only Hermes tahlili 2026-09-09da Mokhinur chatining so‘nggi 30 xabari uchun o‘tdi; faqat qisqa xulosa saqlandi, private dump saqlanmadi. Video/sticker mazmunini taxmin qilmaslik va accountga o‘xshash ma’lumotlarni quote qilmaslik qoidalari [[03 - Areas/Codex Context/Mokhinur Chat Analysis|Mokhinur tahlili]]ga qo‘shildi. Telegramga test xabari yuborilmadi.
+
 ## 2026-09-09 — Hermes audit va Obsidian konteksti
 
 - MyBrain Hermes memory sifatida ulandi: vault path `.env`da, working directory

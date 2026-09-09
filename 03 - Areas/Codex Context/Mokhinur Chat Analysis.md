@@ -1,6 +1,6 @@
 ---
 type: communication-analysis
-updated: 2026-09-06
+updated: 2026-09-09
 source: Telegram chat, last 100 messages read by Emirhan's authorized personal Telegram session
 status: candidate-preferences
 ---
@@ -38,6 +38,13 @@ Emirhan `@mokhinur_ertan` (M_E, Telegram ID `7121655009`) uning ayoli ekanini ta
 - Har bir yuborish Emirhanning Beluga ichidagi aniq topshirig‘i bilan boshlanadi; avval recipient va matn tekshiriladi.
 - TezCode guruhiga yoki boshqa chatlarga bu ruxsat ta’sir qilmaydi.
 
+## 2026-09-09 — so‘nggi 30 xabar bo‘yicha qisqa yangilanish
+
+- Kuzatuv tasdiqlandi: o‘zbekcha lotin va ruscha aralash, juda qisqa va norasmiy yozish; iliq/yaqin ohang, sticker va video ko‘p.
+- So‘nggi oynada matnli javob talab qiladigan aniq savol ko‘rinmadi; video/sticker mazmuni tekshirilmasdan javob tuzilmasin.
+- “Bugun”ga oid reja, account/detail mazmuni yoki video ma’nosi taxmin qilinmasin; zarur bo‘lsa Emirhandan aniqlik so‘ralsin.
+- Accountga o‘xshash maxsus ma’lumotlar uchrashi mumkin: ularni quote qilish, MyBrain’ga saqlash yoki taxminiy izohlash taqiqlanadi.
+
 ## Cheklov
 
 Bu qayd psixologik tashxis emas. U faqat ko‘rinadigan muloqot odatlari va Emirhan tasdiqlagan munosabat faktini saqlaydi. Shaxsiy xabarlarning to‘liq nusxasi MyBrain’ga ko‘chirilmaydi. Video/audio mazmuni bu tahlilda ko‘rilmadi.
@@ -45,4 +52,5 @@ Bu qayd psixologik tashxis emas. U faqat ko‘rinadigan muloqot odatlari va Emir
 ## Manba
 
 - Telegram: `@mokhinur_ertan`, ID `7121655009`, 100 ta oxirgi xabar, 2026-09-06.
+- Telegram: `@mokhinur_ertan`, so‘nggi 30 xabar, 2026-09-09; faqat xulosa saqlandi, xabar dumpi saqlanmadi.
 - [[03 - Areas/Codex Context/Beluga Plan|Beluga Plan]]

@@ -251,3 +251,19 @@ Keyingi etap yozuvlari: o‘zgargan fayllar → test buyrug‘i/scenario → haq
 - Hermes `telegram_personal` MCP bilan ulandi: barcha authenticated chatlarni list/find/read/search qilish owner so‘rovi doirasida ochiq. MCP `send_message` Hermes CLI uchun exclude qilindi; yuborish Beluga host va aniq owner buyrug‘i orqali qoladi. Yangi `beluga-owner-v2` session MCP bilan yaratildi; real `get_account_status` tool-call session exportida tekshirildi.
 - Personal reply routing qo‘shildi: `draft/tayyorla/yozib ber` faqat preview (`reply`), aniq `send/yubor/jo‘nat` esa Beluga host bajaradigan `contact` action. Auto-reply o‘chiq. Real offline contract testida draft=`reply`, explicit send=`contact`, recipient to‘g‘ri qaytdi; hech qanday test xabari yuborilmadi.
 - Backend aktiv, lekin yangi Hermes backend orqali jonli owner Telegram xabari hali yuborilmagan. Keyingi bosqich: Emirhan private bot chatida oddiy savol, `/status`, keyin harmless `/task` bilan staged live test. TezCode yoki boshqa chatga test yuborilmaydi.
+
+### 2026-09-09 — Owner buyruği bilan suhbatni davom ettirish
+
+- Beluga/Hermes contractiga `continue` action qo‘shildi. Hermes bu actionni faqat ownerning aniq “... suhbatni davom ettir” kabi buyrug‘ida tanlaydi; avval recipient chatining so‘nggi kontekstini o‘qishi va mavjud chat tahlilidan foydalanishi kerak.
+- Beluga host `continue` yuborishini `authorized-contacts.json`dagi alohida `continue_enabled` bilan tekshiradi. Hozir `@mokhinur_ertan` uchun yoqilgan; umumiy unsolicited auto-reply hali o‘chiq.
+- Noaniq “shu odam” recipienti yoki recipient nomi topilmasa yuborish bajarilmaydi; draft/aniqlashtirish qaytadi. `send_message` Hermes MCP uchun excluded bo‘lib qoladi, delivery faqat Beluga host orqali.
+- 59/59 Beluga unit test, Python compile o‘tdi. `hermes config check` o‘tdi; Hermes default provider/model `openai-codex` + `gpt-5.5`ga moslandi.
+- Hermes memory approval gate `write_approval=true` qilindi: model o‘rgangan xulosa va skill yozuvlari avtomatik commit bo‘lmaydi, owner `/memory approve` bilan tasdiqlaydi.
+- Jonli owner Telegram yuborish testi bajarilmadi. Read-only Hermes tahlili 2026-09-09da so‘nggi 30 xabar uchun o‘tdi; accountga o‘xshash ma’lumotlarni saqlamaslik va video/sticker mazmunini taxmin qilmaslik qoidalari [[Mokhinur Chat Analysis|Mokhinur tahlili]]ga qo‘shildi.
+
+### 2026-09-09 — Pending media va explicit forward oqimi
+
+- Sabab tekshirildi: oldingi `allowed()` faqat `message.text`ni qabul qilgan, `video`/`document`/`photo`/`audio`/`voice` xabarlari cursor bilan jim o‘tkazib yuborilgan; send adapter esa faqat text yuborgan.
+- Tuzatish kiritildi: media message va caption qabul qilinadi, Bot API `getFile` orqali max. 50 MB lokal private queue’ga yuklanadi, pending fayllar keyingi owner buyrug‘iga metadata sifatida Hermes’ga beriladi.
+- Aniq `Corvinga video va fayllarni forward qil` kabi buyruqda Hermes `media_contact` action qaytaradi; Beluga host recipient va path allowlistni tekshiradi, Telethon `send_file` bilan yuboradi va faqat tasdiqlanganidan keyin pending fayllarni tozalaydi.
+- Boshqa buyruqlar pending media’ni o‘z-o‘zidan yubormaydi. 62/62 test, Python compile va Node syntax o‘tdi. Real video yuborish testi hali bajarilmadi.
