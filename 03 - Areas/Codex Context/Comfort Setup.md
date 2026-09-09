@@ -108,3 +108,8 @@ Tekshiruv: ikkala yangi skill `quick_validate.py` orqali `Skill is valid!` natij
 - [Skilllar](https://developers.openai.com/plugins/concepts/skills.md)
 - [MCP](https://learn.chatgpt.com/docs/extend/mcp.md)
 - Lokal `codex plugin list`, `codex mcp list`, sessiya vositalari va skill fayllari.
+
+### 2026-09-09 — Hermes Telegram personal MCP
+
+- `telegram_personal` Hermes default profile’ga stdio MCP sifatida qo‘shildi va 6 tool discovery health testi o‘tdi. CLI uchun `send_message` exclude; account/list/find/read/search ochiq. Real Hermes `beluga-owner-v2` sessionida `get_account_status` MCP call bajarilgani redacted session export orqali tekshirildi.
+- Hermes Desktop yo‘li: `Возможности → MCP → telegram_personal`. Bu capability sozlamasi; Beluga Telegram transporti va yagona bot poller bo‘lib qoladi.

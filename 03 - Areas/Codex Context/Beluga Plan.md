@@ -242,3 +242,12 @@ Keyingi etap yozuvlari: o‘zgargan fayllar → test buyrug‘i/scenario → haq
 - Xizmat restartidan keyin Telegramdan yuborilgan jonli sinov ham o‘tdi: read_messages completed va bot o‘qish muvaffaqiyatli ekanini qaytardi.
 - Manba: [OpenAI MCP per-tool configuration](https://learn.chatgpt.com/docs/extend/mcp?surface=cli).
 
+### 2026-09-09 — Beluga Telegram transport → Hermes agent bridge
+
+- Emirhan tasdiqlagan arxitektura qo‘llandi: Beluga yagona Telegram poller va send-policy host bo‘lib qoldi; Hermes ichki AI backend sifatida `agent_backend.py` orqali tanlanadi. Hermes native Telegram gateway yoqilmadi va bot tokeni ko‘chirilmagan.
+- `hermes_agent.py` persistent `beluga-owner` sessionini `openai-codex/gpt-5.5` bilan ishlatadi. Oddiy chat va `/task` uchun alohida cheklangan toolset/prompt, process timeout va `/stop` interrupt mavjud. MyBrain canonical context va lokal RAG natijasi har turnga qo‘shiladi; Hermes `mybrain-memory` skilli ham yuklanadi.
+- Rollback: `state/agent-backend.json` olib tashlansa yoki `backend` `codex` qilinsa, Telegram worker eski Codex backendga qaytadi. Pre-change snapshot `Beluga/state/backup-20260909-143050-before-hermes-bridge`. Secretlar qaydga yozilmadi.
+- Offline real test: birinchi turn `ORCA-27` kodini qabul qildi, ikkinchi turn persistent Hermes sessionda uni qaytardi; JSON action contract to‘g‘ri bo‘ldi. 54 unit test va Python compile o‘tdi. LaunchAgent bitta worker bilan running; Telegram getMe true, queue 0, RAG ok/303 chunk.
+- Hermes `telegram_personal` MCP bilan ulandi: barcha authenticated chatlarni list/find/read/search qilish owner so‘rovi doirasida ochiq. MCP `send_message` Hermes CLI uchun exclude qilindi; yuborish Beluga host va aniq owner buyrug‘i orqali qoladi. Yangi `beluga-owner-v2` session MCP bilan yaratildi; real `get_account_status` tool-call session exportida tekshirildi.
+- Personal reply routing qo‘shildi: `draft/tayyorla/yozib ber` faqat preview (`reply`), aniq `send/yubor/jo‘nat` esa Beluga host bajaradigan `contact` action. Auto-reply o‘chiq. Real offline contract testida draft=`reply`, explicit send=`contact`, recipient to‘g‘ri qaytdi; hech qanday test xabari yuborilmadi.
+- Backend aktiv, lekin yangi Hermes backend orqali jonli owner Telegram xabari hali yuborilmagan. Keyingi bosqich: Emirhan private bot chatida oddiy savol, `/status`, keyin harmless `/task` bilan staged live test. TezCode yoki boshqa chatga test yuborilmaydi.

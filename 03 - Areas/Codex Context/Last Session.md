@@ -1,9 +1,54 @@
 ---
 type: session-handoff
-updated: 2026-09-08
+updated: 2026-09-09
 ---
 
 # Oxirgi Codex sessiyasi
+
+## 2026-09-09 — Hermes audit va Obsidian konteksti
+
+- MyBrain Hermes memory sifatida ulandi: vault path `.env`da, working directory
+  `/Users/protochka`, `USER.md`, `MEMORY.md`, global `.hermes.md` va enabled local
+  `mybrain-memory` skill yaratildi. Built-in memory + MyBrain filesystem + lokal
+  RAG arxitekturasi tanlandi; external cloud memory provider ulanmagan.
+- End-to-end test: Hermes Codex orqali AiCamera vazifasi va canonical note yo‘lini
+  MyBrain’dan to‘g‘ri qaytardi; explicit skill testi `MYBRAIN_SKILL_OK` berdi.
+  Prompt-size memory/user/context bloklari yuklanganini ko‘rsatdi.
+- Integratsiyadan oldin Hermes quick snapshot olindi. MarsDC jonli qaydidagi ochiq
+  login qiymatlari olib tashlandi, RAG 299 chunk bilan qayta indekslandi va health
+  `ok=true` qaytdi. Eski credential Git tarixida qolishi mumkin; tarix bu etapda
+  qayta yozilmadi.
+- Hermes Desktop interfeysi `display.language: ru` orqali rus tiliga o‘tkazildi.
+  Oddiy reload oynani vaqtincha bo‘sh qoldirdi; to‘liq quit/relaunch’dan keyin ruscha
+  menyular ko‘rindi va config qiymati `ru` ekani tekshirildi.
+- Hermes Desktop va CLI tekshirildi: v0.21.1, lokal terminal backend, Nous Portal
+  default `upstage/solar-pro4:free`; gateway stopped, scheduled job va active session 0.
+- ChatGPT/Codex Subscription OAuth Hermes UI’da connected; `openai-codex` +
+  `gpt-5.5` bilan real `CODEX_OK` inference testi o‘tdi. OpenAI API key yo‘q va
+  Codex OAuth ishlashi uchun hozir shart emas.
+- `cua-driver 0.25.0` o‘rnatilgan; Hermes MCP serverlari, fallback va core messaging
+  platformalari sozlanmagan. Bundled pluginlar opt-in; 57 built-in skill enabled.
+- [[Hermes Setup|Hermes sozlash va rivojlantirish xaritasi]] yaratildi. Birinchi
+  navbat: Hermes rolini Beluga’dan ajratish, kerak bo‘lsa Codex’ni default qilish,
+  MyBrain read testi, xavfsizlik va smoke test. Gateway, messaging, scheduler, MCP
+  va pluginlar faqat aniq ehtiyoj bo‘lsa keyingi etapda.
+- Eski MarsDC qaydida ochiq credential borligi qayta aniqlandi; Hermes/RAG bilan
+  keng integratsiyadan oldin alohida tozalash kerak. Credential qiymati bu qaydga
+  ko‘chirilmadi.
+
+## 2026-09-09 — Kundalik Mac sozlamalari va Beluga audit handoff’i
+
+- Screenshotlar standart joyi Desktop ekanligi tekshirildi: `/Users/protochka/Desktop`. Finder orqali Desktop ochildi; `Fetch` va `React map` fayllari ko‘rindi.
+- Steam’ning login paytida avtomatik ochilishi o‘chirildi. `Открывать при входе` ro‘yxati endi bo‘sh; Steam’ning alohida fon faoliyati satri qolishi mumkin, bu avtozapusk bilan bir xil emas.
+- GoogleUpdater’ni user macOS Login Items/Background Activity’dan o‘chirganini bildirdi. Bu Google ilovalarining fon yangilanishini cheklaydi, Google ilovalarini o‘chirib yubormaydi.
+- `bash` nomi ostidagi avtomatik ish `/Users/protochka/.codex/rag/embed-reindex.sh` ekanligi tushuntirildi: har 600 soniyada MyBrain RAG indeksini yangilaydi, lokal RAG serverini restart qiladi va localhost health tekshiradi. Bu cron emas; macOS `launchd` LaunchAgent orqali ishlaydi.
+- `crontab -l` tekshiruvi: user crontab mavjud emas. Beluga, RAG va reindex xizmatlari LaunchAgent orqali boshqariladi.
+- RAG reindex OpenAI API tokenlarini ishlatmaydi; `intfloat/multilingual-e5-base` lokal modelidan foydalanadi. Xarajat lokal CPU/RAM/batareya; AI tokenlari faqat Beluga/Codex javoblarida ishlatiladi.
+- Agent inventari: bitta asosiy Beluga AI agenti, uning `beluga-agent` Codex app-server va `beluga` Telegram worker xizmatlari; `codex-rag` yordamchi server va `codex-rag-reindex` scheduler. GoogleUpdater/Steam agent emas.
+- OpenAI Agents SDK hujjatlari o‘qildi. Rasmiy model: Agent + instructions + tools + state/session + guardrails + handoffs + tracing; Runner turn/tool oqimini boshqaradi. Beluga hozir custom Codex app-server + Python orchestration bo‘lib, native Agents SDK emas.
+- Audit dalili: `beluga-agent` va `beluga` LaunchAgent running; RAG `ok=true`, 267 chunk, model/reranker loaded; queue 0; 49 lokal test `OK`. Shu bilan birga `status.py` runtime’ni `notLoaded` deb ko‘rsatmoqda va worker logida tarixiy xatolar bor; keyingi auditda bular tekshiriladi.
+- Keyingi texnik etap: backup/snapshot → status health tuzatish → write-action guardrails → tracing/audit log → smoke/eval testlar → native Agents SDK migratsiyasi kerakligini baholash. Hozircha kod va xizmatlar o‘zgartirilmagan.
+- Mac nomini to‘liq `Muralgin`ga almashtirish masalasi ochiq: ko‘rinadigan `RealName` allaqachon Muralgin, texnik username/home path esa `protochka` bo‘lib qolgan. `/Users/protochka`ni qo‘lda ko‘chirish backup va alohida admin sessiyasiz bajarilmaydi.
 
 ## 2026-09-08 — Beluga agentini yuqori darajaga olib chiqish uchun keyingi audit
 
@@ -140,3 +185,11 @@ Emirhan Codex’ni loyiha uchun emas, kundalik qulay ishlatish uchun sozlashni s
 ## Keyin qaytish kerak
 
 - Telegram personal MCP’ni kengaytirish: avtomatik monitoring, media/voice transkripsiya, Telegram → RAG → Obsidian oqimi va xavfsiz yuborish workflow’ini keyin davom ettirish.
+
+## 2026-09-09 — Beluga → Hermes bridge tayyor
+
+- Beluga yagona Telegram worker bo‘lib qoldi; Hermes native Telegram gateway yoqilmadi. Ichki backend selector Hermes’ga o‘tkazildi: persistent `beluga-owner`, `openai-codex/gpt-5.5`, MyBrain + lokal RAG context.
+- Real offline ikki turn continuity va JSON contract testi o‘tdi; 54 unit test/compile o‘tdi. LaunchAgent running, queue 0, RAG ok/303 chunk. Jonli Telegram owner testi hali bajarilmagan; keyingi qadam user `@BelugaCat_Asisstent_bot`ga oddiy test xabari yuboradi.
+- Rollback snapshot: `/Users/protochka/Beluga/state/backup-20260909-143050-before-hermes-bridge`; selector faylini olib tashlash Codex backendga qaytaradi.
+- Telegram chat o‘qish bo‘shlig‘i tuzatildi: Hermes config’ga `telegram_personal` stdio MCP qo‘shildi, list/find/read/search ishlaydi; direct MCP send exclude. `beluga-owner-v2` real tool-call orqali Telegram sessionga ulandi. Desktop’da bu `Возможности → MCP` bo‘limidagi `telegram_personal` sifatida ko‘rinadi; alohida yangi bot/agent card yaratilmagan.
+- Beluga personal javob oqimi qo‘shildi: chatni o‘qib draft qilish va owner aniq yubor desa host orqali contact send. Offline contract test o‘tdi; auto-reply yoqilmadi va test xabari yuborilmadi.

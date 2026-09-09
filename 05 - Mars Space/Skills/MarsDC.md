@@ -18,7 +18,8 @@ created: 2026-06-04
 
 ### 1. Saytga kirish
 - Playwright bilan `https://core.marsit.uz/` ga o'tish
-- Login: `+998946188877` | Parol: `emir7788`
+- Login ma’lumotlari bu qayddan olib tashlangan. Faqat lokal secret storage yoki
+  foydalanuvchining interaktiv login sessiyasidan foydalanish.
 - `teacher-dashboard` ga kirish
 
 ---
@@ -145,8 +146,7 @@ Har biriga: [MIQDOR] coin
 
 ### Login
 - URL: `https://core.marsit.uz/`
-- Tel: `+998946188877`
-- Parol: `emir7788`
+- Telefon/parol: vaultda saqlanmaydi; lokal secret storage yoki interaktiv sessiya.
 
 ### CSS Selektorlar
 - Bugungi ustun: `td.today-column`
