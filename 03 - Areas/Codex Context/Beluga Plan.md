@@ -296,6 +296,12 @@ Keyingi etap yozuvlari: o‘zgargan fayllar → test buyrug‘i/scenario → haq
 - Bot va personal group javoblari bir xil Hermes `beluga-owner-v2` agent qaroridan o‘tadi; Hermes `group_personal` actionni faqat persisted owner flag bo‘lsa tanlashi mumkin. Personal delivery host adapterda group ID va reply message ID bilan bajariladi.
 - 64/64 test va Python compile o‘tdi. Guruhning aniq numeric IDsi hali berilmagan, shuning uchun allowlist bo‘sh va jonli group activation/send bajarilmagan.
 
+### 2026-09-10 — Hermes background analysis and drafts
+
+- `background_analysis.py` runs under the worker, selecting the most recently changed chat and waiting 60 seconds between attempts. Existing owner jobs take priority. Hermes uses an isolated safe-mode invocation, no resumed owner session and no resolved tools. Input is limited to one chat snapshot; no MyBrain/private cross-chat tools are exposed.
+- Validated summary/facts/questions/promises and ignore/draft/ask_owner decisions are stored inside each chat's `agent_review` in the single JSON. Snapshot hashes reject stale results and skip unchanged chats. This stage has no background send path and does not change chat write permissions.
+- Owner private `/drafts`, `/analysis_status`, `/analysis_pause`, `/analysis_resume` are implemented. Analysis consumes Codex inference quota. 75 unit tests and compile passed; a real synthetic Hermes inference returned a valid draft. Worker deployment enabled; a live stored-chat review was committed successfully through the same analysis step (completed=1). No test message was sent.
+
 ### 2026-09-10 — Personal observer enabled
 
 - Beluga supervises `personal_observer.py` using the existing Telethon environment. Read-only dialog scans run approximately every 60 seconds; initial scan seeds up to 50 recent messages per accessible chat, including outgoing text. Telegram service login messages are excluded. Media contents are not downloaded; edits/deletions without new messages are not reconciled yet.
