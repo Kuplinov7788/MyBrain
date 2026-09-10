@@ -1,16 +1,36 @@
 ---
 type: implementation-plan
-updated: 2026-09-07
+updated: 2026-09-10
 status: paused-after-saved-success
 ---
 
 # Beluga — talablar va etaplar
 
+## 2026-09-10 — Telegram/Hermes audit
+
+- Telegram personal account holati va 20 ta dialog read-only tekshirildi;
+  MCP account/status va dialog listing muvaffaqiyatli qaytdi.
+- `com.protochka.beluga` va `com.protochka.beluga-agent` LaunchAgent’lari running;
+  backend `hermes`, session `beluga-owner-v2`, provider `openai-codex`, model
+  `gpt-5.5`; queue `0`, `needs_review=0`, `failed=0`.
+- Send adapter `confirm=false` preview bilan tekshirildi: Mokhinur recipienti
+  to‘g‘ri resolve bo‘ldi va xabar yuborilmadi.
+- Topic/reply routing, recipient ambiguity, media queue, explicit media send,
+  typing, notification va restart/dedup himoyalari testlarda mavjud; jami 62/62
+  Beluga testi, Python compile va Node syntax check o‘tdi.
+- Incoming video/document/photo/audio/voice hozir private pending-media queue’ga
+  tushadi. Voice’ni avtomatik local transcription qilish hali workerga ulanmagan;
+  hozircha media marker/queue sifatida saqlanadi.
+- Hermes Gateway yoqilmadi: Beluga yagona Telegram poller bo‘lib qoladi.
+
+[tekshirildi: `status.py`, `launchctl`, Telegram MCP read-only calls, send preview,
+62 test, `py_compile`, `node --check`]
+
 ## Maqsad va tasdiqlangan talablar
 
 Emirhan mavjud `@BelugaCat_Asisstent_bot` botini Mac uchun moslashtirib, keyinchalik PC’da ham ishlatmoqchi. Bot tabiiy, kontekstga mos tilda tahlil qiladi va e’lon/javob tayyorlaydi. Botga mention yoki reply bo‘lsa, yoqilgan chat/topicning o‘zida javob beradi.
 
-Shaxsiy akkaunt nomidan avtomatik javob alohida rejim: kimga javob berishni Emirhan o‘zi belgilaydi. Hozir allowlist bo‘sh, yuborish yoqilmagan. Bot nomidan javob va shaxsiy akkaunt nomidan javob alohida ko‘rsatiladi.
+Shaxsiy akkaunt nomidan avtomatik javob alohida rejim: kimga javob berishni Emirhan o‘zi belgilaydi. Hozir Mokhinur uchun aniq owner command talab qilinadigan write/continue ruxsati bor; tashabbusli auto-reply o‘chiq. Bot nomidan javob va shaxsiy akkaunt nomidan javob alohida ko‘rsatiladi.
 
 Emirhan o‘z kun tartibi va afzalliklarini beradi. Faqat u tanlagan chatlar va o‘z javoblaridan til, uzunlik, ohang, rasmiylik, hazil va salomlashish odatlari o‘rganiladi. “Psixologiyani o‘rganish” amalda kuzatiladigan muloqot afzalliklarini tushunish sifatida bajariladi; ruhiy tashxis yoki kontaktlar haqida taxminiy shaxsiy profil tuzilmaydi.
 
@@ -268,5 +288,19 @@ Keyingi etap yozuvlari: o‘zgargan fayllar → test buyrug‘i/scenario → haq
 - Aniq `Corvinga video va fayllarni forward qil` kabi buyruqda Hermes `media_contact` action qaytaradi; Beluga host recipient va path allowlistni tekshiradi, Telethon `send_file` bilan yuboradi va faqat tasdiqlanganidan keyin pending fayllarni tozalaydi.
 - Boshqa buyruqlar pending media’ni o‘z-o‘zidan yubormaydi. 62/62 test, Python compile va Node syntax o‘tdi. Real video yuborish testi hali bajarilmadi.
 ## Hermes knowledge source
+
+### 2026-09-10 — Group bot mode va owner-controlled personal mode
+
+- `bot.py` endi durable `state/authorized-groups.json` allowlistini tekshiradi. Ruxsat berilgan groupda faqat bot mentioni yoki bot xabariga reply kelganda update qabul qilinadi; oddiy guruh suhbati yo‘q. Bot javobi original group/topic/reply ga qaytariladi.
+- Owner private chatidan `/allow_group -100...` bot rejimini yoqadi. `/personal_group -100... on|off` shu group uchun shaxsiy Telegram accountdan davom ettirishni alohida yoqadi/o‘chiradi. Default personal mode off; spontan personal send yo‘q.
+- Bot va personal group javoblari bir xil Hermes `beluga-owner-v2` agent qaroridan o‘tadi; Hermes `group_personal` actionni faqat persisted owner flag bo‘lsa tanlashi mumkin. Personal delivery host adapterda group ID va reply message ID bilan bajariladi.
+- 64/64 test va Python compile o‘tdi. Guruhning aniq numeric IDsi hali berilmagan, shuning uchun allowlist bo‘sh va jonli group activation/send bajarilmagan.
+
+### 2026-09-10 — Unified chat context store, first stage
+
+- Alohida JSON fayllar o‘rniga bitta `Beluga/state/chat-contexts.json` yaratildi. `chats` map ichida har bir Telegram chat ID uchun metadata, bounded recent messages, summary, important facts, open questions, pending promises va reply policy saqlanadi.
+- Yozuvlar atomic replace va file lock bilan bajariladi; context fayli `600` permissionda. Media bytes, credentials va to‘liq chat dump saqlanmaydi; recent text 50 xabar/2,000 belgigacha cheklanadi.
+- Qabul qilingan Beluga update’lar shu store’ga yoziladi. Hermes payloadiga chat context beriladi; Hermes ixtiyoriy `context_update` qaytarsa, host summary/facts/open questions/promise maydonlarini yangilaydi.
+- 68/68 test, Python compile, worker restart va status/RAG health tekshirildi. Keyingi etap: personal account listenerni shu yagona pollerga qo‘shish va per-chat observe/draft/auto_reply policy engine.
 
 Hermes kursi va video transcriptlari endi [[Hermes Hub]] orqali yagona oqimga ulangan. Beluga’dan kelgan media transcriptlari `Hermes Course Transcripts/`da, amaliy qoida esa `/Users/protochka/.hermes/skills/hermes-course/SKILL.md`da. Bu materiallar o‘qish uchun; Telegramga yuborish faqat aniq recipient/action buyrug‘i bilan.
