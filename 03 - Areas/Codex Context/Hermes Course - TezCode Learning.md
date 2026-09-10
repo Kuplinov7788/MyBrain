@@ -2,12 +2,12 @@
 type: learning-note
 updated: 2026-09-09
 source: TezCode Learning topic + Beluga pending media
-status: captured-from-captions-and-guide
+status: transcribed-and-linked
 ---
 
 # Hermes Course — TezCode Learning
 
-Bu qayd TezCode’dagi Learning topicida topilgan Hermes kursi xabarlari, Beluga pending media ro‘yxati va yuborilgan `HERMES.md` qo‘llanmasi asosida yozildi. Video ichidagi audio/transkript alohida ko‘chirilmadi; xulosalar caption, file nomlari va qo‘llanma matniga tayangan.
+Bu qayd TezCode’dagi Learning topicida topilgan Hermes kursi xabarlari, Beluga pending media ro‘yxati, yuborilgan `HERMES.md` qo‘llanmasi va 44 ta video audio transkriptiga asoslangan. Transcriptlarning yagona kirish nuqtasi: [[Hermes Hub]].
 
 ## Manbalar
 
@@ -151,6 +151,7 @@ Amaliy ma’no: yakuniy maqsad — agentni shunchaki chat emas, tekshiriladigan 
 ## Aloqador
 
 - [[Hermes Setup]]
+- [[Hermes Hub|Hermes yagona hubi]]
 - [[Beluga Usage]]
 - [[Operating System]]
 - [[Context MOC]]

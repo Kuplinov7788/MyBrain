@@ -178,3 +178,4 @@ memoryda faqat ixcham indeks va doimiy faktlar, batafsil bilim MyBrain/RAGda qol
 - [[Comfort Setup|Codex qulay ish muhiti]]
 - [[Beluga Usage|Beluga foydalanish qo‘llanmasi]]
 - [[Last Session|Oxirgi sessiya]]
+> Yagona kirish nuqtasi: [[Hermes Hub]]. Kurs transcriptlari, Beluga oqimi va skill qoidalari shu hub orqali ulanadi.

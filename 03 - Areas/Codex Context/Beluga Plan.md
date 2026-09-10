@@ -267,3 +267,6 @@ Keyingi etap yozuvlari: o‘zgargan fayllar → test buyrug‘i/scenario → haq
 - Tuzatish kiritildi: media message va caption qabul qilinadi, Bot API `getFile` orqali max. 50 MB lokal private queue’ga yuklanadi, pending fayllar keyingi owner buyrug‘iga metadata sifatida Hermes’ga beriladi.
 - Aniq `Corvinga video va fayllarni forward qil` kabi buyruqda Hermes `media_contact` action qaytaradi; Beluga host recipient va path allowlistni tekshiradi, Telethon `send_file` bilan yuboradi va faqat tasdiqlanganidan keyin pending fayllarni tozalaydi.
 - Boshqa buyruqlar pending media’ni o‘z-o‘zidan yubormaydi. 62/62 test, Python compile va Node syntax o‘tdi. Real video yuborish testi hali bajarilmadi.
+## Hermes knowledge source
+
+Hermes kursi va video transcriptlari endi [[Hermes Hub]] orqali yagona oqimga ulangan. Beluga’dan kelgan media transcriptlari `Hermes Course Transcripts/`da, amaliy qoida esa `/Users/protochka/.hermes/skills/hermes-course/SKILL.md`da. Bu materiallar o‘qish uchun; Telegramga yuborish faqat aniq recipient/action buyrug‘i bilan.

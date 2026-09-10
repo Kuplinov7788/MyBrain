@@ -16,6 +16,7 @@ Bu sahifa MyBrain’dagi loyiha va vosita kontekstlarini bir joydan ochish uchun
 - [[Operating System|Birlashtirilgan Codex + MyBrain ish tizimi]]
 - [[Hermes Setup|Hermes sozlash va rivojlantirish xaritasi]]
 - [[Hermes Course - TezCode Learning|Hermes kursi — TezCode Learning xulosasi]]
+- [[Hermes Hub|Hermes yagona bilim va ish oqimi hubi]]
 - [[../Claude Context/Profile|Batafsil eski profil]]
 - [[../Claude Context/How-To-Use-Claude|Ishlash qo‘llanmasi]]
 - [[../Claude Context/Projects|Loyihalar umumiy ro‘yxati]]

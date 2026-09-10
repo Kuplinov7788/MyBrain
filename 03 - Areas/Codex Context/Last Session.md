@@ -215,3 +215,11 @@ Emirhan Codex’ni loyiha uchun emas, kundalik qulay ishlatish uchun sozlashni s
 - Rollback snapshot: `/Users/protochka/Beluga/state/backup-20260909-143050-before-hermes-bridge`; selector faylini olib tashlash Codex backendga qaytaradi.
 - Telegram chat o‘qish bo‘shlig‘i tuzatildi: Hermes config’ga `telegram_personal` stdio MCP qo‘shildi, list/find/read/search ishlaydi; direct MCP send exclude. `beluga-owner-v2` real tool-call orqali Telegram sessionga ulandi. Desktop’da bu `Возможности → MCP` bo‘limidagi `telegram_personal` sifatida ko‘rinadi; alohida yangi bot/agent card yaratilmagan.
 - Beluga personal javob oqimi qo‘shildi: chatni o‘qib draft qilish va owner aniq yubor desa host orqali contact send. Offline contract test o‘tdi; auto-reply yoqilmadi va test xabari yuborilmadi.
+## Hermes video transkripsiyasi va yagona hub — 2026-09-09
+
+- Beluga pending media’dagi 44 ta Hermes darsi `faster-whisper-base-int8` bilan transkripsiya qilindi; natijalar `Hermes Course Transcripts/` va `manifest.json` ichida.
+- Qayta ishlatish uchun `/Users/protochka/Beluga/scripts/transcribe_hermes_course.py` qoldirildi; u mavjud transcriptlarni skip qiladi.
+- Hermes uchun yagona skill `/Users/protochka/.hermes/skills/hermes-course/SKILL.md` va Obsidian markaziy sahifa [[Hermes Hub]] yaratildi.
+- [[Context MOC]], [[Hermes Course - TezCode Learning]], [[Hermes Setup]] va [[Beluga Plan]] hub bilan bog‘landi.
+- Skill amaliy chegarasi: transcript bilim manbasi; Telegram media yuborish faqat aniq recipient/action bilan; memory/skill — curated knowledge, model retraining emas.
+- Tekshiruv: manifest 44 entry; transcript `.md`/`.segments.json` juftliklari; Beluga job 678230882 `done`, lekin Hermes chat o‘z turn limitida skill bosqichini tugatmagan edi — skill/hub qo‘lda yakunlandi.
