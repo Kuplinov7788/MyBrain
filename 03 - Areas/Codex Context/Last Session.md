@@ -1,9 +1,20 @@
 ---
 type: session-handoff
-updated: 2026-09-09
+updated: 2026-09-10
 ---
 
 # Oxirgi Codex sessiyasi
+
+## 2026-09-10 — Codex tizimi auditi va davomiy xotira talabi
+
+- Foydalanuvchi aniqlashtirdi: unga modelning umumiy imkoniyatlari yoki bir suhbatdagi ish bahosi emas, Mac’dagi shaxsiy Codex arxitekturasi — startup, AGENTS, skilllar, RAG, xotira va agentlar qanday bog‘langani muhim. Subscription resurs, tizim esa undan foydalanish mexanizmi sifatida tushuntirilsin; javoblar qisqa va aniq bo‘lsin.
+- [tekshirildi: fayl/CLI, 2026-09-10] Global qoida `/Users/protochka/.codex/AGENTS.md`; config default modeli `gpt-6-astra`, effort `low`; CLI `0.153.4`. Tekshirilgan joylarda alohida codex.md topilmadi. Preferences o‘qish yo‘riqnomaga tayanadi; majburiy MyBrain startup hook tasdiqlanmadi.
+- [tekshirildi: CLI, 2026-09-10] RAG health: ok=true, chunks=506, model_loaded=true, reranker=true; endpoint 127.0.0.1:8766; embedding intfloat/multilingual-e5-base. Server RunAtLoad/KeepAlive, reindex StartInterval=600. Bu snapshot; keyingi sessiyada joriy holat qayta tekshirilsin. Ushbu auditda qidiruv sifati uchun alohida test bajarilmadi.
+- [tekshirildi: CLI] 18 plugin installed/enabled; telegram_personal MCP configured va sessiyaga exposed, lekin akkauntga jonli kirish bu auditda sinalmadi. Obsidian Git save/push/pull intervali 10; remote push tasdiqlanmadi.
+- [xulosa] Arxitekturaga berilgan 7/10 subyektiv baho: startup izchilligi, qayd yangiligi, RAG sifatini baholash va yagona health check bo‘shliqlari sabab. Bu o‘lchangan benchmark emas. Operating System qaydidagi 2026-09-05 RAG/Telegram holati eskirgan.
+- Foydalanuvchi suhbatdagi barcha mazmunli momentlarni o‘z tashabbusimiz bilan Obsidian’da saqlashni aniq so‘radi; maqsad kontekstni yo‘qotmaslik va hallucination xavfini kamaytirish. Doimiy qoida [[Preferences#Suhbatni davomiy qayd qilish — 2026-09-10|Preferences]]ga yozildi.
+- Ushbu suhbatning oldingi bosqichlarida muhim yangi kontekst darhol saqlanmagan edi; hozir mazmunli natijalar ushbu handoff’da jamlandi. Yangi fon avtomatikasi o‘rnatilmadi; startup/RAG sifatini yaxshilash takliflari bajarilgan ish emas.
+
 
 ## 2026-09-09 — Hermes kursi transkripsiya va boshqaruv skill
 
