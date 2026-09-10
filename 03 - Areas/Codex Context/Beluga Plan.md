@@ -296,6 +296,13 @@ Keyingi etap yozuvlari: o‘zgargan fayllar → test buyrug‘i/scenario → haq
 - Bot va personal group javoblari bir xil Hermes `beluga-owner-v2` agent qaroridan o‘tadi; Hermes `group_personal` actionni faqat persisted owner flag bo‘lsa tanlashi mumkin. Personal delivery host adapterda group ID va reply message ID bilan bajariladi.
 - 64/64 test va Python compile o‘tdi. Guruhning aniq numeric IDsi hali berilmagan, shuning uchun allowlist bo‘sh va jonli group activation/send bajarilmagan.
 
+### 2026-09-10 — Personal observer enabled
+
+- Beluga supervises `personal_observer.py` using the existing Telethon environment. Read-only dialog scans run approximately every 60 seconds; initial scan seeds up to 50 recent messages per accessible chat, including outgoing text. Telegram service login messages are excluded. Media contents are not downloaded; edits/deletions without new messages are not reconciled yet.
+- One `state/chat-contexts.json` contains every chat object. Message IDs deduplicate repeated scans; unreadable JSON now fails without overwriting memory. Session authorization is read into memory without changing the MCP session database. No send or mark-read calls exist in this observer.
+- Live authenticated scan wrote chat contexts (24 chats/1,164 messages at an intermediate check), file permissions 600. Initial full scan was still progressing. 72 tests and Python compile passed. Worker supervises and restarts the observer; parent exit stops the child. Status exposes freshness, progress and errors.
+- Owner private `/observe_pause` and `/observe_resume` control collection. This stage does not invoke Hermes for every incoming message or enable personal auto-replies; background analysis/policy delivery remains a later stage.
+
 ### 2026-09-10 — Unified chat context store, first stage
 
 - Alohida JSON fayllar o‘rniga bitta `Beluga/state/chat-contexts.json` yaratildi. `chats` map ichida har bir Telegram chat ID uchun metadata, bounded recent messages, summary, important facts, open questions, pending promises va reply policy saqlanadi.
