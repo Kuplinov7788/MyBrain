@@ -1,6 +1,6 @@
 ---
 type: setup-audit
-updated: 2026-09-09
+updated: 2026-09-10
 status: configured-memory-active
 ---
 
@@ -16,10 +16,10 @@ saqlaydi. Tokenlar, parollar va OAuth credentiallari bu vaultga yozilmaydi.
 - Desktop interfeys tili `display.language: ru` qilib o‘zgartirildi; ilova to‘liq
   qayta ishga tushirilgach ruscha menyular ko‘rinishi tekshirildi;
 - Desktop ilova ochiladi, gateway UI’da `ready` ko‘rinadi;
-- default inference: `Nous Portal` → `upstage/solar-pro4:free`;
+- default inference: `openai-codex` → `gpt-5.5`;
 - Nous Portal OAuth ulangan, ammo paid credit yo‘qligi sabab managed web, image,
   TTS/STT, browser va Modal Tool Gateway mavjud emas;
-- `ChatGPT or Codex Subscription` OAuth ulangan;
+- `ChatGPT or Codex Subscription` OAuth ulangan; hozirgi config’da default provider/model `openai-codex` + `gpt-5.5`;
 - Codex ulanishi `openai-codex` + `gpt-5.5` bilan real `CODEX_OK` inference testi
   orqali tekshirildi;
 - OpenAI API key o‘rnatilmagan. Bu hozir majburiy emas: Codex subscription OAuth
@@ -76,10 +76,9 @@ yoki ma’lumotlarni uchinchi tomonga sinxronlashni talab qilmaydi.
    oqimi mavjud. Hermes uni darhol almashtirmaydi. Dastlab Hermes desktop/terminal
    yordamchisi sifatida alohida sinov qilinadi; keyin Beluga bilan birlashtirish yoki
    migratsiya qilish qarori dalil asosida olinadi.
-2. **Default modelni tanlash.** Agar asosiy maqsad Codex obunasidan foydalanish
-   bo‘lsa, Hermes `Model` bo‘limida provider `ChatGPT or Codex Subscription`, model
-   `gpt-5.5` qilib `Apply` qilinadi. Nous free model zaxira variant sifatida qolishi
-   mumkin. Defaultni o‘zgartirish hali bajarilmagan.
+2. **Default model.** Codex obunasidan foydalanish uchun Hermes config’da provider
+   `openai-codex`, model `gpt-5.5` qilib qo‘yilgan. Nous free model avvalgi fallback
+   sifatida qaydda qolgan, lekin hozir default emas.
 3. **Shaxsiy kontekst.** Hermes uchun qisqa owner qoidalari yozildi: o‘zbekcha javob, kod va
    texnik terminlar inglizcha, avval mavjud faylni o‘qish, natijani test bilan
    tekshirish, tarixiy qaydni joriy fakt deb bermaslik. MyBrain’dan avval
