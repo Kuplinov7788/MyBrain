@@ -5,6 +5,13 @@ updated: 2026-09-09
 
 # Oxirgi Codex sessiyasi
 
+## 2026-09-09 — Hermes kursi transkripsiya va boshqaruv skill
+
+- TezCode Learning’dan kelgan Hermes video/fayllar o‘rganildi. Beluga pending media ichidagi 44 ta `.mp4` `faster-whisper base int8` bilan MyBrain’ga transcript qilindi: [[Hermes Course Transcripts]].
+- Transkript sifati Uzbek/Russian talaffuzlarda notekis; yakuniy qoida va playbook captionlar, `HERMES.md`, transcript dalillari va joriy lokal Hermes holatini solishtirib chiqarildi.
+- [[Hermes Course - TezCode Learning]] yangilandi/saqlandi, [[Hermes Management Playbook]] yaratildi va [[Context MOC]]ga ulandi. Local runtime skill `hermes-management` yaratildi; Hermes boshqaruv ishlarida avval `hermes-agent` skill + rasmiy docs, keyin shu playbook ishlatiladi.
+- Qo‘shimcha script: `/Users/protochka/Beluga/scripts/transcribe_hermes_course.py`. Tekshiruvlar: 44 transcript `.md`, 44 `.segments.json`, `skill_view(hermes-management)`, `py_compile`, MyBrain `git diff --check`.
+
 ## 2026-09-09 — Beluga/Hermes runtime audit
 
 - Runtime qayta tekshirildi: Telegram `true`, Beluga LaunchAgent bitta nusxada `running`, Hermes backend `openai-codex/gpt-5.5`, queue `0`, `needs_review=0`, `failed=0`, RAG `ok=true` va model/reranker loaded (319 chunk).
