@@ -6,6 +6,23 @@ status: configured-memory-active
 
 # Hermes — sozlash va rivojlantirish xaritasi
 
+## 2026-09-10 — optimization audit
+
+- `hermes doctor`: config v41, Python 3.11, TCC anchor, OpenAI Codex OAuth,
+  built-in memory, 59 enabled skills va Playwright Chromium holati tekshirildi;
+- real one-shot smoke test `openai-codex/gpt-5.5` bilan o‘tdi: `HERMES_SMOKE_OK`;
+- default `openai-codex` + `gpt-5.5`, reasoning `medium`, language `ru`, sudo
+  o‘chiq, memory user-profile yoqilgan;
+- Gateway `stopped`: bu hozircha ataylab qoldirildi, chunki Telegram transporti
+  Beluga’da ishlaydi va duplicate worker xavfi bor;
+- optimization talab qiladigan majburiy xato topilmadi. Faqat browser/web workspace
+  npm dependency audit ogohlantirishlari va 284 commit ortda qolgan update mavjud;
+  ular ishlayotgan config’ni buzmaslik uchun avtomatik qo‘llanmadi.
+
+[tekshirildi: `hermes doctor`, `config check`, `auth status openai-codex`,
+`prompt-size`, `skills list`, `gateway status`, `rag-status.sh`, real one-shot inference,
+`git diff --check`]
+
 Hermes macOS’da lokal AI agent sifatida o‘rnatilgan. Bu qayd joriy tekshirilgan
 holatni, Emirhan uchun foydali minimal sozlamalarni va keyingi ixtiyoriy etaplarni
 saqlaydi. Tokenlar, parollar va OAuth credentiallari bu vaultga yozilmaydi.
