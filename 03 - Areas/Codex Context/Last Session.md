@@ -5,6 +5,20 @@ updated: 2026-09-10
 
 # Oxirgi Codex sessiyasi
 
+## 2026-09-11 — AiCamera Desktop audit
+
+- Emirhan `/Users/protochka/Desktop/ai-camera` uchun to‘liq struktura/funksiyalar va “Begona #1” old/orqa tanish auditi so‘radi. Tafsilot: [[ZONES/AiCamera/_context|AiCamera konteksti]].
+- [tekshirildi: fayl/CLI] 18 Python modul va yordamchi fayllar ko‘rib chiqildi; mavjud visitor testi 16/16 o‘tdi, 12 offline probe kuzatuvi saqlandi. Identity keshining bir kadrda o‘chishi, body gallery noto‘g‘ri yangilanishi, body-only yangi ID, enrollment/persistence/writer va dashboard/SAHI muammolari topildi.
+- Audit: `/Users/protochka/Desktop/ai-camera/audit/AUDIT-2026-09-11.md`; production kod o‘zgartirilmagan. Jonli model/NVR aniqligi tekshirilmagan, bu nusxada muhit/modellar yo‘q. Keyingi ish — identity/xotira tuzatishlari va real video benchmark; tuzatildi deb talqin qilinmasin.
+
+## 2026-09-11 — Telegram update ishiga qaytish
+
+- MyBrain konteksti qayta tiklandi: `Context MOC`, `Preferences`, `Last Session`, `Beluga Plan` va Telegram zone qayta o‘qildi.
+- [tekshirildi: CLI, 2026-09-11] Beluga worker va Telegram ulanishi faol; Hermes backend `openai-codex/gpt-5.5`, RAG `ok=true`, personal observer fresh/scanning holatida.
+- [tekshirildi: CLI, 2026-09-11] `Beluga/state/chat-contexts.json` yagona store sifatida mavjud; 1051 ta chat konteksti yozilgan, fayl permission `600`.
+- [tekshirildi: CLI, 2026-09-11] Beluga testlari `85/85 OK`.
+- Keyingi Telegram etap: tabiiy owner buyrug‘i bilan tanlangan suhbatni davom ettirish oqimini xavfsiz jonli sinash; guruh rejimi va Mac sleep/reboot alohida ochiq band bo‘lib qoladi.
+
 ## 2026-09-10 — Codex tizimi auditi va davomiy xotira talabi
 
 - Foydalanuvchi aniqlashtirdi: unga modelning umumiy imkoniyatlari yoki bir suhbatdagi ish bahosi emas, Mac’dagi shaxsiy Codex arxitekturasi — startup, AGENTS, skilllar, RAG, xotira va agentlar qanday bog‘langani muhim. Subscription resurs, tizim esa undan foydalanish mexanizmi sifatida tushuntirilsin; javoblar qisqa va aniq bo‘lsin.

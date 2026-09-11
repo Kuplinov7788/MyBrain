@@ -298,6 +298,22 @@ Keyingi etap yozuvlari: o‘zgargan fayllar → test buyrug‘i/scenario → haq
 
 ### 2026-09-10 — Hermes background analysis and drafts
 
+- Final natural command gap fixed: `Opamga yoz` without a message body now resolves directly to the stored chat and becomes an owner instruction. The agent reads the recent context and generates a context/style-matched reply instead of falling through to the generic “last message needs no reply” explanation. 85 tests passed and worker restarted.
+
+- Natural delegation regression fix: owner variants such as `Opam bilan suhbatni davom ettir`, `opamdan chatga kirib ...`, and similar delegation text now always becomes `owner_instruction` when target intent resolves. This prevents the target chat's “last outgoing/confirmation” analysis from replacing the owner command. 84 tests passed and the worker was refreshed.
+
+- Stop command fix: simple owner phrases `to‘xta`, `endi bas`, `suhbatni to‘xtat`, and `shu bilan yozishma` now deterministically disable the saved conversation focus without asking Hermes or a username. 82 tests passed and the worker restarted.
+
+- Usability consolidation: removed the old “owner-only/recipient username required” language from the Hermes chat rules. Stored focus and delegated scope now resolve ordinary “shu bilan”, “u bilan”, “davom ettir” instructions; explicit “yoz ... deb” takes precedence over an outgoing last message. Repeated permission prompts remain only for genuinely ambiguous targets or consequential uncertainty. 80 tests and compile passed; worker restarted.
+
+- Owner-instruction precedence fix: the background analyzer previously treated a target chat's last outgoing owner message as “no reply required,” even when the current owner explicitly said “yoz ... deb.” `owner_instruction` now overrides that guard, preserves the requested message intent, and is included in the same context-driven first delivery. 80 tests passed; worker restarted. No new external message was sent during this fix.
+
+- Owner preference update: automatic personal replies no longer add the `Emirhanning yordamchisi:` prefix; the generated outgoing text is sent unchanged. This applies only to explicitly delegated chats.
+
+- Conversation_changed fix: an explicit handoff may race with a new incoming message while inference runs. Initial delegated delivery now attaches to the latest incoming message and continues; strict revision/latest-message protection remains for background auto-replies. Deterministic non-delivery outcomes can retry, while unknown network outcomes stay at-most-once. 79 tests passed and an Opam response returned `sent` after the fix. Worker restart follows idle check.
+
+- Immediate handoff fix: delegation now performs the first context analysis and sends the first reply in the same owner turn. Initial delegated reply may use the current stored incoming message even if it is older than the normal one-hour background window; subsequent auto-replies still require a fresh incoming message and live last-message match. `send_named.py` validates the revision, latest Telegram message, owner policy and assistant disclosure before delivery. 82 tests passed; a real Opam first reply returned `sent` and worker was restarted afterward.
+
 - Natural conversation handoff: `conversation_intent.py` interprets owner text with an isolated Hermes call, stored chat catalog, recent owner messages and persistent conversation_focus. delegate/stop update existing chat policy; focus is remembered in the same JSON. Draft-only and ambiguous requests never activate sending. Old literal continue rejection was removed from worker path. 82 tests passed including actual process_job routing; real synthetic model checks recognized delegation, stop and draft-only correctly. Worker restarted. No external test message sent; user Telegram trial remains the next verification.
 
 - Latency follow-up: normal chat reasoning changed high → low; explicit /task retains high. Background analysis uses its own lock so it cannot hold the owner-session lock during inference. /drafts and pause/resume/status controls bypass the long job queue. 79 tests and compile passed. No measured before/after model latency claim; active owner job is allowed to finish before worker restart.
@@ -323,3 +339,32 @@ Keyingi etap yozuvlari: o‘zgargan fayllar → test buyrug‘i/scenario → haq
 - 68/68 test, Python compile, worker restart va status/RAG health tekshirildi. Keyingi etap: personal account listenerni shu yagona pollerga qo‘shish va per-chat observe/draft/auto_reply policy engine.
 
 Hermes kursi va video transcriptlari endi [[Hermes Hub]] orqali yagona oqimga ulangan. Beluga’dan kelgan media transcriptlari `Hermes Course Transcripts/`da, amaliy qoida esa `/Users/protochka/.hermes/skills/hermes-course/SKILL.md`da. Bu materiallar o‘qish uchun; Telegramga yuborish faqat aniq recipient/action buyrug‘i bilan.
+
+### 2026-09-11 — Opam xabaridan keyingi auto-reply tuzatishi
+
+### 2026-09-11 — Kontekst va avtonom suhbat arxitekturasi auditi
+
+- Telegram `/status`dagi `Xato: 3` tekshirildi: bu uchta terminal `failed` jobning tarixiy soni edi, navbat/running/needs_review esa `0`. Userga noto‘g‘ri faol muammo ko‘rinmasligi uchun status satri `Tarixiy xato` deb nomlandi; 90 test va compile o‘tdi.
+
+- Auditdan keyin amalga oshirildi: inference oldingi facts/questions/promises va MyBrain Preferencesni oladi; 20 oldingi review tiklash uchun saqlanadi. Bu cheksiz xotira kafolati emas.
+- Observer bitta snapshotni bitta JSON write bilan yozadi, 15 soniyadan keyin scan qiladi; delegated chatda yangi ID bo‘lmasa ham recent window yangilanadi. Analyzer 5 soniyada tekshiradi, general chatlar 60 soniya kutadi; delegated chat owner navbatini kutmaydi.
+- ask_owner muhim savollari ownerga chat revision bo‘yicha bir marta yuboriladi; tarmoq natijasi noaniq bo‘lsa takrorlanmaydi. [[Beluga Runtime]] agregat holat uchun avtomatik yangilanadi; shaxsiy chat matnlari Obsidian’ga eksport qilinmaydi.
+- Tekshiruv: 90 unit test va eski va’dani saqlash bo‘yicha haqiqiy Hermes synthetic inference o‘tdi. Real recipientga ushbu testdan xabar yuborilmadi.
+
+- [tekshirildi: CLI] Telegram/observer/RAG faol, 86 test OK; yagona JSON taxminan 10 MB, 1051 chat, 3 delegated chat, 146 review; analyzer snapshotida 906 pending. Bu barcha suhbatlar sifatli tahlil qilinganini bildirmaydi.
+- [tekshirildi: kod] Har chat uchun 50 xabar/2000 belgi saqlanadi. `save_review` facts/questions/promisesni almashtiradi, `generate` esa oldingi facts/promisesni payloadga bermaydi; uzoq muddatli fakt yo‘qolishi xavfi bor.
+- [tekshirildi: kod] Asosiy owner inference MyBrain/RAG oladi; background inference faqat shu chat summary va recent messages oladi. Fon chat xulosalarini Obsidian’ga avtomatik uzatish bu oqimda yo‘q.
+- [tekshirildi: kod] Observer poll va analyzer kutishi 60 soniyadan; analyzer har safar bitta chat oladi, owner jobs uni kutdiradi. Har record_message butun JSONni ikki marta qayta yozadi. Edits/deletions yangi ID kelmasa yangilanmaydi. ask_owner natijalari saqlanadi, ammo shu background oqimida ownerga avtomatik notification yo‘q.
+- Taklif, hali bajarilmadi: fakt/va’dalarni saqlab yangilash; delegated chatlar uchun tez navbat; muhim aniqliklarni ownerga yetkazish; tanlangan xulosalarni MyBrain bilan bog‘lash; JSON batch yozish va jonli regressiya sinovlari.
+
+- Keyingi tuzatish [tekshirildi: kod/test]: explicit owner send ham incoming-only guardga urilgan, delivery dedup esa targetning oxirgi message ID’siga bog‘langan edi. Endi initial send outgoingdan keyin ham mumkin; dedup har owner job ID bo‘yicha, background reply esa incoming ID bo‘yicha qoladi. 86 test, jumladan bir xil target xabariga ikki yangi owner request va bitta request retry sinovi o‘tdi. Worker restart qilindi. Ushbu tuzatishda yangi external xabar yuborilmadi; jonli yangi owner buyruği hali sinalmagan.
+
+- Keyingi owner talabi: Opamdan kelgan har yangi xabardan, jumladan qisqa tasdiqdan keyin ham tabiiy suhbat davom etsin. Shu chat policy’siga `continue_every_incoming=true` saqlandi va fon inference payloadiga uzatildi. O‘z outgoing xabariga qayta javob berilmaydi. 85 test o‘tdi.
+- Oldingi yuborilgan draftdagi «Hozircha yaxshiman» ownerning tasdiqlangan sog‘liq faktiga tayanmagan; endi prompt bunday umumiy sog‘liq da’vosini ham dalilsiz yozmaslikni aniq talab qiladi.
+
+- [tekshirildi: CLI] Opam (`chat_id=6281530972`) uchun `auto_reply` policy faol bo‘lgan va yangi incoming xabarlar observer store’ga tushgan.
+- Muammo Hermes fon tahlilining oddiy hol-ahvol/sog‘liq savolini `ask_owner` deb belgilagani edi; `draft` bo‘lmagani uchun host xabar yubormagan.
+- `background_analysis.py` qoidasi yangilandi: oddiy ijtimoiy hol-ahvol savollariga aniq sog‘liq faktini to‘qimasdan neytral javob tayyorlanadi; jiddiy yoki consequential noaniqliklargina ownerga qoldiriladi.
+- Yangi draft Opamga host orqali yuborildi (`delivery=sent`). 85/85 test qayta o‘tdi va worker restart qilindi.
+
+- Owner clarified that group-to-recipient delivery must be from Emirhan’s personal account through a Beluga command. `forward_contact` was added: Hermes may read an accessible group, return source chat/message IDs plus recipient, and Telethon forwards the original message from the personal account. Automatic group joining remains disabled. 91 tests and compile passed; no live external forward was sent.

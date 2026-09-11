@@ -2,11 +2,25 @@
 type: zone-context
 zone: AiCamera
 owner: Kuplinov7788
-updated: 2026-09-05
+updated: 2026-09-11
 source_repository: https://github.com/Kuplinov7788/AiCamera-
 ---
 
 # AiCamera — Zone Context
+
+## 2026-09-11 — Desktop nusxasi auditi
+
+- Emirhan `/Users/protochka/Desktop/ai-camera` papkasini to‘liq audit qilishni so‘radi: barcha vazifalar/scriptlar/struktura, odamni “Begona #1” sifatida saqlash, old/orqa ko‘rinishda tanishning uzilishi va yaxshilash tartibi.
+- [tekshirildi: fayl/CLI] Audit nishoni commit `9e26413`; 18 Python modul, JS/shell/README/ignore va 13 data JSON ko‘rib chiqildi. Hozirgi nusxa Flask 5001, YOLOv8s-pose + YOLOv8m, ByteTrack, ArcFace va BoxMOT ReID ishlatadi. Quyidagi Windows/8787 qaydlari eski boshqa nusxa konteksti; Desktop nusxasining joriy holati deb olinmasin.
+- [tekshirildi: CLI] Bir kadr yo‘qolishi identity keshini o‘chiradi; qarama-qarshi tana namunasi eski identity gallery’siga yozilib unbind’ni bekor qiladi; body-only yangi visitor raqami yaratishi mumkin; enrollment boshqa yuzni ham qabul qiladi; parallel Memory writer yozuvni bosadi; qaytishdan keyingi gallery/last diskka to‘liq flush qilinmaydi. Dashboard `lastScan` xatosi va SAHI reentrant lock muammosi ham offline ko‘rsatildi.
+- [tekshirildi: fayl] GUI stranger nazorati default o‘chiq; NVR capture UI fokusiga bog‘liq. Eski SFace va active ArcFace bazalari alohida; avtomatik migratsiya yo‘q.
+- [tekshirildi: CLI] Mavjud visitor testlari 16/16 o‘tdi; audit probe 12 kuzatuvni (syntax + 11 xato/cheklov yo‘li) tekshirdi. Root Python AST, JS syntax va shell syntax tekshirildi. Bu real model aniqligi o‘lchovi emas.
+- Chegara: ushbu nusxada venv/modellar/.env/visitor runtime bazasi yo‘q; jonli NVR/Mars/Telegram va real old/orqa inference tekshirilmagan. Koddagi eski FPS/accuracy izohlari qayta o‘lchanmagan.
+- Hisobot: `/Users/protochka/Desktop/ai-camera/audit/AUDIT-2026-09-11.md`; qayta tekshiruv: `audit/probe.py`, dalil: `audit/results.json`. Production kod o‘zgartirilmagan; faqat audit artefaktlari qo‘shildi.
+- [taklif] Avval identity/xotira, enrollment, yagona writer/engine, diagnostics va UI’dan mustaqil capture; keyin belgilangan kamera videosida oldin/keyin benchmark. Orqadan 100% doimiy kimlik va’da qilinmaydi; local track, person identity va visit alohida bo‘lsin.
+- Maxfiy qiymatlar, embeddinglar yoki real kadrlar MyBrain’ga ko‘chirilmagan. Quyidagi “Git’da saqlanmaydi” eski qoida amalda Desktop nusxada bajarilmagan: credential joyi va tracked yuz/davomat fayllari auditda qayd etildi, remote tarqalish tekshirilmagan.
+
+## Tarixiy kontekst — 2026-09-05
 
 ## Umumiy
 
