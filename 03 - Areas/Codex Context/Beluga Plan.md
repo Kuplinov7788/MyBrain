@@ -369,6 +369,8 @@ Hermes kursi va video transcriptlari endi [[Hermes Hub]] orqali yagona oqimga ul
 
 - Owner clarified that group-to-recipient delivery must be from Emirhan’s personal account through a Beluga command. `forward_contact` was added: Hermes may read an accessible group, return source chat/message IDs plus recipient, and Telethon forwards the original message from the personal account. Automatic group joining remains disabled. 91 tests and compile passed; no live external forward was sent.
 
+- Screenshotdagi link buyrug‘i uchun `forward_broadcast` route qo‘shildi. `t.me/c/...` manba xabari va “Mars Guruh Papkani ... barcha guruxlarga” mazmuni aniqlanadi; faqat shu nomli Telegram folder ichidagi guruhlarga personal account forward qiladi. Folder/account access bo‘lmasa yubormaydi. 91 test va compile o‘tdi; live broadcast yuborilmadi.
+
 - Telegramdagi `Invalid review list` sababli `Opam bilan suhbatni davom ettir` joblari `ValueError` bilan yiqilgani tekshirildi. Background review validatori noto‘g‘ri scalar/list elementlarini tozalab, foydali stringlarni saqlaydi; worker restart qilindi. Yangi ikki continuation buyruği real personal delivery orqali `sent` qaytardi. 91 test o‘tdi.
 
 - Owner monitoringida Opamning “qaysi marojniyni yaxshi ko‘raman?” savoli `ask_owner`ga tushib, javobni ushlab qolgan. Bu consequential masala emasligi uchun prompt yangilandi: delegated chatda noma’lum oddiy preference’ni contactning o‘zidan muloyim so‘rash mumkin. Fon worker yangi draftni revision guard bilan saqlab, personal delivery `sent` qildi (message 474902); Telegram/observer/RAG qayta tekshirildi.
