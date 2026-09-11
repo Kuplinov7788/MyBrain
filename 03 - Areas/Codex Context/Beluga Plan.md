@@ -368,3 +368,5 @@ Hermes kursi va video transcriptlari endi [[Hermes Hub]] orqali yagona oqimga ul
 - Yangi draft Opamga host orqali yuborildi (`delivery=sent`). 85/85 test qayta o‘tdi va worker restart qilindi.
 
 - Owner clarified that group-to-recipient delivery must be from Emirhan’s personal account through a Beluga command. `forward_contact` was added: Hermes may read an accessible group, return source chat/message IDs plus recipient, and Telethon forwards the original message from the personal account. Automatic group joining remains disabled. 91 tests and compile passed; no live external forward was sent.
+
+- Telegramdagi `Invalid review list` sababli `Opam bilan suhbatni davom ettir` joblari `ValueError` bilan yiqilgani tekshirildi. Background review validatori noto‘g‘ri scalar/list elementlarini tozalab, foydali stringlarni saqlaydi; worker restart qilindi. Yangi ikki continuation buyruği real personal delivery orqali `sent` qaytardi. 91 test o‘tdi.

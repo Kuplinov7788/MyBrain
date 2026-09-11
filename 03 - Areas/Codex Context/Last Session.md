@@ -1,6 +1,6 @@
 ---
 type: session-handoff
-updated: 2026-09-10
+updated: 2026-09-11
 ---
 
 # Oxirgi Codex sessiyasi
@@ -9,7 +9,9 @@ updated: 2026-09-10
 
 - Emirhan `/Users/protochka/Desktop/ai-camera` uchun to‘liq struktura/funksiyalar va “Begona #1” old/orqa tanish auditi so‘radi. Tafsilot: [[ZONES/AiCamera/_context|AiCamera konteksti]].
 - [tekshirildi: fayl/CLI] 18 Python modul va yordamchi fayllar ko‘rib chiqildi; mavjud visitor testi 16/16 o‘tdi, 12 offline probe kuzatuvi saqlandi. Identity keshining bir kadrda o‘chishi, body gallery noto‘g‘ri yangilanishi, body-only yangi ID, enrollment/persistence/writer va dashboard/SAHI muammolari topildi.
-- Audit: `/Users/protochka/Desktop/ai-camera/audit/AUDIT-2026-09-11.md`; production kod o‘zgartirilmagan. Jonli model/NVR aniqligi tekshirilmagan, bu nusxada muhit/modellar yo‘q. Keyingi ish — identity/xotira tuzatishlari va real video benchmark; tuzatildi deb talqin qilinmasin.
+- Audit: `/Users/protochka/Desktop/ai-camera/audit/AUDIT-2026-09-11.md` boshlang‘ich commit holatini ko‘rsatadi. Emirhanning “Davom et ishni” buyrug‘idan keyin lokal production patch kiritildi: identity grace/collision, zid tana learning, enrollment gate, atomik file-lock yozuvi, dashboard/SAHI/streak/sleeping/RPC tuzatishlari. Tafsilot: `audit/FIXES-2026-09-11.md`.
+- [tekshirildi: CLI] 30/30 yangi regression + 16/16 mavjud visitor testi, 21 Python AST, JS/shell syntax va diff check o‘tdi; tracked biometric/davomat data o‘zgarmadi. Default yuzsiz yangi visitor raqami ochilishi o‘chirildi (`BODY_ONLY_REGISTER=0`), eski tana orqali matching saqlandi; noaniq holat “Aniqlanmoqda”. Eski env=1 bo‘lsa default kuchga kirmaydi.
+- Jonli model/NVR aniqligi tekshirilmagan, Desktop nusxada muhit/modellar yo‘q. Muammoli filial/kamera va ishlayotgan nusxa yo‘li userdan so‘raldi, javob pending. Keyingi ish — real old/orqa benchmark va capture/global identity arxitekturasi; “ideal” natija tasdiqlanmagan. Commit/push/deployment yoki real xabar yuborish bajarilmadi.
 
 ## 2026-09-11 — Telegram update ishiga qaytish
 
