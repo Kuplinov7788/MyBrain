@@ -371,6 +371,8 @@ Hermes kursi va video transcriptlari endi [[Hermes Hub]] orqali yagona oqimga ul
 
 - Screenshotdagi link buyrug‘i uchun `forward_broadcast` route qo‘shildi. `t.me/c/...` manba xabari va “Mars Guruh Papkani ... barcha guruxlarga” mazmuni aniqlanadi; faqat shu nomli Telegram folder ichidagi guruhlarga personal account forward qiladi. Folder/account access bo‘lmasa yubormaydi. 91 test va compile o‘tdi; live broadcast yuborilmadi.
 
+- Userning ayni link buyrug‘i diagnostikadan keyin bajarildi: akkauntdagi haqiqiy folder nomi `Mars guruh` ekan, fuzzy folder matching bilan topildi; source message `13965` personal accountdan 7 ta folder guruhiga yuborildi, 0 failure. Worker restart qilindi.
+
 - Telegramdagi `Invalid review list` sababli `Opam bilan suhbatni davom ettir` joblari `ValueError` bilan yiqilgani tekshirildi. Background review validatori noto‘g‘ri scalar/list elementlarini tozalab, foydali stringlarni saqlaydi; worker restart qilindi. Yangi ikki continuation buyruği real personal delivery orqali `sent` qaytardi. 91 test o‘tdi.
 
 - Owner monitoringida Opamning “qaysi marojniyni yaxshi ko‘raman?” savoli `ask_owner`ga tushib, javobni ushlab qolgan. Bu consequential masala emasligi uchun prompt yangilandi: delegated chatda noma’lum oddiy preference’ni contactning o‘zidan muloyim so‘rash mumkin. Fon worker yangi draftni revision guard bilan saqlab, personal delivery `sent` qildi (message 474902); Telegram/observer/RAG qayta tekshirildi.
