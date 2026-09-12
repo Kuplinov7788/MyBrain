@@ -1,6 +1,6 @@
 ---
 type: preferences
-updated: 2026-09-10
+updated: 2026-09-12
 source: Emirhan bilan bevosita suhbat
 ---
 
@@ -15,6 +15,9 @@ source: Emirhan bilan bevosita suhbat
 - Qisqa natija yoki vaziyatga mos tushuntirish; bir xil ma’lumotni qayta so‘ramaslik.
 - 2026-09-07: Beluga javoblari qisqa, tushunarli, tabiiy o‘zbekcha va o‘qishga qulay bo‘lsin. Javob tayyorlanayotganda Telegram typing/holat ko‘rsatkichi kerak. Davom ettirish topshirig‘idan keyin ownerga javoblar «Emirhan, …» bilan boshlanishi qo‘llandi; boshqa recipientga yuboriladigan matnga bu murojaat qo‘shilmaydi.
 - Profil, muhim qarorlar va ishlash qoidalarini qaydlar orqali davom ettirish kerak. Yozilgan fayl — doim ishlaydigan fon xotirasi yoki rejalashtirilgan avtomatizatsiya degani emas.
+- 2026-09-12: Telegram agent bilan oddiy tabiiy tilda to‘liq suhbat olib borish kerak; foydalanuvchini `/status`, `/task` kabi texnik buyruqlarni yodlashga majburlamasin. Tabiiy so‘rovdan niyatni tushunsin, mavjud script/tool’lar bilan ishlasin va zarur ichki texnik komandalarni o‘zi boshqarsin.
+- Muammo chiqsa agent shunchaki xato kodini qaytarmasin: nima bo‘ldi, ehtimoliy yoki tekshirilgan sabab, qaysi hodisadan keyin boshlangan, qanday tekshirildi, mavjud yechim va o‘z taklifini tushunarli aytsin. Yetarli dalil bo‘lmasa 1–3 ta aniq savol bersin; foydasiz qayta-qayta tasdiq yoki status buyrug‘ini so‘ramasin.
+- Agent “faqat o‘rgatilgan javoblar” bilan cheklanmasin: kontekst, xotira, script/tool natijalari va foydalanuvchi tuzatishlaridan foydalanib vaziyatga mos fikrlasin. O‘rganish — model weightsini o‘zgartirish emas; tasdiqlangan afzallik va ish natijalarini boshqariladigan xotirada saqlashdir.
 
 ## Suhbatni davomiy qayd qilish — 2026-09-10
 

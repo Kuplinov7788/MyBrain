@@ -1,6 +1,6 @@
 ---
 type: implementation-plan
-updated: 2026-09-10
+updated: 2026-09-12
 status: paused-after-saved-success
 ---
 
@@ -29,6 +29,15 @@ status: paused-after-saved-success
 ## Maqsad va tasdiqlangan talablar
 
 Emirhan mavjud `@BelugaCat_Asisstent_bot` botini Mac uchun moslashtirib, keyinchalik PC’da ham ishlatmoqchi. Bot tabiiy, kontekstga mos tilda tahlil qiladi va e’lon/javob tayyorlaydi. Botga mention yoki reply bo‘lsa, yoqilgan chat/topicning o‘zida javob beradi.
+
+### 2026-09-12 — To‘liq agent suhbat modeli
+
+- Asosiy interfeys tabiiy suhbat. `/status`, `/task` va boshqa slash komandalar diagnostika yoki power-user shortcut bo‘lishi mumkin, lekin kundalik ishlashning majburiy usuli emas.
+- Owner “muammoni ko‘r”, “shu script bo‘yicha ishla”, “davom et” desa agent niyatni kontekstdan tushunadi, tegishli script/tool va holatni o‘zi tekshiradi. Xavfsiz va vakolat doirasidagi ish uchun foydasiz tasdiq so‘ramaydi.
+- Muammo javobi imkon qadar besh qismni qoplaydi: **nima bo‘ldi → sababi → nimadan keyin boshlandi → yechim/tekshiruv natijasi → agent taklifi**. Fakt yetishmasa, agent vaziyatni o‘zgartiradigan eng muhim 1–3 savolni beradi.
+- Raw traceback, exit code yoki “`/status`ni ko‘ring” yakuniy javob emas. Texnik dalil ichkarida saqlanadi, ownerga esa tushunarli tashxis va keyingi qadam beriladi.
+- Agent foydalanuvchi tuzatishlarini boshqariladigan xotiraga candidate/confirmed holatida saqlaydi; o‘z ruxsatini kengaytirmaydi, maxfiy ma’lumotni yodlamaydi va model weightsini mustaqil qayta o‘qitmaydi.
+- Qabul mezoni: oddiy Telegram gaplari bilan conversation, troubleshooting, script task, follow-up va context recall ishlaydi; slash komandasiz ham muammo tashxisi va to‘liq javob qaytadi.
 
 Shaxsiy akkaunt nomidan avtomatik javob alohida rejim: kimga javob berishni Emirhan o‘zi belgilaydi. Hozir Mokhinur uchun aniq owner command talab qilinadigan write/continue ruxsati bor; tashabbusli auto-reply o‘chiq. Bot nomidan javob va shaxsiy akkaunt nomidan javob alohida ko‘rsatiladi.
 

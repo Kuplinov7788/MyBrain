@@ -1,9 +1,18 @@
 ---
 type: session-handoff
-updated: 2026-09-11
+updated: 2026-09-12
 ---
 
 # Oxirgi Codex sessiyasi
+
+## 2026-09-12 — Kontekst qayta tiklandi
+
+- [tekshirildi: fayl/CLI] `Context MOC`, `Preferences`, `Last Session` va eng yangi [[ZONES/AiCamera/_context|AiCamera konteksti]] qayta o‘qildi.
+- [tekshirildi: CLI] Lokal RAG helper `127.0.0.1:8766` ga ulana olmadi; shu sabab recall canonical qaydlar orqali bajarildi. Bu RAG xizmati ayni tekshiruv paytida ishlamayotganini bildiradi, doimiy buzilganini emas.
+- [tekshirildi: CLI] Oxirgi audit qilingan `/Users/protochka/Desktop/ai-camera` papkasi hozir mavjud emas; Desktop ro‘yxatida ham ko‘rinmadi. Shuning uchun 2026-09-11 patchining joriy kod holatini qayta test qilish imkoni bo‘lmadi.
+- [tekshirildi: CLI] MyBrain `main` branch’i `origin/main`dan 1 commit oldinda; bu tekshiruvda push bajarilmadi.
+- Joriy texnik to‘xtash nuqtasi o‘zgarmagan: AiCamera uchun muammoli filial/kamera va amalda ishlayotgan nusxa yo‘li kerak; keyin real old/orqa benchmark bajariladi. Alternativ ochiq yo‘nalish — Beluga’da tanlangan suhbatni tabiiy owner buyrug‘i bilan xavfsiz jonli sinash.
+- Emirhan Beluga uchun yakuniy yo‘nalishni aniqlashtirdi: buyruqlarni yodlatadigan bot emas, tabiiy suhbatdan niyatni tushunadigan, script/tool’lar bilan ishlaydigan va muammoning hodisa–sabab–trigger–yechim–taklif zanjirini to‘liq tushuntiradigan agent kerak. Scriptlar qaytarilgach joriy runtime shu qabul mezonlari bilan audit va moslashtiriladi; hozir kod o‘zgartirilmadi.
 
 ## 2026-09-11 — AiCamera Desktop audit
 
