@@ -1,6 +1,6 @@
 ---
 type: moc
-updated: 2026-09-05
+updated: 2026-09-13
 ---
 
 # Kontekstlar xaritasi
@@ -13,6 +13,7 @@ Bu sahifa MyBrain’dagi loyiha va vosita kontekstlarini bir joydan ochish uchun
 - [[Comfort Setup|Plugin, MCP va skilllar holati]]
 - [[Telegram Setup|Telegram MCP tekshiruvi]]
 - [[Last Session|Oxirgi sessiya]]
+- [[Beluga Agent Report|Beluga Agent imkoniyat va o‘zgarishlar hisoboti]]
 - [[Operating System|Birlashtirilgan Codex + MyBrain ish tizimi]]
 - [[Hermes Setup|Hermes sozlash va rivojlantirish xaritasi]]
 - [[Hermes Course - TezCode Learning|Hermes kursi — TezCode Learning xulosasi]]

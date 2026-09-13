@@ -1,9 +1,32 @@
 ---
 type: session-handoff
-updated: 2026-09-12
+updated: 2026-09-13
 ---
 
 # Oxirgi Codex sessiyasi
+
+## 2026-09-13 — Beluga learning va script arxitekturasi
+
+- Emirhan agent har xato va ishidan o‘rganib, kerak bo‘lsa berilgan skillni o‘zlashtirishini; ko‘p script sabab komandali botga aylanib qolmasligini talab qildi.
+- [xulosa] Yo‘nalish: boshqariladigan experience loop va candidate → confirmed lesson; skilllar qayta ishlatiladigan bilim/workflow uchun; scriptlar faqat tor deterministik transport, permission, queue/lock, health va test vazifalari uchun.
+- [taklif] Scriptlar qaytarilgach inventar qilinadi: `agent reasoning`, `reusable skill`, `necessary tool`, `duplicate/obsolete` toifalariga ajratiladi. Keraksizlarini o‘chirish yoki birlashtirish faqat audit va testdan keyin bajariladi; hozir runtime kodi o‘zgartirilmadi.
+- Emirhan yakunda agent imkoniyatlari, tushunadigan tabiiy niyatlar, barcha o‘zgarishlar, ishlatiladigan skill/tool’lar, test natijalari, cheklovlar va amaliy misollarni qamragan to‘liq hisobot so‘radi. Holatlar `tekshirilgan / jonli sinalmagan / rejalashtirilgan` deb ajratiladi.
+- [tekshirildi: fayl/CLI] Conversation-first patch qo‘llandi: natural technical task routing, candidate/confirmed experience store, natural stop fix, degraded status va tushunarli failure report. 97/97 test, compile va Node syntax o‘tdi; worker restartdan keyin running, observer connected/fresh, queue 0.
+- [tekshirildi: policy fayllari, 2026-09-13] Group xavfsizlik tafovuti topildi:
+  `authorized-groups.json` bo‘sh, lekin context store’da bitta group personal
+  `auto_reply` holatida. Group delivery allowlist bilan majburiy bog‘lanmaguncha
+  group imkoniyati to‘liq tayyor deb hisoblanmaydi; auto-join mavjud emas.
+- [cheklov] Sandbox health’da Telegram va RAG false, historical failed job 10; yangi slashsiz Telegram route jonli owner xabari bilan hali sinalmagan. Tafsilot va qabul testi: [[Beluga Agent Report]].
+- [tuzatish, 2026-09-13] Slashsiz Telegram route endi jonli sinaldi: job `678230960`
+  `done`, `error=null`; agent 97 test, compile va Node check natijasini `/task` yoki
+  `/status` talab qilmasdan qaytardi. Oldingi “hali sinalmagan” band shu natija bilan yopildi.
+- [tekshirildi: CLI, 2026-09-13] Beluga/RAG health qayta tekshirildi: Telegram bot `true`, LaunchAgent loaded, Hermes backend `openai-codex/gpt-5.5`, observer `connected/fresh`, RAG `ok=true` va `chunks=575`. Testlar 97/97 OK, Python compile va `node --check app_bridge.mjs` o‘tdi. `jobs`: queued=0, running=1 (joriy task), needs_review=0; 2026-09-11 atrofidagi 10 ta historical failed job saqlanib turibdi, lekin hozirgi runtime muammosi sifatida ko‘rinmadi.
+- [tekshirildi: SQLite] Shu diagnosis turn’i job `678230961` sifatida done/error=null yakunlandi. Agent sabab isbotlanmaganini ochiq aytib, redacted error reason taklif qildi.
+- [tekshirildi: kod/CLI] Taklif amalga oshirildi: keyingi failed job `error + error_stage + redacted error_detail` saqlaydi; raw/private error matni yozilmaydi. Schema insert regressioni tuzatildi, 98/98 test o‘tdi; worker qayta yuklanib running, queue 0. Eski 10 failed job migratsiya qilinmadi yoki o‘chirilmadi.
+- [tekshirildi: runtime] Learning bazada hozir 2 confirmed/0 candidate lesson; Hermes
+  memory enabled va write approval faol. Keyingi tavsiya: natural correction flow,
+  task evaluator, lesson list/edit/delete/pause, 20–30 scenario eval suite va xavfsiz
+  skill ingestion. Bu bandlar roadmap; hali implementatsiya qilingani yo‘q.
 
 ## 2026-09-12 — Kontekst qayta tiklandi
 

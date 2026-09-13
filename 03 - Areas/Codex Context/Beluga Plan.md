@@ -1,6 +1,6 @@
 ---
 type: implementation-plan
-updated: 2026-09-12
+updated: 2026-09-13
 status: paused-after-saved-success
 ---
 
@@ -39,6 +39,24 @@ Emirhan mavjud `@BelugaCat_Asisstent_bot` botini Mac uchun moslashtirib, keyinch
 - Agent foydalanuvchi tuzatishlarini boshqariladigan xotiraga candidate/confirmed holatida saqlaydi; o‘z ruxsatini kengaytirmaydi, maxfiy ma’lumotni yodlamaydi va model weightsini mustaqil qayta o‘qitmaydi.
 - Qabul mezoni: oddiy Telegram gaplari bilan conversation, troubleshooting, script task, follow-up va context recall ishlaydi; slash komandasiz ham muammo tashxisi va to‘liq javob qaytadi.
 
+### 2026-09-13 — Xatodan o‘rganish va script chegarasi
+
+- [foydalanuvchi talabi] Agent har mazmunli ish va xatodan o‘rganib borishi, Emirhan bergan yangi skill yoki materialni o‘qib qo‘llashi kerak. Ko‘p hardcoded scriptga tayanib, faqat oldindan yozilgan komandalarni bajaradigan botga aylanmasligi kerak.
+- [xulosa] O‘rganish boshqariladigan `experience loop` bo‘ladi: **vazifa → kuzatuv/dalil → xato yoki muvaffaqiyat sababi → qisqa lesson → keyingi safar qo‘llash → regression tekshiruvi**. Har bir oddiy hodisa doimiy xotiraga yozilmaydi; faqat yangi, takrorlanadigan va tekshirilgan lesson saqlanadi.
+- Lesson avval `candidate` bo‘ladi. Takroriy dalil, test yoki owner tasdig‘idan keyin `confirmed`ga o‘tadi. Qarama-qarshi natija chiqsa tuzatiladi yoki bekor qilinadi. Agent xatosi sabab o‘z ruxsati, system rule’i yoki production kodini yashirincha o‘zgartirmaydi.
+- Skill — qayta ishlatiladigan soha bilimi/workflow. Emirhan bergan skill avval to‘liq o‘qiladi, uning chegarasi va xavfsizligi tekshiriladi, keyin mos vazifada chaqiriladi. Bir martalik fakt uchun yangi skill yaratilmaydi.
+- Script — agentning miyasi emas, uning tor va deterministik qo‘li. Faqat API/Telegram transporti, auth/permission, durable queue/lock, media upload, backup, health check va takrorlanadigan test kabi aniq amallarda qoladi. Niyatni tushunish, savol tanlash, tashxis va taklifni model/agent bajaradi.
+- Har yangi script uchun mezon: `modelning o‘zi tool orqali ishonchli bajara olmaydimi?`, `deterministik yoki xavfsizlik chegarasi kerakmi?`, `takror ishlatiladimi?`. Javoblar yetarli bo‘lmasa script qo‘shilmaydi; mavjud scriptlar capability bo‘yicha birlashtiriladi.
+- [taklif] Minimal qatlamlar: **Conversation Agent → Context/Memory → Skill Registry → kichik Tool/Script Gateway → Policy/Approval → Evaluator**. `/status` kabi komandalar ichki diagnostika shortcut’i bo‘lib qoladi, asosiy interfeys tabiiy suhbat bo‘ladi.
+- Qabul mezoni: agent bir xatoni keyingi o‘xshash vazifada takrorlamaslik uchun tegishli lessonni topadi; noto‘g‘ri lessonni rollback qilish mumkin; skill yuklangani auditda ko‘rinadi; oddiy yangi niyat uchun yangi script yozish talab qilinmaydi.
+
+### Yakuniy hisobot talabi
+
+- [foydalanuvchi talabi, 2026-09-13] Implementatsiya va testlar tugagach Emirhanga oddiy tildagi to‘liq hisobot beriladi; faqat commitlar yoki texnik loglar ro‘yxati yetarli emas.
+- Hisobot quyidagilarni qamrab oladi: agent hozir nimalar qila oladi; qaysi tabiiy ibora/niyatlarni tushunadi; vazifani qanday bajaradi; qachon savol yoki ruxsat so‘raydi; qaysi script/tool/skilllardan foydalanadi; agent, xotira va xavfsizlikda nimalar o‘zgardi; qaysi testlar real o‘tdi; nimalar hali cheklangan yoki sinalmagan; amaliy foydalanish misollari.
+- Har capability holati alohida belgilanadi: **ishlaydi va tekshirilgan**, **tayyor, lekin jonli sinalmagan**, **rejalashtirilgan**. “Tugadi” yoki “to‘liq ishlaydi” faqat dalil bo‘lsa yoziladi.
+- Alohida bo‘limda oldingi va yangi xulq solishtiriladi: komandali botdan conversation-first agentga qaysi o‘zgarishlar orqali o‘tilgani va ortiqcha scriptlar bilan nima qilingani ko‘rsatiladi.
+
 Shaxsiy akkaunt nomidan avtomatik javob alohida rejim: kimga javob berishni Emirhan o‘zi belgilaydi. Hozir Mokhinur uchun aniq owner command talab qilinadigan write/continue ruxsati bor; tashabbusli auto-reply o‘chiq. Bot nomidan javob va shaxsiy akkaunt nomidan javob alohida ko‘rsatiladi.
 
 Emirhan o‘z kun tartibi va afzalliklarini beradi. Faqat u tanlagan chatlar va o‘z javoblaridan til, uzunlik, ohang, rasmiylik, hazil va salomlashish odatlari o‘rganiladi. “Psixologiyani o‘rganish” amalda kuzatiladigan muloqot afzalliklarini tushunish sifatida bajariladi; ruhiy tashxis yoki kontaktlar haqida taxminiy shaxsiy profil tuzilmaydi.
@@ -46,6 +64,32 @@ Emirhan o‘z kun tartibi va afzalliklarini beradi. Faqat u tanlagan chatlar va 
 Noaniq vaziyatlarda Emirhandan so‘raladi. Insoniy ohang bot ekanini inkor qilish, bo‘lmagan tajriba yoki va’da to‘qishni anglatmaydi. Shaxsiy avtomatik javoblar uchun avtomatlashtirishni qanday bildirish ishga tushirishdan oldin aniqlanadi.
 
 ## O‘rganish va xotira
+
+### 2026-09-13 — Learning’ni kuchaytirish roadmap’i
+
+- [tekshirildi: runtime] `experience.json`da hozir 2 ta confirmed, 0 candidate lesson;
+  Hermes memory enabled va `write_approval=true`; mavjud maxsus bilim orasida Hermes
+  course skilli bor. Bu asos ishlaydi, lekin hali to‘liq self-evaluation tizimi emas.
+- [taklif 1] Har mazmunli taskdan keyin evaluator: maqsad, natija, dalil, xato/success
+  sababi va qayta ishlatiladigan lesson bor-yo‘qligini baholaydi. Oddiy success log
+  xotiraga yozilmaydi; faqat yangi va generalizable lesson candidate bo‘ladi.
+- [taklif 2] Tabiiy correction flow: “bu noto‘g‘ri”, “keyingi safar bunday qilma”,
+  “shu usul to‘g‘ri” kabi owner gaplari tegishli task/job bilan bog‘lanib candidate yoki
+  verified lesson yaratadi. Owner correction’i model taxminidan ustun.
+- [taklif 3] Natural memory control: “nimalarni o‘rganding?”, “shu lessonni tuzat/o‘chir”,
+  “o‘rganishni pauza/davom ettir”. Slash command majburiy emas; audit history va rollback saqlanadi.
+- [taklif 4] Skill ingestion: Emirhan bergan skill/doc/video avval quarantine’da o‘qiladi,
+  provenance, scope, prompt-injection va secret tekshiruvidan o‘tadi; keyin reusable
+  skill sifatida register qilinadi. Materialning o‘zi permission bermaydi.
+- [taklif 5] Eval to‘plami: tabiiy suhbat, troubleshooting, script task, contact send,
+  delegated reply, group routing, ambiguous request, memory recall va correction bo‘yicha
+  kamida 20–30 scenario. Har yangi lesson/skill regressiyani buzmasligi tekshiriladi.
+- [taklif 6] Memory tierlari: task-local context → chat summary → confirmed experience →
+  MyBrain durable fact → reusable skill. Har ma’lumot faqat mos qatlamda saqlanadi;
+  duplicate va qarama-qarshi lessonlar evaluator orqali flag qilinadi.
+- Tavsiya etilgan ketma-ketlik: **correction flow → evaluator → lesson controls → eval suite →
+  skill ingestion → periodic review/cleanup**. Model weightsini o‘zgartirish yoki nazoratsiz
+  self-modification rejalashtirilmaydi.
 
 - Owner bergan fakt, kuzatuv va tasdiqlanmagan uslub taxmini alohida saqlanadi.
 - Har nomzod afzallikda sana, manba havolasi va ishonch darajasi bo‘ladi; owner tuzatishi ustun.
@@ -79,6 +123,30 @@ Noaniq vaziyatlarda Emirhandan so‘raladi. Insoniy ohang bot ekanini inkor qili
 TezCode topiclariga test javoblari yuborilmaydi. Avval kichik testlar. Mac va PC bir botni boshqarish tartibi runtime tanlanganda belgilanadi; takroriy javob bo‘lmasligi test qilinadi.
 
 ## Etap jurnali
+
+### 2026-09-13 — Conversation-first va learning implementatsiyasi
+
+- `experience.py` candidate/confirmed learning store’i qo‘shildi; faqat confirmed va relevant lesson agent promptiga kiradi. Ikki owner-confirmed lesson live store’da tekshirildi.
+- Oddiy owner technical request’i Hermes `task` action orqali restricted work oqimiga yo‘naltiriladi; `/task` endi optional shortcut. Guruhdan technical work va yangi send permission ochilmadi.
+- Natural stop variantlari, degraded `status.py` va `/status`ni majburlamaydigan failure explanation tuzatildi.
+- [tekshirildi: CLI] 97/97 unit test, Python compile, Node syntax; LaunchAgent restartdan keyin worker running, observer connected/fresh, queue 0. Sandbox statusida Telegram/RAG false; jonli private chat testi pending.
+- Hisobot: [[Beluga Agent Report]]. Rollback snapshot: `/Users/protochka/Beluga/state/backup-20260913-conversation-agent/`.
+- [tekshirildi: SQLite] Jonli owner testi o‘tdi: slashsiz natural technical request job
+  `678230960`, status `done`, error `null`; 97 test/compile/Node natijasi Telegramga qaytdi.
+  Keyingi bosqich — failure diagnosis/lesson recall live testi va legacy dependency cleanup.
+- [tekshirildi: SQLite/CLI] Diagnosis testi ham o‘tdi: job `678230961` done/error=null;
+  agent health, historical failure, dalil chegarasi va taklifni to‘liq qaytardi.
+- Agent taklifi bo‘yicha `jobs` schema’ga `error_stage` va redacted `error_detail`
+  qo‘shildi; positional insertlar explicit columnsga o‘tkazildi. 98/98 test o‘tdi,
+  worker restartdan keyin running va queue 0. Eski 10 failed yozuv saqlandi.
+- [tekshirildi: runtime policy, 2026-09-13] Personal conversation delegation amalda
+  uchta chat contextida `auto_reply` holatida; ulardan biri group. Shu bilan birga
+  `authorized-groups.json` allowlisti bo‘sh. Bu policy qatlamlari o‘rtasida tafovut:
+  group personal auto-reply/delivery’ni “to‘liq xavfsiz tayyor” deb bo‘lmaydi.
+- Keyingi tuzatish: `auto_reply.eligible()` group uchun `group_policy` allowlist va
+  explicit personal flagni majburiy tekshirsin. Folder broadcast faqat mavjud/access
+  qilinadigan grouplarga explicit owner buyrug‘i bilan ishlaydi; auto-join yo‘q va
+  live broadcast hali sinalmagan.
 
 ### 2026-09-06 — 1-etap
 

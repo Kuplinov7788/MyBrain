@@ -1,6 +1,6 @@
 ---
 type: preferences
-updated: 2026-09-12
+updated: 2026-09-13
 source: Emirhan bilan bevosita suhbat
 ---
 
@@ -18,6 +18,8 @@ source: Emirhan bilan bevosita suhbat
 - 2026-09-12: Telegram agent bilan oddiy tabiiy tilda to‘liq suhbat olib borish kerak; foydalanuvchini `/status`, `/task` kabi texnik buyruqlarni yodlashga majburlamasin. Tabiiy so‘rovdan niyatni tushunsin, mavjud script/tool’lar bilan ishlasin va zarur ichki texnik komandalarni o‘zi boshqarsin.
 - Muammo chiqsa agent shunchaki xato kodini qaytarmasin: nima bo‘ldi, ehtimoliy yoki tekshirilgan sabab, qaysi hodisadan keyin boshlangan, qanday tekshirildi, mavjud yechim va o‘z taklifini tushunarli aytsin. Yetarli dalil bo‘lmasa 1–3 ta aniq savol bersin; foydasiz qayta-qayta tasdiq yoki status buyrug‘ini so‘ramasin.
 - Agent “faqat o‘rgatilgan javoblar” bilan cheklanmasin: kontekst, xotira, script/tool natijalari va foydalanuvchi tuzatishlaridan foydalanib vaziyatga mos fikrlasin. O‘rganish — model weightsini o‘zgartirish emas; tasdiqlangan afzallik va ish natijalarini boshqariladigan xotirada saqlashdir.
+- 2026-09-13: Agent xato va muvaffaqiyatlardan bosqichma-bosqich lesson chiqarib, keyingi o‘xshash vazifada qo‘llasin. Yangi lesson avval candidate bo‘lsin; dalil/test yoki Emirhan tasdig‘idan keyin doimiy qoida/skillga aylansin. Ko‘p hardcoded script o‘rniga agentic reasoning va kichik, aniq tool’lar afzal.
+- Beluga ishi yakunida oddiy tildagi to‘liq hisobot kerak: bot/agent nimalar qila olishi, nimalarni tabiiy tildan tushunishi, nimalar o‘zgargani, test dalillari, cheklovlar va foydalanish misollari. Tekshirilgan, jonli sinalmagan va rejalashtirilgan imkoniyatlar aralashtirilmasin.
 
 ## Suhbatni davomiy qayd qilish — 2026-09-10
 
