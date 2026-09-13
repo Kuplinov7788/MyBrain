@@ -61,6 +61,8 @@ Shaxsiy akkaunt nomidan avtomatik javob alohida rejim: kimga javob berishni Emir
 
 Emirhan o‘z kun tartibi va afzalliklarini beradi. Faqat u tanlagan chatlar va o‘z javoblaridan til, uzunlik, ohang, rasmiylik, hazil va salomlashish odatlari o‘rganiladi. “Psixologiyani o‘rganish” amalda kuzatiladigan muloqot afzalliklarini tushunish sifatida bajariladi; ruhiy tashxis yoki kontaktlar haqida taxminiy shaxsiy profil tuzilmaydi.
 
+2026-09-13 talabi: agent har bir aniq chatda ruxsatli so‘nggi kontekstni o‘qib, Emirhan yozganlaridan munosabatga mos javob ohangini o‘rgansin. Bu darhol barcha chatni ommaviy eksport/tahlil qilish degani emas; bounded context, per-chat summary va [[Beluga Communication Lessons]]dagi maxfiy bo‘lmagan reusable lessonlar bilan yuritiladi.
+
 Noaniq vaziyatlarda Emirhandan so‘raladi. Insoniy ohang bot ekanini inkor qilish, bo‘lmagan tajriba yoki va’da to‘qishni anglatmaydi. Shaxsiy avtomatik javoblar uchun avtomatlashtirishni qanday bildirish ishga tushirishdan oldin aniqlanadi.
 
 ## O‘rganish va xotira

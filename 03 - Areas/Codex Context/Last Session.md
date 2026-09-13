@@ -5,6 +5,26 @@ updated: 2026-09-13
 
 # Oxirgi Codex sessiyasi
 
+## 2026-09-13 — Hermes yagona model rejimi
+
+- Dashboarddagi qayta chiqqan GPT-5.5 `AUX · MCP` kartalari config’dagi eski
+  auxiliary/MoA/Beluga model bog‘lanishlari ekanligi tekshirildi.
+- Barcha faol yo‘llar `openai-codex/gpt-5.6-terra`ga moslandi; MoA/reference
+  modellar o‘chirildi, eski sessionlar backupdan keyin tozalandi. Beluga yangi
+  `beluga-owner-v3` sessionidan foydalanadi.
+- 99 test, config check, compile, Node syntax va diff check o‘tdi; LaunchAgent
+  running. Commit/push hali qilinmadi.
+
+## 2026-09-13 — Hermes Dashboard cleanup
+
+- Emirhan topshirig‘i bilan tarixiy/free model kartalari va Beluga background
+  analysis yaratgan 1500+ texnik sessionlar tozalandi. Faqat persistent
+  `beluga-owner-v2` (`GPT-5.5/openai-codex`) visible qoldi.
+- Cleanup oldidan Hermes DB backup olindi. Background tahlil saqlandi, lekin yangi
+  one-shot tool sessionlar dashboardda avtomatik archived bo‘ladi.
+- Beluga kodi: `background_analysis.py`, `conversation_intent.py`; 99 test va
+  syntax/diff checks o‘tdi, LaunchAgent `running`. Commit/push hali qilinmadi.
+
 ## 2026-09-13 — Beluga learning va script arxitekturasi
 
 - Emirhan agent har xato va ishidan o‘rganib, kerak bo‘lsa berilgan skillni o‘zlashtirishini; ko‘p script sabab komandali botga aylanib qolmasligini talab qildi.
@@ -37,6 +57,7 @@ updated: 2026-09-13
   <https://github.com/Kuplinov7788/Beluga>. Visibility PRIVATE, local/remote commit teng;
   99/99 test o‘tdi, runtime secret/state tracked emas. MyBrain pathning asosiy qatlamlari
   portable qilindi; full installer va qolgan helper pathlar hali keyingi ish.
+- [foydalanuvchi talabi, 2026-09-13] Emirhan Beluga har bir aniq chatda ruxsatli so‘nggi kontekstni o‘qib, uning yozish uslubi va munosabatdagi ohang/chegaralardan o‘rganishini so‘radi. Bu talab [[Preferences]] va yangi [[Beluga Communication Lessons]]ga maxfiy chat dumpsiz yozildi; barcha chatlarni ommaviy o‘qish/tahlil qilish hozir bajarilmadi.
 
 ## 2026-09-12 — Kontekst qayta tiklandi
 

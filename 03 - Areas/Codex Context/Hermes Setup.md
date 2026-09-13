@@ -1,10 +1,53 @@
 ---
 type: setup-audit
-updated: 2026-09-10
+updated: 2026-09-13
 status: configured-memory-active
 ---
 
 # Hermes — sozlash va rivojlantirish xaritasi
+
+## 2026-09-13 — Dashboard model kartalari
+
+- Dashboarddagi ko‘p karta bir vaqtda ishlayotgan ko‘p model degani emas; ular
+  `state.db`dagi sessionlarni model, provider va source metadata bo‘yicha guruhlaydi.
+- Joriy default profil bitta: `openai-codex` + `gpt-5.5`.
+- Tekshiruvda DB’da 1503 session va 3225 message bor edi. Asosiy guruhlar:
+  `gpt-5.5/openai-codex/tool` — 1349, provider belgisi yo‘q `gpt-5.5/tool` —
+  141, `gpt-5.5/openai-codex/cli` — 10 va tarixiy Nous free sessionlari.
+- Provider belgisisiz `GPT-5.5` kartalari alohida model emas, eski yoki to‘liq
+  billing/provider metadata yozilmagan sessionlar bo‘lishi ehtimoli yuqori.
+- `sessions` — saqlangan suhbat/session soni, parallel ishlayotgan process soni
+  emas. Eski sessionlarni backup/audit qilmasdan o‘chirmaslik kerak.
+- Computer Control surface bu sessiyada yoqilmagan
+  (`CUA_REPL_ENABLED_SURFACES is required`); tahlil screenshot, Hermes config va
+  lokal SQLite metadata orqali bajarildi.
+
+### Dashboard cleanup
+
+- Emirhan qarori: dashboardda faqat asosiy `GPT-5.5/openai-codex` Beluga sessioni
+  qolsin; tarixiy free modellar va texnik one-shot kartalar kerak emas.
+- `state.db` cleanup oldidan
+  `/Users/protochka/.hermes/state.db.backup-20260913-before-dashboard-cleanup`
+  backup olindi. 1502 ta background/tool session va 13 ta boshqa tarixiy session
+  o‘chirildi; `beluga-owner-v2` saqlandi.
+- Beluga background analysis va intent classification sessionlari ishlashda davom
+  etadi, ammo running paytidan boshlab `archived=1` qilinadi va dashboardni
+  to‘ldirmaydi. Yakuniy tekshiruvda visible session soni `1`.
+- Beluga LaunchAgent restartdan keyin `running`; 99 test, Python compile, Node
+  syntax va `git diff --check` o‘tdi.
+
+### Yagona model rejimi — gpt-5.6-terra
+
+- Emirhan dashboardda GPT-5.5 `AUX · MCP` kartalari yana ko‘ringanini bildirdi.
+  Sabab: main model Terra bo‘lsa ham auxiliary MCP/curator, MoA reference’lari va
+  Beluga backend hali GPT-5.5ga biriktirilgan edi.
+- Hermes main, auxiliary MCP, curator va Beluga endi `openai-codex/gpt-5.6-terra`.
+  MoA o‘chirildi va GPT-5.5 hamda free DeepSeek reference ro‘yxatlari olib tashlandi.
+- Eski 14 Hermes session cleanup qilindi; oldindan config va state DB backup olindi.
+  Yangi Beluga session nomi `beluga-owner-v3`; u birinchi owner xabarida yaratiladi.
+- Tekshiruv: profile va Beluga runtime Terra, config valid, LaunchAgent running,
+  99 test/compile/Node/diff check o‘tdi. Background auxiliary session archived va
+  visible session hozircha `0`.
 
 ## 2026-09-10 — optimization audit
 
