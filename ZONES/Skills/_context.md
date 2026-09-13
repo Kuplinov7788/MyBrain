@@ -2,10 +2,21 @@
 type: zone-context
 zone: Skills
 owner: Saidazim + Emirhan
-updated: 2026-06-21
+updated: 2026-09-14
 ---
 
 # Skills — Zone Context
+
+## 2026-09-14 — Codex agent architecture skill
+
+- `/Users/protochka/.codex/skills/agent-architecture/` yaratildi va standart
+  `quick_validate.py` bilan validatsiyadan o‘tdi.
+- Skill 33 bosqichni majburiy checklist emas, capability/adoption-gate xaritasi sifatida
+  ishlatadi. Batafsil ta’rif `references/levels.md`, Beluga mappingi
+  `references/beluga-baseline.md` ichida.
+- Obsidian qo‘llanma: [[../../03 - Areas/Codex Context/Agent Architecture - 33 Levels]].
+- Quyidagi eski `.claude/skills` inventari tarixiy; joriy Codex skill holati uchun
+  `/Users/protochka/.codex/skills` amalda tekshirilsin.
 
 ## Umumiy
 `.claude/skills/` dagi 29 ta skill fayli. Claude Code workflow larini boshqaradi.

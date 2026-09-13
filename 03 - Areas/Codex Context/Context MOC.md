@@ -21,6 +21,7 @@ Bu sahifa MyBrain’dagi loyiha va vosita kontekstlarini bir joydan ochish uchun
 - [[Hermes Course Transcripts|Hermes kursi transkriptlari]]
 - [[Hermes Hub|Hermes yagona bilim va ish oqimi hubi]]
 - [[Hermes Management Playbook|Hermes boshqaruv playbook’i]]
+- [[Agent Architecture - 33 Levels|Agent arxitekturasi — 33 bosqich]]
 - [[../Claude Context/Profile|Batafsil eski profil]]
 - [[../Claude Context/How-To-Use-Claude|Ishlash qo‘llanmasi]]
 - [[../Claude Context/Projects|Loyihalar umumiy ro‘yxati]]

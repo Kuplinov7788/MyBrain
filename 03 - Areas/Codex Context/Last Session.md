@@ -1,9 +1,27 @@
 ---
 type: session-handoff
-updated: 2026-09-13
+updated: 2026-09-14
 ---
 
 # Oxirgi Codex sessiyasi
+
+## 2026-09-14 — Agent Architecture skill va 33 bosqich
+
+- Emirhan bergan 33 bandli agent arxitekturasi capability map sifatida qayta tuzildi;
+  barcha bandlar majburiy ketma-ket checklist emas.
+- Codex uchun `/Users/protochka/.codex/skills/agent-architecture` skilli yaratildi.
+  U minimal yetarli architecture, evidence/eval gate, security va controlled
+  self-improvement qoidalari bilan ishlaydi.
+- Obsidian uchun [[Agent Architecture - 33 Levels]] yaratildi: har bir bosqichning
+  ma’nosi, vazifasi, qachon kerakligi, maturity talqini va Beluga/Hermes mappingi bor.
+- Beluga yaqin targeti: Level 17 production single agent + tanlangan 9–16 controls +
+  Level 23–24 observability/evaluation. Multi-agent/A2A/AIOS hozir avtomatik talab emas.
+- Sessiya shu yerda yopildi. Ertaga davom ettirish iborasi:
+  **“Agent Architecture 33 bosqich mavzusini davom ettir, Beluga’ni Level 17 +
+  Observability + Evaluation bo‘yicha audit qilishdan boshla.”**
+- Keyingi ish hali bajarilmadi: avval amaldagi Beluga kodi/runtime tekshiriladi, so‘ng
+  33 daraja `present / partial / needed-next / later / not-needed` holatida dalillar
+  bilan baholanadi va eng kichik 1–3 keyingi o‘zgarish tanlanadi.
 
 ## 2026-09-13 — Hermes yagona model rejimi
 
