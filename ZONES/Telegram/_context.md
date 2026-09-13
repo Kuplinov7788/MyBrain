@@ -2,7 +2,7 @@
 type: zone-context
 zone: Telegram
 owner: Saidazim + Emirhan
-updated: 2026-06-21
+updated: 2026-08-18
 ---
 
 # Telegram — Zone Context
@@ -11,6 +11,12 @@ updated: 2026-06-21
 Telegram botlar, bildirishnomalar va integratsiyalar.
 
 ## Komponentlar
+
+### 0. Shaxsiy Telegram–Codex Bridge
+- **Qayd:** [[tg-setting-Setub]]
+- **Bot:** `@BelugaCat_Asisstent_bot`
+- **Vazifa:** Telegram orqali Codex tasklari, chat analizi va owner buyrug'i bilan xabar yuborish
+- **Holat:** full-access yoqilgan, Windows startup task ishlaydi
 
 ### 1. WeWatch Telegram Bot
 - **Service:** notification (port 3007)
@@ -35,4 +41,4 @@ Task notification bot ishlaydi. WeWatch Telegram bot — asosiy funksionallik ta
 
 ---
 
-*Zone context | Telegram | 2026-06-21*
+*Zone context | Telegram | 2026-08-18*
