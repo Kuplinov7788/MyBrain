@@ -82,6 +82,17 @@ Telegram action yoki restricted technical work ekanini agent tanlaydi. `/task` v
   `state/backup-20260913-conversation-agent/`.
 - 32 root Python faylning legacy/compatibility qismini olib tashlash hali bajarilmadi.
 
+## Git va yangi qurilmaga ko‘chirish
+
+- Private code repo: <https://github.com/Kuplinov7788/Beluga>.
+- Initial remote commit: `9d56fbf`; `main == origin/main`. [tekshirildi: Git/gh]
+- MyBrain alohida private repo bo‘lib qoladi. Beluga `MYBRAIN_PATH` yoki `~/MyBrain`
+  orqali lokal yangilangan vaultni o‘qiydi; RAG reindex yangi Obsidian mazmunini qidiruvga qo‘shadi.
+- Token, Telegram session, chat context, job DB, media, private experience va loglar
+  Gitga kirmaydi. Yangi laptopda credentials/login alohida tiklanadi.
+- Full different-username bootstrap hali ochiq: installer va qolgan helper pathlari
+  portable configga ko‘chirilishi kerak.
+
 ## Jonli qabul testi
 
 Owner Beluga private chatiga slashsiz: `Beluga testlarini tekshir va muammo bo‘lsa sababi bilan ayt`

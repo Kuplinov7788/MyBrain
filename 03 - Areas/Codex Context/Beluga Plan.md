@@ -109,6 +109,42 @@ Noaniq vaziyatlarda Emirhandan so‘raladi. Insoniy ohang bot ekanini inkor qili
 
 ## Ketma-ket etaplar
 
+### 2026-09-13 — Yangi noutbuk uchun distributsiya taklifi
+
+- [foydalanuvchi maqsadi] MyBrain clone qilinganda Beluga’ni boshidan qayta yasamasdan
+  yangi Mac/noutbukda tiklash kerak.
+- [tekshirildi: fayl] Beluga hali Git repo emas; `install-mac.sh` `/Users/protochka`
+  yo‘liga hardcoded; Python/Node dependency manifesti yo‘q. Joriy `.gitignore` `state/`,
+  session/sqlite/token/venvni asosan chiqaradi, lekin publish oldidan secret scan va
+  ignore testi majburiy.
+- [taklif] Alohida private `Beluga` GitHub repo: faqat source, tests, portable installer,
+  dependency lock, config examples va migration guide. MyBrain alohida repo bo‘lib qoladi;
+  ikki repo README/link orqali bog‘lanadi.
+- Gitga kirmaydi: bot token, Telegram credentials/session, chat contextlari, job DB,
+  media, experience private state, loglar va `.venv`. Zarur private state alohida
+  encrypted backup orqali ko‘chiriladi yoki yangi qurilmada login/config qayta yaratiladi.
+- Qabul mezoni: fresh temp/home smoke test → `bootstrap` → local credentials setup →
+  `doctor` → unit/compile checks → owner private Telegram test. Eski va yangi noutbuk
+  bir token bilan parallel poller bo‘lib qolmasligi uchun activation/disable tartibi bo‘ladi.
+- Bu hozir taklif; GitHub repo yaratish, Beluga commit/push va encrypted state backup
+  hali bajarilmadi.
+
+### 2026-09-13 — Private Beluga repository yaratildi
+
+- [tekshirildi: Git/GitHub CLI] `/Users/protochka/Beluga` lokal Git repo qilindi;
+  initial commit `9d56fbf` (`initialize portable Beluga assistant`) `main` branchga yozildi.
+- Private remote yaratildi va push qilindi: <https://github.com/Kuplinov7788/Beluga>.
+  GitHub visibility `PRIVATE`; lokal `HEAD` va `origin/main` bir xil commitda.
+- [tekshirildi: Git] `state/`, `.venv`, session/sqlite, bot token, credentials, log va
+  media tracked fayllarga kirmadi. Source secret scan token/API hash topmadi.
+- `runtime_config.py` qo‘shildi: MyBrain `MYBRAIN_PATH` orqali yoki default `~/MyBrain`
+  dan olinadi. `context.py`, `chat_memory.py` va `app_bridge.mjs` shu portable pathdan
+  foydalanadi; 99/99 test, Python compile va Node syntax o‘tdi.
+- `requirements.txt` va repo migration qo‘llanmasi qo‘shildi (`Beluga/MIGRATION.md`).
+- [cheklov] launchd installer va ayrim Telegram helper pathlari hali boshqa macOS
+  username uchun to‘liq portable emas. Private runtime state GitHub’ga chiqmaydi;
+  Telegram/Codex/Hermes login yoki encrypted backup yangi qurilmada alohida kerak.
+
 | Etap | Ish va qabul mezoni | Holat |
 | --- | --- | --- |
 | 1 | Talablar, ruxsatlar, test rejasi va skillni yozish; fayl/link validatsiyasi | Yozildi; quyidagi jurnalga qarang |

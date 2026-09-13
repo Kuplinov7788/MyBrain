@@ -2,9 +2,9 @@
 
 Generated metadata only. Chat content remains in the local single JSON store.
 
-- Stored chats: 1053
+- Stored chats: 1054
 - Delegated chats: 3
-- Chats with reviews: 246
+- Chats with reviews: 263
 
 Source: `/Users/protochka/Beluga/state/chat-contexts.json`
 

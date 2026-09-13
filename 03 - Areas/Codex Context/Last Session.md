@@ -27,6 +27,16 @@ updated: 2026-09-13
   memory enabled va write approval faol. Keyingi tavsiya: natural correction flow,
   task evaluator, lesson list/edit/delete/pause, 20–30 scenario eval suite va xavfsiz
   skill ingestion. Bu bandlar roadmap; hali implementatsiya qilingani yo‘q.
+- Emirhan yangi noutbukda MyBrain bilan birga Beluga’ni boshidan qurmasdan tiklash
+  yo‘lini so‘radi. [tekshirildi: fayl] Beluga Git repo emas, installer home pathga
+  hardcoded va dependency manifest yo‘q. Taklif: alohida private Beluga repo + portable
+  bootstrap/doctor + dependency lock; secret/runtime state Gitdan tashqarida encrypted
+  backup yoki yangi lokal login orqali. Repo yaratish/push hali bajarilmadi.
+- [tuzatish/tekshirildi: Git/gh, 2026-09-13] Beluga private repo endi yaratildi va
+  initial commit `9d56fbf` `origin/main`ga push qilindi:
+  <https://github.com/Kuplinov7788/Beluga>. Visibility PRIVATE, local/remote commit teng;
+  99/99 test o‘tdi, runtime secret/state tracked emas. MyBrain pathning asosiy qatlamlari
+  portable qilindi; full installer va qolgan helper pathlar hali keyingi ish.
 
 ## 2026-09-12 — Kontekst qayta tiklandi
 
