@@ -5,6 +5,18 @@ updated: 2026-09-14
 
 # Oxirgi Codex sessiyasi
 
+## 2026-09-14 — MyBrain graph tozalandi
+
+- [tekshirildi: lokal audit] Vaultda 93 ta Markdown bor; nol baytli yoki faqat
+  placeholder mazmunli qayd topilmadi. Ma’noli note, backup va template’lar o‘chirilmagan.
+- `Home.md`dagi uzilgan `Daily Notes` va namuna wikilink olib tashlandi; haqiqiy
+  wikilinklar qayta tekshirildi: unresolved link 0.
+- `.obsidian/graph.json` ko‘rinishi tartiblandi: attachment va orphan tugunlar yashirildi,
+  node/line o‘lchami va masofa yengillashtirildi. Obsidian graph qayta ochilib, vizual
+  tekshirildi.
+- [tekshirildi: git] MyBrain `git diff --check` o‘tdi. Faqat `Home.md` va graph config
+  o‘zgardi; ma’noli kontent o‘chirilmagan.
+
 ## 2026-09-14 — Beluga architecture tuzatishi boshlandi
 
 - 33-level capability map bo‘yicha yaqin target: Level 17 production single agent +

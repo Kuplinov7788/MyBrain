@@ -12,7 +12,7 @@ Xush kelibsiz! Bu sizning shaxsiy bilimlar bazangiz.
 - [[03 - Areas/Codex Context/Context MOC|Barcha kontekstlar xaritasi]]
 - [[ZONES/AiCamera/AiCamera|AiCamera loyihasi]]
 - [[Inbox]] — Yangi g'oyalar va yozuvlar
-- [[Daily Notes]] — Kundalik yozuvlar
+- `DAILY/Emirhan` — Kundalik yozuvlar
 - [[Projects MOC]] — Loyihalar xaritasi
 - [[Areas MOC]] — Hayot sohalari
 - [[Resources MOC]] — Foydali manbalar
@@ -25,7 +25,7 @@ Xush kelibsiz! Bu sizning shaxsiy bilimlar bazangiz.
 1. Yangi g'oya keldi → **Inbox** ga yozing
 2. Har kuni → **Daily Note** yarating
 3. G'oyani qayta ishlang → tegishli papkaga ko'chiring
-4. **Havolalar** yarating → `[[sahifa nomi]]`
+4. **Havolalar** yarating → mavjud qayd nomini wikilink sifatida ulang
 5. Vaqt o'tishi bilan bilimlar **tarmog'i** paydo bo'ladi
 
 ---
