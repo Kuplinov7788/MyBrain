@@ -20,6 +20,17 @@ updated: 2026-09-14
   Telegram delivery testi bajarilmadi. 11 historical failed job saqlangan.
 - Keyingi incrementlar: versioned agent scenario eval va Telegram → agent →
   tool/policy → delivery bo‘ylab redacted correlation/telemetry.
+- [tekshirildi: kod/CLI] Level 24 offline production gate qo‘shildi: version 1’da
+  intent, policy, contract, delivery, recovery, retrieval, learning va privacy
+  bo‘yicha 24 scenario; yakuniy run 24/24, gate passed.
+- [cheklov] Offline gate real model sifati, jonli Telegram delivery, token cost va
+  network latency’ni o‘lchamaydi; report bularni ochiq `not_measured` deb belgilaydi.
+- [tekshirildi: kod/CLI] Level 23 asosiy job tracing qo‘shildi: `job-<update_id>`
+  correlation ID, redacted state-transition/failure JSONL telemetry. Xabar, model
+  natijasi va raw error telemetryga qabul qilinmaydi; telemetry xatosi delivery’ni
+  bloklamaydi. Jami 103/103 test o‘tdi, worker restartdan keyin `running`.
+- Joriy xulosa: Level 23 va 24 endi `partial/present offline`; Level 17 hali jonli
+  SLO/acceptance va incident/rollback dalillari sabab partial.
 
 ## 2026-09-14 — Remotion MCP o‘rnatildi
 

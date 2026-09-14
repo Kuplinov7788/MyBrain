@@ -175,6 +175,18 @@ TezCode topiclariga test javoblari yuborilmaydi. Avval kichik testlar. Mac va PC
 - Architecture holati: Level 13–16 boundary kuchaydi; Level 17 hali partial. Keyingi
   gate — versioned scenario eval (Level 24), keyin redacted correlation/metrics
   (Level 23). Multi-agent/A2A/AIOS dalilsiz qo‘shilmaydi.
+- [tekshirildi: `evals/run.py`] Level 24 versioned offline gate yaratildi. 24 scenario
+  8 kategoriyada 24/24 o‘tdi. Report `state/evals/latest.json`da, runtime state sifatida
+  Gitdan chiqarilgan; suite ta’rifi `evals/scenarios.json`da versionlanadi.
+- [tekshirildi: kod/test] Level 23 job telemetry yaratildi. `job-<update_id>` bir xil
+  correlation ID bilan lifecycle transition va redacted failure metadata’ni
+  `state/telemetry.jsonl`ga yozadi. Private input/result/raw error yozilmasligi va bir
+  correlation ID testi o‘tdi; telemetry failure asosiy ishni yiqitmaydi.
+- Yakuniy tekshiruv: 103/103 unit/integration test, 24/24 architecture eval, Python
+  compile, Node syntax va diff check o‘tdi; worker restartdan keyin `running`.
+- Keyingi production gate: owner private chatda alohida xavfsiz live scenario bilan
+  model quality, end-to-end latency, token/cost va delivery correlation’ni o‘lchash.
+  Tashqi recipient yoki group’ga test xabari yuborilmaydi.
 
 ### 2026-09-13 — Conversation-first va learning implementatsiyasi
 
