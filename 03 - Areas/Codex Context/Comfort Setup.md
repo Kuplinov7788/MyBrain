@@ -113,3 +113,10 @@ Tekshiruv: ikkala yangi skill `quick_validate.py` orqali `Skill is valid!` natij
 
 - `telegram_personal` Hermes default profile’ga stdio MCP sifatida qo‘shildi va 6 tool discovery health testi o‘tdi. CLI uchun `send_message` exclude; account/list/find/read/search ochiq. Real Hermes `beluga-owner-v2` sessionida `get_account_status` MCP call bajarilgani redacted session export orqali tekshirildi.
 - Hermes Desktop yo‘li: `Возможности → MCP → telegram_personal`. Bu capability sozlamasi; Beluga Telegram transporti va yagona bot poller bo‘lib qoladi.
+
+### 2026-09-14 — Remotion render MCP
+
+- [tekshirildi: rasmiy docs] Remotion’ning eski documentation MCP’i deprecated; 2026-09-12 holatiga yangi install tavsiya qilinmaydi. Rasmiy yangi yo‘l — Remotion Agent Skills.
+- [tekshirildi: CLI/fayl] Lokal `remotion` STDIO MCP `/Users/protochka/.codex/remotion-mcp/index.mjs` orqali global Codex config’ga qo‘shildi va enabled. Toollar: health, composition list, MP4 render va PNG still render.
+- [tekshirildi: MCP E2E] Demo `Ready` composition MCP orqali topildi; 1280×720 PNG va MP4 muvaffaqiyatli yaratildi. MCP package audit: 0 vulnerability.
+- [tekshirildi: CLI] Remotion tavsiya qilgan 12 ta agent skill demo workspace ichiga o‘rnatildi. Joriy ochiq Codex sessiyasi yangi MCP/skill katalogini ko‘rishi uchun yangi task yoki app refresh kerak bo‘lishi mumkin.

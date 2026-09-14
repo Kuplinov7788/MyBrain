@@ -162,6 +162,20 @@ TezCode topiclariga test javoblari yuborilmaydi. Avval kichik testlar. Mac va PC
 
 ## Etap jurnali
 
+### 2026-09-14 — Architecture audit: group policy boundary
+
+- [tekshirildi: kod/runtime] `auto_reply` group delivery’ni group allowlist bilan
+  bog‘lamagan edi. Runtime snapshot: 4 delegated chatdan 1 tasi group, ammo explicit
+  authorized/personal-enabled group 0.
+- Tuzatildi: group/supergroup delivery va `/auto ... on` endi faqat
+  `group_policy.personal_enabled(chat_id)` true bo‘lsa ishlaydi. Context’dagi eski
+  `auto_reply` flagi authorization hisoblanmaydi.
+- [tekshirildi: CLI] Ikki policy regression testi qo‘shildi; jami 101/101 test,
+  Python compile, Node syntax va diff check o‘tdi. Worker restartdan keyin `running`.
+- Architecture holati: Level 13–16 boundary kuchaydi; Level 17 hali partial. Keyingi
+  gate — versioned scenario eval (Level 24), keyin redacted correlation/metrics
+  (Level 23). Multi-agent/A2A/AIOS dalilsiz qo‘shilmaydi.
+
 ### 2026-09-13 — Conversation-first va learning implementatsiyasi
 
 - `experience.py` candidate/confirmed learning store’i qo‘shildi; faqat confirmed va relevant lesson agent promptiga kiradi. Ikki owner-confirmed lesson live store’da tekshirildi.

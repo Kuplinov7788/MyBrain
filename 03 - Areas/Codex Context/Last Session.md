@@ -5,6 +5,29 @@ updated: 2026-09-14
 
 # Oxirgi Codex sessiyasi
 
+## 2026-09-14 — Beluga architecture tuzatishi boshlandi
+
+- 33-level capability map bo‘yicha yaqin target: Level 17 production single agent +
+  Level 23 observability + Level 24 evaluation; multi-agent/AIOS hozir talab emas.
+- [tekshirildi: kod/runtime] Context store’da 1 ta group `auto_reply`, ammo
+  `authorized-groups.json`da 0 ta group bor edi.
+- Group delivery va enable command endi alohida
+  `group_policy.personal_enabled()` allowlistini majburiy tekshiradi. Eski context
+  flagining o‘zi personal akkauntdan yuborishga ruxsat bermaydi.
+- [tekshirildi: CLI] 101/101 test, Python compile, Node syntax va `git diff --check`
+  o‘tdi. `com.protochka.beluga` restart qilindi va `running`.
+- [cheklov] Sandbox health’da Telegram va RAG false/URL error ko‘rindi; jonli
+  Telegram delivery testi bajarilmadi. 11 historical failed job saqlangan.
+- Keyingi incrementlar: versioned agent scenario eval va Telegram → agent →
+  tool/policy → delivery bo‘ylab redacted correlation/telemetry.
+
+## 2026-09-14 — Remotion MCP o‘rnatildi
+
+- [tekshirildi: rasmiy docs] Remotion’ning eski documentation MCP’i deprecated bo‘lgani uchun u o‘rnatilmadi; rasmiy Agent Skills yo‘li qo‘shildi.
+- [tekshirildi: CLI/MCP] Global Codex config’da `remotion` STDIO server enabled. Lokal adapter health, composition discovery, PNG still va MP4 render tool’larini beradi.
+- [tekshirildi: E2E] `Ready` demo composition MCP orqali topildi va ikkala render formati yaratildi; server dependency auditida 0 vulnerability.
+- Keyingi foydalanish: yangi Codex task ochilgach Remotion MCP katalogga yuklanadi; real loyiha berilsa `projectPath` orqali shu adapter ishlaydi.
+
 ## 2026-09-14 — Agent Architecture skill va 33 bosqich
 
 - Emirhan bergan 33 bandli agent arxitekturasi capability map sifatida qayta tuzildi;
