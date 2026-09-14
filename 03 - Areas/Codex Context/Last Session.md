@@ -5,6 +5,18 @@ updated: 2026-09-14
 
 # Oxirgi Codex sessiyasi
 
+## 2026-09-14 — Beluga quota xatosi aniqlandi va tushuntirishi tuzatildi
+
+- [tekshirildi: SQLite] `Qisqa et nimalar qila olasan` xabari job `678230975`da
+  `RuntimeError` bilan yiqilgan; Telegram va RAG sog‘lom edi.
+- [tekshirildi: Hermes CLI] Asl sabab `Codex provider quota exhausted (429)`;
+  credential yaroqli, lekin provider limiti vaqtincha tugagan.
+- Tuzatildi: quota/429 xatosida Hermes foydasiz recovery session retry qilmaydi;
+  job redacted `AI provider limiti vaqtincha tugagan` izohi bilan yakunlanadi.
+  Ownerga yuboriladigan xabar endi raw `RuntimeError` emas, qisqa sabab + retry qilinmagani.
+- [tekshirildi: CLI] 106/106 test, Python compile, Node syntax va diff check o‘tdi;
+  worker restartdan keyin `running`. Quota sababli live inference qayta sinalmadi.
+
 ## 2026-09-14 — MyBrain graph tozalandi
 
 - [tekshirildi: lokal audit] Vaultda 93 ta Markdown bor; nol baytli yoki faqat

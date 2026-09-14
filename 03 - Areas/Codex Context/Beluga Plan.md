@@ -162,6 +162,18 @@ TezCode topiclariga test javoblari yuborilmaydi. Avval kichik testlar. Mac va PC
 
 ## Etap jurnali
 
+### 2026-09-14 — Provider quota failure diagnosis
+
+- [tekshirildi: live owner job/SQLite] `Qisqa et nimalar qila olasan` job `678230975`
+  `RuntimeError` bilan tugadi; tashqi action bajarilmadi.
+- [tekshirildi: Hermes CLI] Sabab Telegram/RAG emas: `Codex provider quota exhausted
+  (429)`; credentials valid, provider cooldown kutmoqda.
+- Tuzatildi: Hermes backend quota/429 xatosini aniqlaydi va yangi session bilan
+  takrorlamaydi; `job_store.describe_error()` ham ownerga maxfiy bo‘lmagan qisqa
+  Uzbek sabab beradi. Umumiy notification endi raw `RuntimeError` yubormaydi.
+- Regressiondan keyin 106/106 test, compile/syntax/diff check o‘tdi; worker `running`.
+  Quota tiklanmaguncha yangi inference live testi ataylab yuborilmaydi.
+
 ### 2026-09-14 — Architecture audit: group policy boundary
 
 - [tekshirildi: kod/runtime] `auto_reply` group delivery’ni group allowlist bilan
