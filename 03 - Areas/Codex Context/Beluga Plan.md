@@ -187,6 +187,18 @@ TezCode topiclariga test javoblari yuborilmaydi. Avval kichik testlar. Mac va PC
 - Keyingi production gate: owner private chatda alohida xavfsiz live scenario bilan
   model quality, end-to-end latency, token/cost va delivery correlation’ni o‘lchash.
   Tashqi recipient yoki group’ga test xabari yuborilmaydi.
+- [tekshirildi: live owner-private] Birinchi test contract formatida yiqildi: model
+  `reply` bilan irrelevant recipient metadata qaytargan. Host delivery qilmagan,
+  job `678230973` failed va redacted trace saqlangan.
+- Host non-delivery actionlardagi irrelevant recipientni xavfsiz olib tashlaydi;
+  haqiqiy send actionlaridagi recipient validation yumshatilmadi. Shu holat eval
+  version 2 dagi 25-scenario bo‘ldi.
+- [tekshirildi: live Telegram/SQLite/telemetry] Takroriy markerli test job `678230974`
+  done; bot test xabariga reply qildi, latency 15 soniya, correlation trace queued →
+  running → ready → reply_attempt → done. 104/104 test va 25/25 eval o‘tdi.
+- Ingress endi `job.accepted` hodisasini ham yozadi. Worker restartdan keyin running;
+  Telegram true, RAG 641 chunk/ok, observer fresh, queue 0. Tashqi recipient/groupga
+  xabar yuborilmadi.
 
 ### 2026-09-13 — Conversation-first va learning implementatsiyasi
 

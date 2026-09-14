@@ -31,6 +31,20 @@ updated: 2026-09-14
   bloklamaydi. Jami 103/103 test o‘tdi, worker restartdan keyin `running`.
 - Joriy xulosa: Level 23 va 24 endi `partial/present offline`; Level 17 hali jonli
   SLO/acceptance va incident/rollback dalillari sabab partial.
+- [tekshirildi: live Telegram/SQLite/Hermes shape] Birinchi owner-private live test
+  job `678230973` modelning xavfsiz `reply` actioniga irrelevant `recipient_id`
+  qo‘shgani uchun contract gate’da `ValueError` bilan to‘xtadi; tashqi recipient/group
+  delivery bo‘lmadi. Raw private matn qaydga ko‘chirilmadi.
+- Tuzatildi: `reply/task` kabi non-delivery actionlarda recipient metadata authority
+  bera olmaydi va `null`ga normalizatsiya qilinadi; `contact/continue/media/forward`
+  recipient talablari o‘zgarmadi. Regression eval version 2 ga qo‘shildi.
+- [tekshirildi: live Telegram/SQLite/telemetry] Ikkinchi owner-private test job
+  `678230974` `done`; bot aynan test xabariga reply qildi, end-to-end latency 15 soniya.
+  Trace: queued → running → ready → reply_attempt → done. Yakuniy suite 25/25,
+  umumiy test 104/104; Telegram true, RAG ok (641 chunk), observer fresh, queue 0.
+- [xulosa] Owner-private oddiy javob oqimi uchun Level 17/23/24 acceptance dalili bor;
+  consequential send, group va restart-under-load oqimlari alohida staged live gate
+  bo‘lib qoladi. Tashqi recipient yoki group’ga test yuborilmadi.
 
 ## 2026-09-14 — Remotion MCP o‘rnatildi
 
