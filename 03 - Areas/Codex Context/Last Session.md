@@ -5,6 +5,33 @@ updated: 2026-09-14
 
 # Oxirgi Codex sessiyasi
 
+## 2026-09-14 — Context-first group task routing qayta tekshirildi
+
+- [tekshirildi: Beluga kod/test] `conversation_intent` umumiy savol va group taskni
+  personal conversation routerga bermaydi; faqat aniq continuation/delegation/stop
+  iboralari shu tor yo‘ldan o‘tadi. `RCT-366 guruhiga JavaScript vazifasi...` endi
+  asosiy Hermes/MyBrain context oqimiga boradi, “Qaysi suhbat?” javobiga tushmaydi.
+- [tekshirildi: CLI] 108/108 test, Python compile, Node syntax va `git diff --check`
+  o‘tdi. `com.protochka.beluga` restartdan keyin `running`; Telegram true, RAG ok
+  (650 chunk), queue 0.
+- [cheklov] Context store’da nomi `RCT-366` bo‘lgan 2 ta supergroup bor va
+  `authorized-groups.json`da group allowlist bo‘sh. Shu sabab aniq numeric group ID/link
+  va alohida allowlist bo‘lmasa xabar yuborilmaydi; hozir hech qaysi groupga delivery
+  qilinmadi. Provider quota tiklanmagani uchun yangi live AI inference ham yuborilmadi.
+
+## 2026-09-14 — Beluga group request routing tuzatildi
+
+- [tekshirildi: SQLite] Emirhanning RCT-366 JavaScript vazifasi haqidagi so‘rovi
+  personal conversation router tomonidan noto‘g‘ri `Qaysi suhbat...` javobiga aylangan.
+- Sabab: context store’da `RCT-366` nomli 2 ta supergroup bor; group request uchun
+  outbound bot delivery esa allowlist’da yoqilmagan. Hech qanday group xabari yuborilmadi.
+- Tuzatildi: `guruh/group/sinf/bolalar/RCT` kalit so‘zli owner so‘rovi conversation
+  delegation’dan bypass qilinadi; Hermes prompti buni group task deb tushuntiradi va
+  kerak bo‘lsa numeric ID/linkni so‘raydi, `Qaysi suhbat` demaydi.
+- [tekshirildi: CLI] 107/107 test, Python compile, Node syntax, diff check; worker
+  restartdan keyin `running`. Live provider quota tugagani sabab yangi inference testi
+  yuborilmadi.
+
 ## 2026-09-14 — Beluga quota xatosi aniqlandi va tushuntirishi tuzatildi
 
 - [tekshirildi: SQLite] `Qisqa et nimalar qila olasan` xabari job `678230975`da

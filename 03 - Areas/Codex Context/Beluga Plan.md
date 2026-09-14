@@ -162,6 +162,31 @@ TezCode topiclariga test javoblari yuborilmaydi. Avval kichik testlar. Mac va PC
 
 ## Etap jurnali
 
+### 2026-09-14 — Context-first routing regression fix
+
+- [tekshirildi: kod/test] Oldingi tor `conversation_intent` yo‘li umumiy savol va
+  guruh topshirig‘ini “Qaysi suhbat?”ga burib yuborayotgan edi. Endi `guruh/group/sinf/
+  bolalar/RCT` va boshqa umumiy tasklar shu routerdan bypass qilinib, to‘liq
+  Hermes/MyBrain contextiga beriladi; personal continuation iboralari saqlab qolindi.
+- [tekshirildi: CLI] 108/108 test, compile/syntax/diff check o‘tdi; worker restartdan
+  keyin running, Telegram true, RAG ok (650 chunk), queue 0.
+- [cheklov] Ikkita `RCT-366` supergroup nomi bor, group allowlist bo‘sh. Aniq ID/link
+  va owner yoqishi bo‘lmasa tayyorlangan matn ham groupga yuborilmaydi. Provider quota
+  429 bo‘lgani sabab live AI inference sinovi quota resetgacha qoldi.
+
+### 2026-09-14 — Group task routing diagnosis
+
+- [tekshirildi: job `678230977`–`678230979`, context store] RCT-366 topshirig‘i
+  `conversation_intent`ga tushib, noto‘g‘ri “Qaysi suhbat?” clarification qaytargan.
+  Ikki xil `RCT-366` supergroup mavjud, `authorized-groups.json` esa bo‘sh; delivery
+  ataylab bajarilmadi.
+- Tuzatildi: group-related owner requests conversation continuation’dan deterministic
+  bypass qilinadi. Hermes group task sifatida draft/aniqlik javobini beradi; numeric
+  group ID yoki link bo‘lmasa group tanlamaydi. Group allowlist material permissionni
+  oshirmaydi.
+- [tekshirildi: CLI] 107/107 test, compile/syntax/diff check o‘tdi, worker `running`.
+  Provider quota tiklanmagani uchun bu yangi routingning live AI sinovi keyinga qoldi.
+
 ### 2026-09-14 — Provider quota failure diagnosis
 
 - [tekshirildi: live owner job/SQLite] `Qisqa et nimalar qila olasan` job `678230975`
