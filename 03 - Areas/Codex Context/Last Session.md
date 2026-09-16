@@ -5,6 +5,25 @@ updated: 2026-09-16
 
 # Oxirgi Codex sessiyasi
 
+## 2026-09-16 — Beluga bir martalik owner buyrug‘i
+
+- [tekshirildi: kod/CLI] Ownerning private chatdagi aniq continuation topshirig‘i
+  bir martalik yuborishga yetadi; alohida recipient allowlist talab qilinmaydi.
+  Host authority flagni o‘zi yaratadi, model outputidan ko‘chirmaydi.
+- Persistent background auto-reply ruxsatlari o‘zgarmadi. Guruhdan kelgan so‘rov
+  boshqa chatga personal deliveryni boshlay olmaydi; regression test bor.
+- [tekshirildi: CLI] 123/123 unit test, production eval v4 32/32, Python compile
+  va Beluga git diff --check o‘tdi. Idle worker restart qilindi: running,
+  Telegram health true, queue/running jobs 0, RAG 671 chunk (shu tekshiruv payti).
+- [cheklov] Delivery mock bilan sinaldi, haqiqiy Telegram xabari yuborilmadi.
+  Bu model noto‘g‘ri tushunmasligi yoki tekshirmasdan imkoniyatni inkor qilmasligi
+  kafolati emas. Oldingi isolated semantic probe action/recipient 3/3 bo‘lgan,
+  lekin outgoing matnning vaqt ma’nosini saqlash hali o‘lchanmagan.
+- [keyingi qadam] Tabiiy savol, clarificationdan keyingi recipient, draft/send
+  farqi va capability denialni tashqi yuborishsiz sinash; topilgan xatoni Hermes,
+  context, RAG yoki routing qatlamiga ajratib tuzatish.
+- Batafsil jurnal: [[03 - Areas/Codex Context/Beluga Plan|Beluga Plan]].
+
 ## 2026-09-16 — Uzbek routing va RAG relevance eval
 
 - [tekshirildi: versioned dataset] 40 ta tabiiy o‘zbekcha owner iborasi group task,

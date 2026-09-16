@@ -162,6 +162,22 @@ TezCode topiclariga test javoblari yuborilmaydi. Avval kichik testlar. Mac va PC
 
 ## Etap jurnali
 
+### 2026-09-16 — One-time owner command authority
+
+- Owner talabi: tabiiy aniq topshiriqning o‘zi bir martalik yuborishga yetarli;
+  alohida permission/allowlist savoli bilan to‘xtatmaslik.
+- [tekshirildi: kod] Private owner chat va sender ID hostda tekshiriladi;
+  continuation uchun host-created owner_command flag allowlistni bir marta bypass
+  qiladi. Persistent permission state yozilmaydi; auto_revision bu yo‘ldan o‘tmaydi.
+  Guruh so‘rovlari boshqa chatga contact/continue/media/forward/saved/broadcast
+  yuborishni boshlay olmaydi. Scoped group_personal yo‘li alohida qoldi.
+- [tekshirildi: CLI] 123/123 test, production gate v4 32/32, Python compile va
+  diff check o‘tdi. Worker idle holatda restartdan keyin running; Telegram true,
+  queue 0, RAG 671 chunk. Haqiqiy tashqi delivery testi bajarilmadi.
+- [cheklov] Permission to‘sig‘i tuzatildi; semantic understandingning barcha
+  xatolari tuzatilgani emas. Keyingi bosqich — capability denial, context carryover,
+  draft/send va meaning faithfulnessni yuborishsiz sinash.
+
 ### 2026-09-16 — Isolated live Hermes decision probe
 
 - `evals/semantic_eval.py` synthetic context bilan alohida Hermes one-shot model
