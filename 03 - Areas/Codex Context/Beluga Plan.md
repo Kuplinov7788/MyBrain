@@ -1,7 +1,7 @@
 ---
 type: implementation-plan
-updated: 2026-09-13
-status: paused-after-saved-success
+updated: 2026-09-16
+status: active-observability-and-evals
 ---
 
 # Beluga — talablar va etaplar
@@ -161,6 +161,68 @@ Noaniq vaziyatlarda Emirhandan so‘raladi. Insoniy ohang bot ekanini inkor qili
 TezCode topiclariga test javoblari yuborilmaydi. Avval kichik testlar. Mac va PC bir botni boshqarish tartibi runtime tanlanganda belgilanadi; takroriy javob bo‘lmasligi test qilinadi.
 
 ## Etap jurnali
+
+### 2026-09-16 — Isolated live Hermes decision probe
+
+- `evals/semantic_eval.py` synthetic context bilan alohida Hermes one-shot model
+  sinovini bajaradi; tools none, production session reuse yo‘q, delivery yo‘q.
+- Birinchi parser run CLI `Warning: Unknown toolsets: none` JSON oldiga kelishi sabab
+  yiqildi. Known warning output cleanerda filtrlandi; regression test qo‘shildi.
+- [tekshirildi: live model] Final action/recipient gate 3/3: clarification → username
+  `continue @Corvin_0`; contextless username va draft `reply`. Bu haqiqiy recipientga
+  xabar yuborilganini yoki permission integration ishlaganini isbotlamaydi.
+- [kuzatuv] Draft model javobida `qilding` o‘rniga `qilyapsan` kelgan; temporal meaning
+  faithfulness bu gate’da o‘lchanmagan va keyingi fix/eval bo‘lib qoladi.
+- [tekshirildi: CLI] 119/119 test, compile va diff check o‘tdi.
+
+### 2026-09-16 — Hermes-first natural conversation
+
+- Owner talabi: erkin yozish; niyatni Hermes context bilan tushunsin, tor regex router
+  suhbatning asosiy qaror qiluvchisi bo‘lmasin.
+- [tekshirildi: kod] Hermes backendda oddiy owner xabarlari narrow conversation routerdan
+  emas, persistent Hermes agentidan o‘tadi; deterministic stop saqlandi. Host oxirgi
+  12 owner/assistant turnni job status bilan beradi, jumladan clarification savollari.
+- Chat CLI `--reasoning low` override olib tashlandi; Hermes configdagi medium reasoning
+  meros olinadi. Task high bo‘lib qoldi. Global config/model yoki permissions o‘zgarmadi.
+- Unconditional continue clarification blok olib tashlandi; continuation existing
+  recipient policy orqali bajariladi. Username alone yangi send permission emas.
+- [tekshirildi: offline] 118/118 test, 32/32 production eval, compile/syntax/diff check.
+  Corvin clarification → username regression mocked deliveryda sinaldi; live send yo‘q.
+
+### 2026-09-16 — Uzbek routing dataset va live RAG relevance gate
+
+- 40-case natural Uzbek dataset va deterministic routing evaluator qo‘shildi. U group
+  task, general/main agent, direct recipient, conversation classifier, stop va command
+  bypass yo‘llarini versionlangan matnlar bilan tekshiradi.
+- Birinchi run 36/40: suffiksli `guruhga/groupga/bolalarga` iboralari group route’ga
+  tushmagan; `unga yozish kerak emas` esa direct `yoz` regexiga noto‘g‘ri tushgan.
+  Ikkalasi tuzatilib, regression test va production gate’ga qo‘shildi; final 40/40.
+- Live local RAG relevance suite 5 queryda hit@5=1.0, MRR=0.9 va avg latency=303.85 ms
+  ko‘rsatdi; reranker barcha queryda ishladi. Eval report private query yoki passage
+  matnini saqlamaydi.
+- [tekshirildi: CLI/runtime] 117/117 test, production eval v4 32/32, compile/syntax/
+  diff check o‘tdi. Worker running, Telegram true, RAG 657 chunk, queue 0.
+- [cheklov] Deterministic routing va retrieval relevance Hermesning yakuniy semantic
+  actioni yoki javob faithfulness’ini o‘lchamaydi. Keyingi gate tashqi send qilmaydigan
+  model eval, so‘ng owner-private staged live acceptance.
+
+### 2026-09-16 — Redacted routing/RAG telemetry va duplicate group identity
+
+- Error telemetry barqaror kategoriyalarga ajratildi: provider quota, contract,
+  Telegram delivery, agent backend, timeout/storage va generic runtime. Raw error va
+  private message loglanmaydi.
+- Owner request uchun RAG retrieval `job-<id>` correlation trace’iga ulandi: faqat
+  availability, result count, latency va reranker holati yoziladi. Routing gate ham
+  group/general/delegation/stop yo‘lini xabar matnisiz qayd qiladi.
+- Duplicate group title uchun host matching candidate’larning faqat title, numeric ID,
+  bot-enabled va personal-enabled metadatasini Hermesga beradi. Bir nechta moslikda model
+  ID so‘rashi kerak; candidate mavjudligi delivery permission bermaydi.
+- [tekshirildi: CLI/runtime] 113/113 test, production eval v3 28/28, compile/syntax/diff
+  check o‘tdi. Manual RAG telemetry 3 result/450 ms/reranked true; worker running,
+  Telegram true, RAG 657 chunk, queue 0.
+- [cheklov] Offline gate model semantic quality, live delivery, token cost va network
+  latency’ni o‘lchamaydi. Keyingi gate — owner-private live Uzbek routing suite va
+  retrieval relevance/answer faithfulness score; groupga test send qilinmaydi.
 
 ### 2026-09-14 — Context-first routing regression fix
 

@@ -1,9 +1,46 @@
 ---
 type: session-handoff
-updated: 2026-09-14
+updated: 2026-09-16
 ---
 
 # Oxirgi Codex sessiyasi
+
+## 2026-09-16 — Uzbek routing va RAG relevance eval
+
+- [tekshirildi: versioned dataset] 40 ta tabiiy o‘zbekcha owner iborasi group task,
+  main agent, direct recipient, conversation classifier, deterministic stop va command
+  bypass yo‘llarida sinaldi; yakuniy natija 40/40.
+- [tekshirildi: eval topilmasi/kod] Dastlabki run 36/40 bo‘lib, `guruhga/groupga/
+  bolalarga` qo‘shimchalari tanilmagani va `unga yozish kerak emas` direct recipient
+  sifatida noto‘g‘ri ko‘rilgani aniqlandi. Group stem matching va direct `yoz` word-boundary
+  tuzatildi; negated write endi delivery yo‘liga kirmaydi.
+- [tekshirildi: live local RAG] 5 ta MyBrain relevance query: hit@5 1.0, MRR 0.9,
+  o‘rtacha latency 303.85 ms, reranker barcha holatda true. Report query/passagesni
+  ko‘chirmaydi. Bu retrieval sifati; answer faithfulness yoki model quality isboti emas.
+- [tekshirildi: CLI/runtime] 117/117 test, production eval v4 32/32, routing eval
+  40/40, RAG relevance gate passed, compile/Node/diff check o‘tdi. Worker restartdan
+  keyin running, Telegram true, RAG 657 chunk, queue 0.
+- [keyingi qadam] Answer faithfulness va Hermes semantic action quality uchun tashqi
+  deliverysiz model eval; undan keyingina owner-private staged live acceptance.
+
+## 2026-09-16 — Beluga observability va group identity update
+
+- [tekshirildi: kod/test] Job failure telemetry endi faqat `RuntimeError` kabi umumiy
+  tur emas, `provider_quota`, `contract`, `telegram_delivery`, `agent_backend`,
+  `timeout_or_storage` yoki `runtime` kategoriyasini ham redacted shaklda yozadi.
+- [tekshirildi: runtime telemetry] Owner request RAG oqimi bir xil `job-<id>` trace’iga
+  status, result count, latency va reranker holatini yozadi; query, note matni va private
+  context telemetryga kiritilmaydi. Manual health query: 3 result, 450 ms, reranked true.
+- [tekshirildi: kod/test] Conversation router `group_task_bypass`, `main_agent_bypass`,
+  `direct_recipient`, `intent_classifier` va stop yo‘llarini xabar matnisiz trace qiladi.
+  Bir xil nomli group topilsa Hermesga faqat title, numeric ID va allowlist holati beriladi;
+  oxirgi xabarlar uzatilmaydi va bu metadata yuborish vakolati hisoblanmaydi.
+- [tekshirildi: CLI/runtime] 113/113 test, eval v3 28/28, Python compile, Node syntax va
+  `git diff --check` o‘tdi. Worker restartdan keyin running, Telegram true, RAG 657 chunk,
+  queue 0. Live model-quality va tashqi group delivery sinovi bu bosqichda bajarilmadi.
+- [xulosa] Level 23 observability va Level 24 eval kuchaydi; Level 17 hali partial.
+  Keyingi update: real Uzbek owner iboralari bilan live/private routing-quality dataset va
+  RAG relevance/faithfulness bahosi. Multi-agent/A2A hozir kerak emas.
 
 ## 2026-09-14 — Context-first group task routing qayta tekshirildi
 
