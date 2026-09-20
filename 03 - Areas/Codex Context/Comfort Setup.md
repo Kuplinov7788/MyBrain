@@ -120,3 +120,10 @@ Tekshiruv: ikkala yangi skill `quick_validate.py` orqali `Skill is valid!` natij
 - [tekshirildi: CLI/fayl] Lokal `remotion` STDIO MCP `/Users/protochka/.codex/remotion-mcp/index.mjs` orqali global Codex config’ga qo‘shildi va enabled. Toollar: health, composition list, MP4 render va PNG still render.
 - [tekshirildi: MCP E2E] Demo `Ready` composition MCP orqali topildi; 1280×720 PNG va MP4 muvaffaqiyatli yaratildi. MCP package audit: 0 vulnerability.
 - [tekshirildi: CLI] Remotion tavsiya qilgan 12 ta agent skill demo workspace ichiga o‘rnatildi. Joriy ochiq Codex sessiyasi yangi MCP/skill katalogini ko‘rishi uchun yangi task yoki app refresh kerak bo‘lishi mumkin.
+
+## 2026-09-17 — Classic ML uchun o‘quv vositalari
+
+- [foydalanuvchi talabi] Algoritmlar bo‘yicha mentorlik; avval qulay grafik/jadval vositalari, keyin tushuntirish. Figma misol sifatida aytilgan.
+- [tekshirildi: CLI] visualize 1.0.37, figma 11.0.0, spreadsheets/pdf/presentations 26.909.12148 installed, enabled. Figma toollari joriy sessiyada exposed; akkaunt amaliy sinovi qilinmagan.
+- [qaror] Boshlang‘ich darslar suhbat ichida: jadval, sxema va interaktiv o‘quv misoli. Yangi plugin o‘rnatishga hozir imkoniyat bo‘shlig‘i aniqlanmadi.
+- Dars davomiyligi: [[Last Session|Oxirgi sessiya]].

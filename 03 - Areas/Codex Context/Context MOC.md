@@ -1,6 +1,6 @@
 ---
 type: moc
-updated: 2026-09-13
+updated: 2026-09-20
 ---
 
 # Kontekstlar xaritasi
@@ -21,6 +21,7 @@ Bu sahifa MyBrain’dagi loyiha va vosita kontekstlarini bir joydan ochish uchun
 - [[Hermes Course Transcripts|Hermes kursi transkriptlari]]
 - [[Hermes Hub|Hermes yagona bilim va ish oqimi hubi]]
 - [[Hermes Management Playbook|Hermes boshqaruv playbook’i]]
+- [[Dantes Audit 2026-09-20|Dantes AI loyiha va Hermes dashboard ko‘rigi]]
 - [[Agent Architecture - 33 Levels|Agent arxitekturasi — 33 bosqich]]
 - [[../Claude Context/Profile|Batafsil eski profil]]
 - [[../Claude Context/How-To-Use-Claude|Ishlash qo‘llanmasi]]

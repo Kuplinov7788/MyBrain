@@ -1,9 +1,28 @@
 ---
 type: session-handoff
-updated: 2026-09-16
+updated: 2026-09-20
 ---
 
 # Oxirgi Codex sessiyasi
+
+## 2026-09-20 — Dantes AI ko‘rigi
+
+- [foydalanuvchi qarori] Hozir hech qanday Dantes ishini boshlamaslik; faqat batafsil ko‘rikni Obsidian’ga saqlash.
+- [tekshirildi: lokal kod va Hermes dashboard] 13 xodim ta’rifi (5 `faol`, 8 `rejalashtirilgan`), dashboardda 15 profil, `Gateway stopped`, 0 faol sessiya, Dantes AI Kanban doskasida 2026-09-06 sanali 3 ta `Done` vazifa.
+- [qayd] Arxitektura, mavjud kod, tarixiy holat bilan bugungi dashboard farqlari va boshlanmagan keyingi imkoniyatlar: [[Dantes Audit 2026-09-20]]. Servislar ishga tushirilmagan va testlar yuritilmagan.
+
+## 2026-09-19 — TezCode Academy birinchi kurs taklifi
+
+- [yangilandi] Taklifning 2-versiyasi tayyorlandi: TezCode’ning amaliy tajribasi, ota-onaga oylik hisobot, o‘quvchidan kutiladigan ish va amaliyotga o‘tmagan bitiruvchining natijasi qo‘shildi. 1-versiya output sifatida saqlandi; MyBrain’dagi asosiy taklif 2-versiyaga yangilandi. Batafsil kurs qoidalari keyingi ish, hozircha ishlab chiqilmagan.
+- [foydalanuvchi qarori] Ish 6 etapga bo‘lindi; avval bir sahifalik taklifni tayyorlab, keyin tuzatish ma’qullandi. Kurs ochilishi yoki tashqi reklama boshlanishi so‘ralmagan.
+- [foydalanuvchi qarori] Auditoriya 14–18 yosh, ikki kirish yo‘li, pilot 5–10 o‘quvchi va 12 kishilik chegara. Rejadagi narx 1,2 mln so‘m/oy; dars 1 soat, haftasiga 3 marta. Hozirgi taklifda AI bosqichi 4 oy deb olingan.
+- [tuzatish] Jamoa 3–5 nafar mentor; mentor/support dastlab Academy’dan haq olmaydi. Xarajatlardan keyingi mablag‘ Academy rivojiga qayta sarflanadi. Oldingi 3–4 mln mentor haqi tasdiqlangan budjet emas.
+- [natija] [[ZONES/TezCode-Academy/TezCode Academy|Kurs taklifi]] va [[ZONES/TezCode-Academy/_context|qarorlar hamda etaplar]] yozildi. 1-etap qoralamasi tahrir uchun ochiq; yakuniy taklif tasdiqlangan deb olinmaydi.
+- [ochiq] Xona, jadval, Foundation dasturi/narxi, AI paketi, baholash va 3 oylik pullik amaliyot shartlari. Ishga olish va hamma bitiruvchini real mijoz loyihasiga chiqarish kafolati berilmaydi.
+- [keyin] 2-etap — Foundation va AI metodikasi xaritasi, birinchi oy darslari va baholash. Hozircha yangi plugin o‘rnatilmagan, tashqi xabar yuborilmagan, commit/push bajarilmagan.
+- [davom etdi] 2-etap uchun [[ZONES/TezCode-Academy/Metodika v0|metodika v0]] yozildi: Foundation xaritasi, AI 4 oylik reja, birinchi oy 12 dars, baholash va ota-onaga hisobot. Keyingi ish — mentor review, asosiy til va birinchi loyiha tanlovi.
+- [pauza] Emirhan Academy ishini vaqtincha to‘xtatdi. Keyingi qaytishda avval yuridik audit qilinadi: litsenziya/ta’lim faoliyati doirasi, ota-ona shartnomasi va roziliklari, voyaga yetmaganlar ma’lumotlari, xona, to‘lov/reklama hamda Project Labning huquqiy shakli.
+- [aniqlik] TezCode firmasi, pechat va bank hisob raqamlari mavjud; keyingi audit mavjud tuzilma ustidagi yetishmayotgan hujjatlarga qaratiladi.
 
 ## 2026-09-16 — Beluga bir martalik owner buyrug‘i
 
@@ -493,3 +512,11 @@ Emirhan Codex’ni loyiha uchun emas, kundalik qulay ishlatish uchun sozlashni s
 - [[Context MOC]], [[Hermes Course - TezCode Learning]], [[Hermes Setup]] va [[Beluga Plan]] hub bilan bog‘landi.
 - Skill amaliy chegarasi: transcript bilim manbasi; Telegram media yuborish faqat aniq recipient/action bilan; memory/skill — curated knowledge, model retraining emas.
 - Tekshiruv: manifest 44 entry; transcript `.md`/`.segments.json` juftliklari; Beluga job 678230882 `done`, lekin Hermes chat o‘z turn limitida skill bosqichini tugatmagan edi — skill/hub qo‘lda yakunlandi.
+
+## 2026-09-17 — Classic ML mentorlik boshlanishi
+
+- [foydalanuvchi talabi] Emirhan o‘quvchi, assistant mentor; Classic ML algoritmlarini grafik/jadval bilan o‘rganish. Avval vositalarni tayyorlash so‘raldi.
+- [tekshirildi: CLI] Mavjud visualize va Figma enabled; Figma toollari exposed, real akkaunt tekshiruvi bajarilmadi. Yangi plugin o‘rnatilmadi.
+- [tayyorlandi: fayl] Linear Regression uchun slope slayderli o‘quv grafik fragmenti; sun’iy ma’lumot: 1/2/3 soat → 20/40/60 ball, model y=a*x; MSE. Bu haqiqiy ta’lim natijasi haqidagi da’vo emas.
+- [keyingi qadam] Birinchi dars: feature, target, training, loss va prediction. Emirhan 4 soat uchun taxminni hisoblaydi; keyin intercept va o‘rganish jarayoniga o‘tish.
+- Vosita qaydi: [[Comfort Setup|Qulay ish muhiti]].
