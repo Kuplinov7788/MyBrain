@@ -8,6 +8,8 @@ updated: 2026-09-20
 ## 2026-09-20 — Dantes AI ko‘rigi
 
 - [foydalanuvchi qarori] Hozir hech qanday Dantes ishini boshlamaslik; faqat batafsil ko‘rikni Obsidian’ga saqlash.
+- [tekshirildi: lokal kod + rasmiy Hermes docs] Dantes/Hermes mosligi alohida baholandi: arxitektura g‘oyasi 8.5/10, joriy integratsiya 5.8/10, production tayyorligi 3.8/10, umumiy moslik 6.0/10. Asosiy pasayishlar: runtime policy bridge isboti yo‘q, 13 profile configida `terminal.cwd` yo‘q, xotira/business data bo‘sh, gateway/dispatcher va LLM quality eval to‘liq isbotlanmagan.
+- [qayd] Batafsil mezonlar, sabablar va moslashtirish ko‘priklari: [[Dantes-Hermes Moslik Tahlili 2026-09-20]]. Kod yoki servis o‘zgartirilmadi.
 - [tekshirildi: lokal kod va Hermes dashboard] 13 xodim ta’rifi (5 `faol`, 8 `rejalashtirilgan`), dashboardda 15 profil, `Gateway stopped`, 0 faol sessiya, Dantes AI Kanban doskasida 2026-09-06 sanali 3 ta `Done` vazifa.
 - [qayd] Arxitektura, mavjud kod, tarixiy holat bilan bugungi dashboard farqlari va boshlanmagan keyingi imkoniyatlar: [[Dantes Audit 2026-09-20]]. Servislar ishga tushirilmagan va testlar yuritilmagan.
 

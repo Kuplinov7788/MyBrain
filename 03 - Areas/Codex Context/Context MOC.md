@@ -22,6 +22,7 @@ Bu sahifa MyBrain’dagi loyiha va vosita kontekstlarini bir joydan ochish uchun
 - [[Hermes Hub|Hermes yagona bilim va ish oqimi hubi]]
 - [[Hermes Management Playbook|Hermes boshqaruv playbook’i]]
 - [[Dantes Audit 2026-09-20|Dantes AI loyiha va Hermes dashboard ko‘rigi]]
+- [[Dantes-Hermes Moslik Tahlili 2026-09-20|Dantes va Hermes Agent moslik tahlili]]
 - [[Agent Architecture - 33 Levels|Agent arxitekturasi — 33 bosqich]]
 - [[../Claude Context/Profile|Batafsil eski profil]]
 - [[../Claude Context/How-To-Use-Claude|Ishlash qo‘llanmasi]]
