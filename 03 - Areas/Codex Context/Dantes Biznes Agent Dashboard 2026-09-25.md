@@ -82,8 +82,10 @@ Panel maketini yoki kodini boshlashdan avval maqsadli biznesni aniqlash: Dantes 
 ## 2026-09-28 — Uysot Sales dashboard kuzatuvi
 
 - [tekshirildi: Uysot UI] Menejer akkauntlari, loyiha xonadonlari, 2026-yil sotuv statistikasi, CRM voronkasi, sentabr qarzdorlik va to‘lov grafigi ko‘rildi; sanasi, qiymatlari va cheklovlari Dantes repo’dagi `docs/UYSOT-SALES-DASHBOARD-KUZATUVLARI-2026-09-28.md`da.
-- [xulosa] Uysotda qarzdorlik mas’uli va to‘lov turi/summasi ko‘rinsa ham, undirish, to‘lovni tasdiqlash va AI vakolatlari aniqlanmagan. Sales/Finance jarayonni tasdiqlashi kerak.
+- [xulosa] Uysotda qarzdorlik mas’uli va to‘lov turi/summasi ko‘rinsa ham, agentning vazifasi/vakolati aniqlanmagan. Sales jarayonini tasdiqlashi kerak; alohida Finance bo‘limi tasdiqlanmagan.
 - [qaror] Yangi mazmunli, tekshirilgan Uysot/Sales ma’lumotlari MyBrain Sales qaydi va Dantes loyihasidagi tegishli hujjatda saqlanadi. Salesga o‘zidan-o‘zi xabar yuborilmaydi.
+- [Sales javobi: 2026-09-28] Bitta sotuvchi barcha loyihalarni yuritadi; qarz mas’uli mijozga bir necha ogohlantirish beradi, keyin direktorga eskalatsiya qiladi. Suhbatdosh to‘lovlarni tekshirib Uysotga kiritadi; mijozlarga korporativ raqamdan qo‘ng‘iroq qiladi. Tafsilotlar Dantes Uysot kuzatuv hujjatida.
+- [tuzatish] `Продажа` sahifasidagi 4 raqamini Sales noto‘g‘ri deb aytdi; tasdiqlangan sotuv soni emas. “Finance” avvalgi savolda asossiz qo‘llangan.
 
 ## Manbalar
 

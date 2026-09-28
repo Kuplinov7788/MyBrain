@@ -721,3 +721,11 @@ Emirhan Codex’ni loyiha uchun emas, kundalik qulay ishlatish uchun sozlashni s
 - [foydalanuvchi qarori] Har yangi mazmunli, tekshirilgan Uysot/Sales ma’lumotini MyBrain kanonik Sales qaydiga va Dantes repo’dagi tegishli loyiha hujjatiga qo‘shib borish. Credential/mijoz PII ko‘chirmaslik; Salesga yuborish alohida aniq ruxsatsiz bajarilmaydi.
 - [yozildi] Dantes repo `docs/UYSOT-SALES-DASHBOARD-KUZATUVLARI-2026-09-28.md`; MyBrain Dantes loyiha qaydi va Sales qaydi yangilandi. `uysot-sales` skillida keyingi safar ikki manbani yangilash tartibi qayd etildi.
 - [cheklov] Lokal fayllar o‘zgardi; commit/push so‘ralmadi va bajarilmadi.
+
+## 2026-09-28 — Sales javoblarini tahlil qilish
+
+- [foydalanuvchi yuborgan Sales javobi] Bitta sotuvchi barcha loyihaga qaraydi; qarzdorlik mas’uli bir necha ogohlantirishdan keyin direktor Jonibek Komiljonovichga eskalatsiya qiladi; suhbatdosh to‘lovlarni tekshirib Uysotga kiritadi; mijozlarga korporativ raqamdan qo‘ng‘iroq qiladi.
+- [tuzatish] Akkaunt/rol sonidan sotuvchilar sonini chiqarish hamda dashboarddagi `Продажа=4`ni haqiqiy natija deb ko‘rsatish noto‘g‘ri bo‘lgan. Sales 4 raqamni rad etdi. “Finance” bo‘limi — agent taxmini; tasdiqlanmagan.
+- [dalil] Uysotning qarz/to‘lov/sotuv sahifalari rasmlari shu suhbatda ko‘rsatildi; mijoz PII qaydga ko‘chmadi.
+- [tayyorlandi, yuborilmadi] 6 ta tuzatilgan savol [[Uysot Sales javoblari va dashboard dalillari 2026-09-28]]da.
+- [raqam farqi] Sentabr to‘lovlar UI’si qayta ochilganda 1 648 008 366 dan 1 838 580 366 UZSga o‘zgardi; ikkisi ham shu paytdagi, hisoblash ta’rifi noma’lum UI qiymati.
