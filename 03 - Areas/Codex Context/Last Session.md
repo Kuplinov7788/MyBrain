@@ -729,3 +729,6 @@ Emirhan Codex’ni loyiha uchun emas, kundalik qulay ishlatish uchun sozlashni s
 - [dalil] Uysotning qarz/to‘lov/sotuv sahifalari rasmlari shu suhbatda ko‘rsatildi; mijoz PII qaydga ko‘chmadi.
 - [tayyorlandi, yuborilmadi] 6 ta tuzatilgan savol [[Uysot Sales javoblari va dashboard dalillari 2026-09-28]]da.
 - [raqam farqi] Sentabr to‘lovlar UI’si qayta ochilganda 1 648 008 366 dan 1 838 580 366 UZSga o‘zgardi; ikkisi ham shu paytdagi, hisoblash ta’rifi noma’lum UI qiymati.
+- [foydalanuvchi aniqlashtirdi] Uch faol akkaunt — o‘zining, konsultantning va Dantes CEO’niki; amalda bitta sotuvchi barcha loyihalarni yuritadi. Sales bo‘limining jami xodimlar soni va vazifalari savolga qo‘shilsin.
+- [dalil] 14.09.2026 foydalanuvchi skrinshoti klient/to‘lov turi/summa ustunli, bank to‘lovlari sahifasini ko‘rsatadi; 2 sahifa. Bu to‘lov tafsiloti, xonadon savdosi bilan bog‘lovchi ID/ustun skrinshotda yo‘q. PII ko‘chirilmadi.
+- [tayyorlandi, yuborilmadi] Sales follow-up savollari qayta tuzildi: jami xodim/rollar, ogohlantirish tartibi, to‘lov→kontrakt/xonadon bog‘lanishi, sotilgan xonadonlar jadvali, CRM qo‘ng‘iroq qaydi, AI vazifasi va xabar tasdig‘i.

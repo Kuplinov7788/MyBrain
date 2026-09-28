@@ -111,6 +111,9 @@ Konsultant kartasi: ism, lavozim, ish vaqti, aloqa, qaysi jarayon va ma’lumotn
 - [aniqlashtirish] “Finance” alohida bo‘limi bor deb agent savolda taxmin qildi; Sales buni aytmagan, to‘lovni o‘zi tekshirib kiritishini bildirgan. Keyingi savolda bu atama ishlatilmaydi.
 - [dalil] Suhbatda `Статистика → Задолженность`, `Платежи` va `Продажа` sahifalarining UI rasmlari ko‘rsatildi. Jadvaldagi mijoz ma’lumotlari qaydga ko‘chirilmagan.
 - [tayyorlandi] Javobga mos 6 ta aniqlashtirish savoli [[Uysot Sales javoblari va dashboard dalillari 2026-09-28]] qaydida; Salesga yuborilmadi.
+- [foydalanuvchi aniqlashtirdi: 2026-09-28] Uch faol akkaunt — Emirhanning o‘ziniki, konsultantniki va Dantes CEO’niki; bitta sotuvchi barcha loyihalarni yuritadi. Sales jamoasidagi jami xodimlar soni va har birining vazifasi aniqlashtirilishi kerak.
+- [tekshirildi: foydalanuvchi yuborgan skrinshot] 14.09.2026 oynasi to‘lov tafsilotlari jadvali: mijoz, to‘lov turi, summa; ko‘rinadigan to‘lovlar bank orqali va 2 sahifa bor. Bu payment transaction dalili; xonadon/kontrakt bilan bog‘lanishi skrinshotda yo‘q. Mijoz PII ko‘chirilmadi.
+- [tayyorlandi, yuborilmadi] Yangilangan savollarga Sales bo‘limining headcount/rol taqsimoti va to‘lovni kontrakt/xonadonga bog‘laydigan Uysot jadvali haqidagi savollar qo‘shildi.
 
 ## Suhbatdan keyin
 

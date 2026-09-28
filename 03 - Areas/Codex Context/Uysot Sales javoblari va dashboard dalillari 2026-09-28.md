@@ -9,6 +9,7 @@ status: Sales javobi olindi; aniqlashtiruvchi savollar tayyor, yuborilmagan
 ## Hisobot xulosasi
 
 - Sales javobiga ko‘ra, hozir **1 sotuvchi barcha loyihalar bilan ishlaydi**.
+- Emirhan aniqlashtirdi: uch faol akkaunt — o‘zining, konsultantning va Dantes CEO’niki; bitta sotuvchi barcha loyihalarni yuritadi. Sales bo‘limining jami xodimlari soni ochiq qolmoqda.
 - Qarzdorlikdagi mas’ul xodim mijoz bilan ishlaydi; bir necha ogohlantirish natija bermasa direktor **Jonibek Komiljonovich**ga eskalatsiya qilinadi.
 - Suhbatdosh to‘lovlarni o‘zi tekshiradi va Uysotga kiritadi; mijozlarga korporativ telefon raqamidan qo‘ng‘iroq qiladi.
 - Bizning oldingi ikki xulosamiz xato bo‘lgan: akkaunt/rol soni sotuvchilar soni deb olindi; `Продажа`dagi `4` haqiqiy sotuv deb aytildi. Sales `4` noto‘g‘ri ma’lumot deb tasdiqladi.
@@ -37,15 +38,16 @@ Oldingi savolda rahbar yoki Finance tasdig‘i so‘raldi. Sales alohida Finance
 - `Статистика → Задолженность` (`/boss/arrearage`): kunlik grafik; pastida kontrakt, qarz summasi va kechikish ustunli qarzdorlar jadvali. Shu suhbatda ochiq ko‘rsatildi. Jadvaldagi mijoz ismlari ushbu qaydga nusxalanmagan.
 - `Статистика → Платежи` (`/boss/payment`): sentabr grafigi va sana bo‘yicha naqd, karta, bank, o‘tkazma, Click hamda boshqa to‘lov kesimlari. Shu suhbatda skrinshot ko‘rsatildi.
 - `Статистика → Продажа` (`/boss/sale`): 2026/oylik UI’da 4; Sales bu hisobni noto‘g‘ri deb rad etdi.
+- Foydalanuvchi yuborgan 14.09.2026 oynasi `Клиент / Тип платежа / Сумма платежа` ustunli to‘lov tafsiloti; ko‘rinadigan qatorlar bank to‘lovi, 1- va 2-sahifa bor. Bu alohida to‘lov yozuvlarini ko‘rsatadi, sotilgan uylar ro‘yxatini emas. Ularni sotuv/xonadonga bog‘laydigan kontrakt yoki obyekt jadvali hali topilmagan.
 
 Skrinshotlar shu suhbatda inline ko‘rsatildi; fayl qilib eksport qilinmadi va Salesga yuborilmadi.
 
 ## Salesga ko‘rsatish uchun yangilangan qisqa savollar
 
-1. “3 ta faol akkaunt” deganda faqat savdo akkauntlarini nazarda tutdingizmi? Sizning va Dantes Farhodovich akkauntlaringiz shu songa kiradimi?
+1. Sales bo‘limida jami nechta xodim ishlaydi? Har birining vazifasi va Uysotdagi roli qanday?
 2. “Bir necha ogohlantirish” odatda nechta va qancha muddat oralig‘ida beriladi? Qo‘ng‘iroq natijasi Uysotga yoziladimi?
-3. Siz so‘ragan jadval `Задолженность`dagi qarzdorlar ro‘yxatimi yoki `Платежи`dagi sana/to‘lov turi jadvalimi?
-4. `Продажа` sahifasidagi 4 noto‘g‘ri. To‘g‘ri sotuv sonini qaysi Uysot jadvalidan va qaysi davr bo‘yicha olamiz?
+3. 14-sentabr jadvalidagi to‘lovni qaysi jadvaldan shartnoma, loyiha va xonadonga bog‘laymiz?
+4. Sotilgan xonadonlarni ko‘rsatadigan ishonchli Uysot jadvali qaysi? Unda sotuv sanasi, xonadon va status qaysi ustunlarda?
 5. Korporativ raqamdan qilingan qo‘ng‘iroq sanasi, natijasi va keyingi aloqa CRM’da saqlanadimi?
 6. AI avval qaysi ishga yordam bersin: qarz hisoboti, aloqa eslatmasi yoki Uysot hisobotini tekshirish? Mijozga xabar yuborishdan oldin kim tasdiqlaydi?
 
