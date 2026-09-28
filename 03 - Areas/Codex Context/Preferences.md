@@ -21,6 +21,7 @@ source: Emirhan bilan bevosita suhbat
 - 2026-09-13: Agent xato va muvaffaqiyatlardan bosqichma-bosqich lesson chiqarib, keyingi o‘xshash vazifada qo‘llasin. Yangi lesson avval candidate bo‘lsin; dalil/test yoki Emirhan tasdig‘idan keyin doimiy qoida/skillga aylansin. Ko‘p hardcoded script o‘rniga agentic reasoning va kichik, aniq tool’lar afzal.
 - Beluga ishi yakunida oddiy tildagi to‘liq hisobot kerak: bot/agent nimalar qila olishi, nimalarni tabiiy tildan tushunishi, nimalar o‘zgargani, test dalillari, cheklovlar va foydalanish misollari. Tekshirilgan, jonli sinalmagan va rejalashtirilgan imkoniyatlar aralashtirilmasin.
 - 2026-09-13: Telegram suhbatlarida javob tayyorlashda har bir aniq chat uchun ruxsatli so‘nggi kontekstni o‘qib, Emirhan yozish uslubi, ohang, yaqinlik/chegara va oddiy preference signallarini hisobga olish so‘raldi. Bu psixologik tashxis emas; maxfiy chat dump saqlanmaydi, faqat qisqa per-chat xulosa va qayta ishlatiladigan communication lessonlar yuritiladi.
+- 2026-09-22: Har bir javobda Emirhanga ismi bilan murojaat qilinsin. Gallyutsinatsiyani kamaytirish uchun Emirhan aytgan “meyhod kanareyki” usuli amalda tekshirilgan faktni xulosadan, taxminni esa noaniqlikdan alohida ko‘rsatish; muhim natijani fayl/CLI yoki boshqa dalil bilan tekshirmasdan “tugadi/ishlaydi” deb aytmaslik tarzida qo‘llansin.
 
 ## Suhbatni davomiy qayd qilish — 2026-09-10
 

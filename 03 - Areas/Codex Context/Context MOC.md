@@ -1,6 +1,6 @@
 ---
 type: moc
-updated: 2026-09-20
+updated: 2026-09-25
 ---
 
 # Kontekstlar xaritasi
@@ -17,12 +17,17 @@ Bu sahifa MyBrain’dagi loyiha va vosita kontekstlarini bir joydan ochish uchun
 - [[Beluga Communication Lessons|Beluga communication lessonlari]]
 - [[Operating System|Birlashtirilgan Codex + MyBrain ish tizimi]]
 - [[Hermes Setup|Hermes sozlash va rivojlantirish xaritasi]]
+- [[AI Profit Boardroom Analysis 2026-09-25|AI Profit Boardroom tahlili]]
 - [[Hermes Course - TezCode Learning|Hermes kursi — TezCode Learning xulosasi]]
 - [[Hermes Course Transcripts|Hermes kursi transkriptlari]]
 - [[Hermes Hub|Hermes yagona bilim va ish oqimi hubi]]
 - [[Hermes Management Playbook|Hermes boshqaruv playbook’i]]
+- [[Mars IT Front-End Topics|Mars IT Front-End mavzulari]]
 - [[Dantes Audit 2026-09-20|Dantes AI loyiha va Hermes dashboard ko‘rigi]]
+- [[Dantes Biznes Agent Dashboard 2026-09-25|Dantes biznes agentlar dashboardi yo‘nalishi]]
+- [[Sales suhbat - muammolar va AI agent talablari|Sales bilan suhbat savollari va muammolar qaydi]]
 - [[Dantes-Hermes Moslik Tahlili 2026-09-20|Dantes va Hermes Agent moslik tahlili]]
+- [[Dantes Hermes Arxitektura va Yuridik Savollar 2026-09-21|Dantes va Hermes arxitektura/yuridik savollari]]
 - [[Agent Architecture - 33 Levels|Agent arxitekturasi — 33 bosqich]]
 - [[../Claude Context/Profile|Batafsil eski profil]]
 - [[../Claude Context/How-To-Use-Claude|Ishlash qo‘llanmasi]]

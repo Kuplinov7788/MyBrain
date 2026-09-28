@@ -1,10 +1,17 @@
 ---
 type: setup-audit
-updated: 2026-09-13
+updated: 2026-09-24
 status: configured-memory-active
 ---
 
 # Hermes — sozlash va rivojlantirish xaritasi
+
+## 2026-09-24 — Hermes v0.21.4 update
+
+- [tekshirildi: CLI] Git install `v0.21.1`dan `v0.21.4` (`main @ 76c5bdcc`)ga yangilandi; config v46. `hermes doctor` version/config/OpenAI Codex auth’ni sog‘lom ko‘rsatdi. MyBrain va Remotion skill/MCP’lari enabled; izolyatsiyalangan Terra inference javob berdi.
+- [tiklash] Updater kod almashgandan keyin o‘z process’idagi eski/yangi Python modul aralashuvi sabab cleanup’da xato berdi. Yangi processda qayta run exit 0 va success receipt yozdi. Backup `~/.hermes/backups/pre-update-2026-09-24-144811.zip`; eski shallow HEAD rescue ref’da, dependency patchlari stash’da ham saqlangan.
+- [test] Beluga 129/129, web 352/352, root JS 46/46; TUI/Desktop typecheck o‘tdi. TUI’da 4 theme/color testi yiqildi; Desktop to‘liq testi uzoq davom etgani uchun to‘xtatildi va ko‘rilgan fail’larning sababi ajratilmadi. Production npm audit 0, dev audit 10 advisory (9 high, 1 low).
+- [ishchi holat] Oldingi dependency security patchlari yangi Hermes checkout’ga qayta qo‘llangan, 6 fayl uncommitted. Beluga worker Telegramga ulangan; yangilanishdan keyin live Telegram send sinalmagan. Batafsil handoff: [[Last Session]].
 
 ## 2026-09-13 — Dashboard model kartalari
 

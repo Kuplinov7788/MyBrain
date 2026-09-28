@@ -1,9 +1,160 @@
 ---
 type: session-handoff
-updated: 2026-09-20
+updated: 2026-09-25
 ---
 
+## 2026-09-25 — AI Profit Boardroom va Hermes Agent Revenue Kit
+
+- [foydalanuvchi so‘rovi] Emirhan Skool’dagi AI Profit Boardroom sahifasini tahlil qilish, nima ekanini va nima uchun kerakligini aniqlash, so‘ng eslab qolishni so‘radi.
+- [tekshirildi: public sahifalar] Bu Julian Goldie’ning pullik AI biznes community’si; Hermes Agent Revenue Kit — Hermes dasturining o‘zi emas, Hermes ustiga qo‘yilgan workflow/template va biznes trening paketi.
+- [tekshirildi: GitHub] Boardroom bilan mos Agent OS dashboard candidate `nilhemdot/agent-os`; uning README pack sanasi 2026-07-03. Boshqa public copy `gdotbat/Hermes-agentic-os` a’zolar uchun cheklovni ko‘rsatadi va JulianGoldie repo’sini collaborator-only clone URL deb ataydi. Kanonik member repo’ni public tekshira olmadim; bular Hermes upstream repo’si emas.
+- [xulosa] Hermes upstream GitHub MIT/open-source va Boardroom obunasisiz ishlatiladi. Pullik qiymat — biznes qo‘llash materiallari, coaching va support; daromad va’dalari mustaqil tekshirilmagan.
+- [qayd] To‘liq tahlil, joriy narx, free alternativ, refund/cancel cheklovlari va manbalar: [[AI Profit Boardroom Analysis 2026-09-25]].
+
+## 2026-09-25 — Dantes biznes agentlar dashboardi
+
+- [foydalanuvchi yo‘nalishi] Dantes/AI agentlar biznesni avtomatlashtirishga xizmat qilishi, CEO, HR va boshqa xodim rollari bo‘lishi, Julian Goldie Agent OS uslubidagi Dantes’ga mos dashboard kerakligi aytildi.
+- [tekshirildi: lokal repo] Dantes’da 13 manifest (5 faol, 8 rejalashtirilgan), `rahbar` orkestratori va Hermes dashboard launcher 8791-port uchun mavjud. Alohida biznes cockpit topilmadi; repo `main...origin/main` holatida toza.
+- [xulosa/taklif] Hermes paneli runtime/operator boshqaruviga, yangi Dantes paneli esa KPI, agentlar, Kanban, inson tasdiqlari va auditni biznes nuqtai nazaridan birlashtirishga xizmat qilishi kerak. UI agentning qaror vakolatini oshirmaydi; pul va HR qarorlari odamda qoladi.
+- [repo taqqoslash va tuzatish] Eng mos public asos `paperclipai/paperclip`: org chart, goals, tasks, budgets, approvals va audit bor; Julian Agent OS README'si Paperclip'ni optional AI-company modul deb ko'rsatadi. Joriy rasmiy Paperclip docs `hermes_local` va `hermes_gateway` adapterlari built-in ekanini tasdiqladi (README asosida oldin Hermes adapteri yo'q deyilgan edi — tuzatildi).
+- [baholash] Biznes maqsadiga 9/10, Hermes runtime native fit 9/10, Dantes'ning maxsus 13 profile/`HERMES_HOME`/core-policy mapping fit 6/10; Paperclip'ni Dantes uchun asos sifatida 8/10. Raqamlar kodni ishga tushirmasdan qilgan moslik xulosasi.
+- [cheklov] Upstream issue non-default `HERMES_HOME` skills inventory'da nomuvofiqlik qayd etadi; Paperclip adapter sahifasi Dantes profile mapping'ini tasdiqlamaydi. Dantes `core` ruxsat/audit authority bo'lib qolishi, task/agent ma'lumoti ikki joyda parallel source-of-truth bo'lmasligi kerak.
+- [cheklov] Hermes upstream docs Dantes deploy pinidan yangiroq bo'lishi mumkin (`ARXITEKTURA.md`: v0.20.4); panel plugin/API tanlovi o'sha pin bilan tekshirilishi kerak.
+- [foydalanuvchi talabi aniqlashdi] Agentlar uchun galaxy/xarita ko'rinishi, Trello uslubidagi board, Hermes boshqaruvi, Obsidian bilan bilim ulashuvi va foydalanish qulayligi solishtirilsin.
+- [yangi mos UI nomzodi] `Fruxano/fruvisi` Hermes plugin'i 2D interaktiv org-chart, rangli bo'lim/guruhlar, presetlar va Hermes native Kanban'da task drag/drop beradi; haqiqiy 2.5D/3D ko'rinish va live agent holati roadmap'da. README faqat Hermes 0.18.2'da sinagan, Dantes serveri 0.20.4'ga pin qilingan; public repo kichik (1 commit, 4 stars).
+- [xulosa] Aniq UX talablariga FruVisi UI-asos **8/10**, Dantes'ga hozir tayyorligi **5/10**. Yangi agentlarni FruVisi wizard'idan emas Dantes manifest/sinxronlash orqali yaratish, tasklar uchun Hermes Kanban'ni saqlash, fallback provider va metadata yozuvlarini Dantes siyosatiga tekshirish kerak. Paperclip biznes KPI/budget/approval uchun kuchliroq, ammo alohida control plane; `mojomast/hermesdashboard` session/tool graph ko'rsatadi, lekin org chart yoki task board emas.
+- [Obsidian integratsiya] Hermes MCP orqali vault serveriga ulanish mumkin; `Vasallo94/obsidian-mcp-server` read/search va ixtiyoriy write tool'larini hujjatlashtiradi. Shaxsiy `MyBrain` vault'ini Dantes mijoz agentlariga to'liq ochmaslik; Dantes uchun alohida, ruxsatlangan vault/context papkasini read-only ulash tavsiya.
+- [qayd] Mezonlarga moslik, risk va manbalar: [[Dantes Biznes Agent Dashboard 2026-09-25]]. Hech narsa klonlanmadi/o'rnatilmadi; Dantes repo o'zgarmadi.
+- [ochiq] Panel Dantes Construction mijoziga yoki TezCode/AiSolution'ning o‘z biznesiga qilinadimi — bu aniqlanmaguncha maket/kod boshlanmaydi.
+- [qayd] Tekshirilgan asoslar va konsept: [[Dantes Biznes Agent Dashboard 2026-09-25]]. Julian candidate’i Hermes operator dashboard’i bilan aynan bir mahsulot emas.
+
+## 2026-09-24 — RAG birinchi ustuvorlik sifatida tekshirildi
+
+- [foydalanuvchi qarori] RAG birinchi navbatda tekshirilsin, ishlamasa tuzatilsin.
+- [tekshirildi: CLI] `com.protochka.codex-rag` running; health `ok`, 838 chunk, embedding model va reranker yuklangan. `com.protochka.codex-rag-reindex` har 600 soniyada ishga tushadi; oxirgi indeks 15:10 da qurilgan va o‘sha paytgacha yangilangan MyBrain qaydlari undan eski. Oxirgi reindex logi xatosiz.
+- [tekshirildi: real qidiruv/Beluga] Remotion upload recovery savoli yangi `Last Session` va `Beluga Plan` parchalarini topdi; `context.build` 3 ta RAG manbasini owner context’ga qo‘shdi. RAG relevance eval 5/5, hit@k 1.0, MRR 0.9. Nosozlik topilmadi, kod yoki servis o‘zgartirilmadi.
+- [tekshirildi: izolyatsiyalangan Hermes inference] RAG konteksti va Beluga reply qoidalari toolsiz bir martalik Hermes so‘roviga berildi. Javob upload oldidan `action_attempt`, keyingi owner job feedback scope’i, PNG/MP4 trusted path va format tekshiruvini manbaga mos sanab, `Last Session.md`ni ko‘rsatdi. Tashqi xabar yuborilmadi, ownerning davomli sessiyasi ishlatilmadi.
+- [foydalanuvchi so‘rovi va tekshiruv] Uchta toolsiz Hermes probe: Remotion delivery fix manbaga mos; RAG path/600 soniya/838 chunk va manba to‘g‘ri; kontekstda bo‘lmagan sevimli film haqidagi savolga “bilmayman” dedi. Dastlabki tekshiruv mezoni so‘ralmagan `8766` portini shart qilgani uchun bitta false negative chiqdi; mezon portni talab qilmaydigan qilib tuzatilib, o‘sha probe qayta o‘tkazildi va o‘tdi. Owner-session yoki Telegram ishlatilmadi.
+- [cheklov] Bu retrieval va promptga kontekst qo‘shilishini isbotlaydi; Hermes javobining har safar manbaga sodiqligini yoki Telegram orqali jonli javob sifatini isbotlamaydi.
+
+## 2026-09-24 — Beluga/Hermes lokal ko‘rik va ikki delivery fix
+
+- [foydalanuvchi so‘rovi] Beluga/Hermes’ning barcha joriy qismlarini tekshirish so‘raldi; tashqi Telegram send qilinmadi.
+- [topildi va tuzatildi] Remotion upload oldidan durable attempt yozilmagan edi; crash/restart’da qayta yuborish xavfi bor edi. Endi `action_attempt` senddan oldin yoziladi. Render feedback konteksti bevosita keyingi owner job bilan cheklanadi. Upload PNG/MP4 format signature’i, trusted path va owner private chat bilan cheklanadi.
+- [tekshirildi: CLI/test/runtime] 139/139 Beluga unit test, production eval 32/32, routing 40/40, RAG relevance 5/5 (hit@5 1.0, MRR 0.9), compile/syntax/diff check. Hermes doctor sog‘lom, OpenAI Codex auth bor; Remotion va Telegram personal MCP testlari ulandi. `send_message` Hermes’dan exclude qilingan. Worker restartdan keyin running, Telegram true, yangi observer child fresh, queue/running 0. Hermes v0.21.4 o‘rnatilgan, `main`da tekshiruv payti 17 yangi commit mavjud.
+- [cheklov] Live Telegram correction yoki Remotion upload testi qilinmagan. Hermes TUI’dagi 4 test failure va Desktop keng testining to‘xtatilgani oldingi auditdagi ochiq holat. NPM production audit 0; dev audit 10 advisory. Batafsil: [[Beluga Plan]].
+
+## 2026-09-24 — Beluga correction feature
+
+- [foydalanuvchi so‘rovi] Hermes agentga feature qo‘shish so‘raldi; feature turi aniqlashtirish uchun yuborildi, javob kelmagani sabab [[Beluga Plan]]dagi birinchi tavsiya — tabiiy correction flow — tanlandi.
+- [o‘zgartirildi: kod] Owner feedbacki oldingi yakunlangan ishga ulanadi. Aniq, umumiy tuzatish `candidate` lesson bo‘lib saqlanishi mumkin; noaniq holatda Hermes savol beradi. Correction xabari tashqi yuborishni boshlamaydi. Bir xil job retry yangi dalil hisoblanmaydi.
+- [tekshirildi: test/model/runtime] 134/134 unit test, production eval 32/32, Uzbek routing 40/40, compile/syntax/diff check o‘tdi. Izolyatsiyalangan Hermes probe’da aniq feedback candidate berdi, noaniq feedback savol berdi. Worker restartdan keyin running, Telegram true, queue/running 0, observer fresh. Jonli Telegram correction flow hali sinalmagan.
+
+## 2026-09-24 — Hermes Agent yangilanishi
+
+- [foydalanuvchi so‘rovi] Beluga konteksti o‘qilgach Hermes Agent’ni update qilish so‘raldi. “Update” o‘rnatilgan agent versiyasini yangilash deb talqin qilindi.
+- [tekshirildi: CLI] Hermes `v0.21.1`dan `v0.21.4`ga, `main @ 76c5bdcc`ga yangilandi; config `v41 → v46`. Full backup: `~/.hermes/backups/pre-update-2026-09-24-144811.zip`. Eski shallow checkout `9e0dc431` rescue ref’da saqlandi. Uncommitted dependency patchlari stash’da saqlanib, yangilangan kodga qayta qo‘llandi; stash ham ehtiyot nusxa sifatida qoldi.
+- [xato va tiklash] Birinchi updater process’i kod swap’dan keyin eski/yangi Python modul signature aralashuvi sabab cleanup’da `TypeError` bilan exit 1 berdi. Yangi processda cleanup chaqiruvi o‘tdi; updater qayta ishga tushirilganda exit 0 va `success` receipt yozdi. Kodga qo‘shimcha patch kerak bo‘lmadi.
+- [tekshirildi: CLI/test] `hermes --version`, `hermes config check`, `hermes doctor`, MyBrain/Remotion skill va MCP enable holati, OpenAI Codex auth o‘tdi. Izolyatsiyalangan `gpt-5.6-terra` inference `HERMES_UPDATE_OK` qaytardi; tashqi xabar yuborilmadi. Beluga 129/129 unit test, Python compile, Node syntax va Telegram worker health o‘tdi. Web 352/352, root JS 46/46; TUI va Desktop typecheck o‘tdi.
+- [cheklov] TUI’da 4 ta theme/color test yiqildi. Desktop keng testi uzoq davom etgani uchun to‘xtatildi; to‘xtatishgacha bir nechta failure ko‘rindi, sabab shu update ekani isbotlanmagan. NPM audit: production dependency 0, jami dev dependency 10 advisory (9 high, 1 low). Beluga observer statusi `scanning`, `fresh: false`; 19 ta tarixiy failed job bor.
+- [holat] Hermes checkout’dagi oldingi dependency security patchlarining 6 fayli uncommitted; `git diff --check` o‘tdi. Beluga’dagi oldindan mavjud 7 fayl o‘zgarishi saqlandi. Jonli Telegram yuborish testi bu yangilanishda bajarilmadi.
+
+## 2026-09-23 — Beluga task, xotira va Hermes audit
+
+- [tekshirildi: Telegram/job store] Eng oxirgi owner task Remotion rasmiga izoh qo‘shish va shu chatga natijani yuborish bo‘lgan. `job-678231070` `done`; rasm va matn 2026-09-23 18:21 da ko‘rinadi.
+- [xotira tahlili] Hermes’da `remotion-js-infographic` local skill `enabled` va Beluga chat/task buyrug‘ida preload qilinadi. Audit eski “short caption” ko‘rsatmasi owner so‘ragan rasm ostidagi izoh bilan mos emasligini topdi; Beluga prompt, Hermes skill v0.1.1 va Obsidian workflow endi tushuntiruvchi captionni talab qiladi. `experience.json`da qisqa confirmed lessonlar bor; shaxsiy chat dump saqlanmagan.
+- [cheklov] Observer 1061 ta ochiq dialogni ko‘rib, scan holatiga qarab 200 yoki 250 ta recent snapshot ko‘rsatgan; bu to‘liq tarix emas. Oxirgi restartdan keyin analyzer `idle`, xatosiz; tekshiruv paytida 8 review tugagan, 240 tasi navbatda edi. Saqlangan chatlarning aksariyati observe rejimida. Auto-reply 3 chatda, draft 1 chatda yoqilgan.
+- [tuzatildi] Muvaffaqiyatli background scan oldingi `RuntimeError` statusini tozalamagan. Statusni tozalash sharti qo‘shildi va regression test yozildi.
+- [test] Beluga 129/129 unit test, offline production eval 32/32, Uzbek routing 40/40, local RAG 5/5 (hit@5 1.0, MRR 0.9), compile/syntax va `git diff --check` o‘tdi.
+- [Hermes auth] `openai-codex` login borligi tasdiqlandi. Nous Portal refresh-token sessiyasi bekor qilingan; Beluga uni ishlatmaydi, qayta ulash uchun interaktiv login kerak. Hermes dependency’larining xavfsiz yangilanishlari quyida qayd etildi.
+- [izoh] SQLite’da 19 ta eski failed job bor; eng so‘nggisi 2026-09-22 dagi provider quota/backend xatosi. Ular qayta ishga tushirilmadi.
+- [Hermes fix] Hermes workspace dependency auditda buzuvchi bo‘lmagan patch/minor yangilanishlar qilindi; `hermes doctor` browser/web/UI advisory topmadi. `apps/desktop`da 8 ta yuqori darajadagi Electron advisory qoldi; buni tuzatish Electron 40’dan 44 major versiyaga o‘tishni talab qiladi, majburan yangilamadim. OpenAI Codex auth ishlayapti, Nous Portal tokenini interaktiv qayta ulash kerak.
+- [Hermes test auditi] Web tests 295/295, root tests 69/69. TUI typecheck/build o‘tdi, 4 theme/color testi yiqildi; desktop typecheck/lint o‘tdi, 2 localStorage testi yiqildi. Bularni kod nuqsoni yoki oldingi holat deb aniq ajratib tasdiqlamadim.
+- Batafsil audit: [[Beluga Plan]].
+
+## 2026-09-22 — Remotion natijasini Beluga chatiga qaytarish
+
+- [o‘zgartirildi: Beluga] Hermes `render_media` action’i qo‘shildi. Remotion render qilgan MP4/PNG faqat trusted `/Users/protochka/.codex/remotion-workspace/outputs/` ichidan qabul qilinadi va so‘rov kelgan shu Telegram chatiga Bot API orqali yuboriladi.
+- [tekshirildi: test] Beluga 126/126 unit test, Python compile, Node syntax, routing eval 40/40 va `git diff --check` o‘tdi. Jonli Telegram testi muvaffaqiyatli: `Ready` composition 2 soniyali video sifatida Telegram `msg 478334` bilan shu chatga yuborildi; keyingi owner feedback shu chatdagi navbatdagi xabar sifatida qayta ishlanadi.
+- [o‘zgartirildi: Hermes skill] Telegramdagi For Loop infographic feedbackidan reusable workflow ajratildi: [[Remotion JS Infographic Workflow]] Obsidian’da bor edi, endi `/Users/protochka/.hermes/skills/creative/remotion-js-infographic/SKILL.md` sifatida Hermes’ga ham qo‘shildi va Beluga command’ida `mybrain-memory,remotion-js-infographic` preload qilinadi.
+- [tekshirildi: skill/runtime] `hermes skills list` local skillni `enabled` ko‘rsatdi; Beluga testlari 127/127 ga chiqdi. Skill 1080×1080 PNG, real JS example, “nima uchun”, “real project”, “FISHKA”, trusted render path va current-chat `render_media` qoidalarini saqlaydi.
+- [tekshirildi: vizual] Telegramdagi `for-loop-card-v2.png` va `for-loop-card-v3.png` ko‘rildi. `v3`da real project, natija va qisqa xulosa bor; `v2`da FISHKA bor, ammo real project misoli yo‘q. Yangi Hermes skill ikkala talabni birlashtiradi, keyingi renderlar shu mezon bilan tekshiriladi.
+- [foydalanuvchi qarori] Remotion infographic skill bosqichma-bosqich kuchaytiriladi. Emirhan 6-banddagi mavzu template’larini o‘zi beradi; metodika uning bergan ko‘rsatmasi asosida qo‘llanadi. Qolgan ishlar navbat bilan: design system → feedback loop → code correctness → visual quality check → keyin user template’larini skillga qo‘shish.
+- [bajarildi: 1-bosqich] Hermes va Obsidian workflow’ga `Design System v1` qo‘shildi: 1080×1080 canvas, 56px padding, 24px spacing, navy background, cyan/purple/green/amber semantic accents, monospace code panel, card hierarchy va bottom 10% quiet area.
+- [bajarildi: 2-bosqich] Feedback loop qo‘shildi: oxirgi render receipt’i `worker.sqlite`da saqlanadi, keyingi owner xabari `feedback_mode` va `last_render` bilan Hermesga beriladi; skill content/design/readability/technical feedbackni ajratib, yangi `v2/v3` artifact yaratish va tasdiqlangan qismlarni saqlashni talab qiladi. Testlar 128/128, worker qayta ishga tushirildi.
+- [bajarildi: 3-bosqich] Remotion MCP’ga `remotion_validate_js` qo‘shildi. U sandbox ichida educational JavaScript snippet’ni syntax va captured console output bilan tekshiradi; expected output mos kelmasa renderga o‘tilmaydi. MCP smoke/E2E 5 tool bilan o‘tdi, Beluga testlari 128/128.
+- [bajarildi: 4-bosqich] Visual Quality Check qo‘shildi: `remotion_check_still` trusted output path, PNG format, expected dimensions va fayl hajmini `sips` bilan tekshiradi. MCP end-to-end 6 tool va Ready composition check o‘tdi; Beluga 128/128 test.
+
+## 2026-09-22 — Remotion JavaScript infografika usuli
+
+- [o‘rganildi: owner feedback + Remotion render] O‘quv PNG faqat sintaksis emas, “nima uchun ishlatiladi?”, ko‘rinadigan natija va bitta real-project misolini ham ko‘rsatganda tushunarliroq bo‘ladi.
+- [qayd] Qayta ishlatiladigan workflow: [[Remotion JS Infographic Workflow]]. U `1080×1080` layout, ajratilgan mazmun bloklari, ishlaydigan JS misoli, trusted MCP render, format/o‘lcham tekshiruvi va current-chat `render_media` qoidalarini jamlaydi.
+- [tekshirildi: Remotion MCP + CLI] `ForLoopCard` composition `for-loop-card-v3.png` sifatida render qilindi; PNG `1080×1080` deb tekshirildi.
+
+## 2026-09-22 — Mars IT ko‘rigi (eski yondashuv tuzatildi)
+
+- [tarixiy qayd, superseded] Dastlab ikki mavzudagi dars bosqichlaridan umumiy metodika chiqarilib, Obsidian va Hermes skilliga qo‘shilgan edi. Emirhan 2026-09-23 da bu qism kerak emasligini, faqat mavzularni qayd etish lozimligini aniqlashtirdi.
+- [joriy natija] To‘g‘ri mavzu katalogi: [[Mars IT Front-End Topics]].
+
+## 2026-09-23 — Mars IT bo‘yicha scope tuzatishi
+
+- [foydalanuvchi tuzatishi] Umumiy dars metodikasi yoki takrorlash bosqichlari kerak emas; faqat Mars IT mavzularini o‘rganib, Obsidian’da mavzu katalogi saqlansin.
+- [tekshirildi: Mars IT UI] `nF-455` guruhida 11 moduldagi 110 ta mavzu nomi qayta tekshirildi; oldingi qaydda modulga taqsimlash xato bo‘lgan.
+- [tuzatildi: Obsidian] [[Mars IT Front-End Topics]] ichidagi dars metodikasi olib tashlanib, platformadagi mavzu nomlari 11 modul va 22 block bo‘yicha qayta yozildi.
+- [tuzatildi: Hermes skill] Mars IT dars siklini skillga qo‘shgan band va reference olib tashlandi; oldingi Remotion infographic workflow talablari saqlandi.
+- [cheklov] Bu yozuv mavzu nomlari katalogi; barcha mavzulardagi dars matni/kod misollari transkripsiya qilinmagan.
+
 # Oxirgi Codex sessiyasi
+
+## 2026-09-21 — Dantes/Hermes savollar tayyorlash
+
+- [tayyorlandi: lokal Dantes hujjatlari + LexUZ] Hermes/Dantes arxitekturasi, bizning majburiyatlarimiz, mijozdan kerak bo'ladigan ruxsatlar va yuristga beriladigan savollar ro'yxati tuzildi.
+- [qayd] To'liq ro'yxat: [[Dantes Hermes Arxitektura va Yuridik Savollar 2026-09-21]]. Yuridik bandlar yakuniy xulosa emas, shartnoma va yurist tasdig'i uchun savollar sifatida yozildi.
+
+## 2026-09-20 — Beluga, Hermes va Remotion moslik ko‘rigi
+
+- [tekshirildi: CLI] Beluga worker `running`, Telegram `true`, RAG `ok` (753 chunk,
+  reranker true), personal observer `connected/fresh`, queue va running jobs `0`;
+  tanlangan backend Hermes, joriy kod/runtime modeli `gpt-5.6-terra`.
+- [tekshirildi: fayl] `hermes_agent.py` Hermes CLI’ni to‘g‘ridan-to‘g‘ri chaqiradi.
+  Oddiy Telegram oqimi toolsetida Remotion yo‘q; task oqimida terminal bor, ammo
+  Remotion MCP alohida ulanmadi.
+- [tekshirildi: CLI/fayl] Lokal Remotion adapteri mavjud: health, composition list,
+  MP4 render va PNG still tool’lari bor; `npm test` smoke testi o‘tdi. Remotion
+  React orqali video/motion graphics yaratish va render qilish vositasi, Beluga yoki
+  Hermes agent runtime’i emas.
+- [aniqlandi] `state/agent-backend.json` ichidagi `beluga-owner-v2/gpt-5.5` metadata
+  kod/runtime’dagi `beluga-owner-v3/gpt-5.6-terra` bilan eskirgan; selector faqat
+  `backend` qiymatini o‘qiydi, shuning uchun hozirgi ishlashni bloklamaydi, ammo
+  keyingi integratsiyadan oldin drift tozalanishi kerak.
+- [xulosa] Beluga’ni Remotion’ga to‘liq ko‘chirish mos emas. To‘g‘ri yo‘l — Telegram
+  transporti va policy host sifatida Beluga’ni, reasoning/backend sifatida Hermes’ni
+  qoldirib, Remotion’ni tor `render_video` capability sifatida ulash. Bunda
+  composition/project allowlist, render queue/timeout, validated structured action
+  va Telegram `sendVideo` natija yo‘li kerak bo‘ladi.
+- [tekshirildi: test] Beluga `123/123` unittest, Python compile, Node syntax,
+  `git diff --check` va Remotion MCP smoke testi o‘tdi. Bu auditda kod o‘zgartirilmadi.
+
+## 2026-09-20 — Hermes Beluga Remotion MCP integratsiyasi
+
+- [foydalanuvchi qarori] Hermes agent Beluga ichidan Remotion’dan foydalansin;
+  skill o‘rniga native MCP yo‘li tanlandi.
+- [o‘zgartirildi: Hermes config] `~/.hermes/config.yaml`ga local `remotion` stdio
+  serveri `/usr/local/bin/node` va default Remotion workspace/output yo‘llari bilan
+  qo‘shildi va enabled qilindi.
+- [o‘zgartirildi: Beluga] `hermes_agent.py`ning oddiy chat va task toolsetlariga
+  `remotion` qo‘shildi; prompt Remotion’dan faqat explicit video/render ishlarida
+  foydalanish, secretni `inputProps`ga bermaslik va local artifactni delivery deb
+  hisoblamaslikni belgilaydi. README va regression test yangilandi.
+- [o‘zgartirildi: Remotion adapter] `projectPath` faqat trusted Remotion workspace
+  ichida, `outputPath` esa dedicated output directory ichida qabul qilinadi.
+- [tekshirildi: CLI/runtime] Hermes MCP testida 4 tool topildi; model smoke
+  composition discovery’dan `Ready`, `1280x720`, `60 FPS`, `2.00 sec` qaytardi.
+  Remotion `REMOTION_E2E=1 npm test` o‘tdi, boundary testi `enforced`; Beluga
+  `124/124` test, compile/syntax/diff check o‘tdi. Worker restartdan keyin running,
+  Telegram true, Hermes `beluga-owner-v3`, RAG ok, queue/running `0`.
+- [cheklov] Render local MP4/PNG artifact yaratadi; Telegram `sendVideo` delivery
+  yo‘li hali alohida increment sifatida qo‘shilmagan.
 
 ## 2026-09-20 — Dantes AI ko‘rigi
 
@@ -522,3 +673,45 @@ Emirhan Codex’ni loyiha uchun emas, kundalik qulay ishlatish uchun sozlashni s
 - [tayyorlandi: fayl] Linear Regression uchun slope slayderli o‘quv grafik fragmenti; sun’iy ma’lumot: 1/2/3 soat → 20/40/60 ball, model y=a*x; MSE. Bu haqiqiy ta’lim natijasi haqidagi da’vo emas.
 - [keyingi qadam] Birinchi dars: feature, target, training, loss va prediction. Emirhan 4 soat uchun taxminni hisoblaydi; keyin intercept va o‘rganish jarayoniga o‘tish.
 - Vosita qaydi: [[Comfort Setup|Qulay ish muhiti]].
+
+
+## 2026-09-25 — FruVisi demo ishga tushirildi
+
+- [tekshirildi: Git] `Fruxano/fruvisi` v1.3.9, commit `a7d7bdcfcb3552bc5c0b460c25b818bfd8e7b7c0` `/Users/protochka/FruVisi-Demo/fruvisi` ichiga olindi; upstream clone toza.
+- [tekshirildi: Hermes CLI/UI] Alohida `HERMES_HOME=/Users/protochka/FruVisi-Demo/hermes-home`; Hermes v0.21.4; FruVisi dashboard `http://127.0.0.1:9127/fruvisi` ochildi. CEO → HR/Finance/Marketing sample grafigi va uchta taqsimlangan demo vazifa ko‘rinadi. `default` profili faqat Sample Company presetida yashirilgan.
+- Demo profil nomlari: `ceo-demo`, `hr-demo`, `finance-demo`, `marketing-demo`. Model/provider credential berilmagan; gateway va task dispatcher o‘chiq, vazifalar AI tomonidan bajarilmaydi.
+- Hermes Copilot auto-discovery demo muhiti ichida o‘chirildi. `~/.hermes` va mavjud CLI autentifikatsiyasi o‘zgartirilmadi.
+- FruVisi dashboard o‘rnatilgan bundle’iga `null` model badge uchun `unconfigured` fallback qo‘shildi; repo kloni o‘zgarmagan. Sabab va tafsilot: `/Users/protochka/FruVisi-Demo/LOCAL-NOTES.md`. Plugin doctor ro‘yxatga olish/importdan o‘tdi, ammo `provides_tools` manifest deklaratsiyasi yo‘q 6 ta tool bo‘yicha warning chiqardi.
+- Qayta ishga tushirish: `env HERMES_HOME=/Users/protochka/FruVisi-Demo/hermes-home /Users/protochka/.local/bin/hermes dashboard --host 127.0.0.1 --port 9127`; to‘xtatish: `env HERMES_HOME=/Users/protochka/FruVisi-Demo/hermes-home /Users/protochka/.local/bin/hermes dashboard --stop`.
+
+## 2026-09-25 — BelugaCat Kanban migratsiyasi
+
+- [foydalanuvchi so‘rovi] Izolyatsiyalangan FruVisi demo’da o‘rnatilgan Kanban’ni BelugaCat’ga migratsiya qilish.
+- [tekshirildi: Hermes CLI] Umumiy `~/.hermes` Kanban default board’i bo‘sh edi; demo board’da 3 ta namuna vazifa bor edi. `Fruxano/fruvisi/plugin` v1.3.9, commit `a7d7bdcfcb3552bc5c0b460c25b818bfd8e7b7c0` umumiy Hermes muhitiga o‘rnatildi va enabled qilindi.
+- [o‘zgartirildi: Hermes] Bo‘sh `beluga-cat` board yaratilib joriy qilindi. Default board saqlandi; CEO/HR/Finance/Marketing demo profillari va demo vazifalari ko‘chirilmagan. Dashboard `/Users/protochka/.hermes` muhitida; `http://127.0.0.1:9119/kanban` URL’i Chrome’da ochish uchun yuborildi; FruVisi demo serveri `9127` to‘xtatildi.
+- [o‘zgartirildi: Beluga] `bot.py` owner private so‘rovini hostda tasdiqlab payloadga belgilaydi. `hermes_agent.py` Kanban toolset’ni faqat shu owner-private ordinary-chat turnida qo‘shadi va `beluga-cat` board’ga yo‘naltiradi. Group hamda `/task` turnlariga Kanban berilmaydi. Agentga kartani `blocked` ochish va dispatcher/gateway’ni ishga tushirmaslik ko‘rsatmasi qo‘shildi.
+- [tekshirildi: health] `py_compile`, `git diff --check`; global plugin enabled; current board `beluga-cat`; Hermes dashboard status/HTTP va worker status tasdiqlandi. Restartdan keyin Telegram=true, Hermes backend tanlangan, RAG=true, queue/running 0. Jonli Telegram tool-call sinovi bajarilmadi.
+- [cheklov] FruVisi API ping brauzer sessiyasiz `401 Unauthorized` qaytardi; web UI’da login talab qilinishi mumkin. Kanban dispatcher va Hermes gateway yoqilmadi, shu sabab vazifalar avtomatik bajarilmaydi.
+- [eslatma] `Beluga/` worktree’da avvaldan bor o‘zgarishlar qoldirildi; migratsiyaga tegishli qatorlar qo‘shildi. Git commit/push bajarilmadi.
+
+
+## 2026-09-25 — Sales suhbatiga tayyorgarlik
+
+- [foydalanuvchi qarori] Sales uchun AI agentdan oldin real jarayon va muammolarni suhbat orqali o‘rganish; taklif qilingan muammolar hali tasdiqlangan fakt emas.
+- [foydalanuvchi talabi] Savollarni Obsidian’da saqlash, sales bilan gaplashish oldidan kontekstni tiklab, kerakli savollarni eslatish. “Sales bilan gaplashaman” yoki “sales savollarini tikla” deyilganda [[Sales suhbat - muammolar va AI agent talablari]] o‘qiladi.
+- [qayd] Grafda Xarorat invest, Uysot.uz, noma’lum konsultant va kechikkan qarzdorlik ko‘rsatilgan. Xarorat invest–Dantes bog‘liqligi, platforma integratsiyasi va muammo ko‘lami ochiq.
+- [tayyorlandi] Suhbat savollari, qarzdorlikni aniqlashtirish, graf shoxlari va har muammo uchun dalil/natija qayd shabloni. Uchrashuv hali o‘tkazilmagan; vaqtli avtomatik eslatma o‘rnatilmagan.
+
+## 2026-09-26 — Whimsical Dantes xaritasi FruVisi’ga qo‘shildi
+
+- [tekshirildi: Whimsical] Dantes xaritasida Construction (Xarorat Invest, Sayqal Avenue, Boston Avenue, Baxtli odamlar), Transport va Office yo‘nalishlari bor. Sales uchun Uysot.uz, mijoz ma’lumotlari, kechikkan qarzlar, consultant kontaktlari va hisobot savollari ko‘rsatilgan.
+- [o‘zgartirildi: global Hermes FruVisi] `/Users/protochka/.hermes/fruvisi/topology.json` ichiga `Dantes xaritasi` planning preset’i qo‘shildi. U 2D org-chartda loyiha bo‘limlarini ko‘rsatadi; kartalarni bosganda ma’lumot, ochiq savol va keyingi ishlar ko‘rinadi.
+- [o‘zgartirildi: FruVisi plugin] Planning preset haqiqiy Hermes profiliga tenglashtirilmaydi; `Apply structure` o‘chirilgan, Kanban dock yashirilgan, reja kartasi tahrirlanadi. Shu sabab xaritani ko‘rish Dantes agentlari yoki ruxsatlarini o‘zgartirmaydi.
+- [tekshirildi: browser/CLI] Dashboard `http://127.0.0.1:9119/fruvisi` HTTP 200; `Dantes xaritasi` faol; Sales kartasi inspector panelida ko‘rindi. Plugin build, TypeScript tekshiruvi va `git diff --check` o‘tdi.
+- [cheklov] Whimsical’dagi xarita o‘qildi, lekin Dantes uchun real Hermes profillari hali yaratilmagan. Keyingi bosqich — Sales bilan suhbat va Uysot.uz API/export imkoniyatlarini dalil bilan aniqlash.
+
+## 2026-09-26 — FruVisi permission map
+
+- [o‘zgartirildi: FruVisi] Ruscha `Права доступа` paneli qo‘shildi: reader → data owner yo‘nalishida `Чтение`, `Запись`, `Подтверждение` toggle’lari. O‘qish ruxsati yashil punktir chiziq bilan ko‘rsatiladi.
+- [o‘zgartirildi: skill] `/Users/protochka/.codex/skills/skill-permission/SKILL.md` yaratildi. U deny-by-default, minimal scope, approval va audit qoidalarini belgilaydi.
+- [cheklov] FruVisi siyosat xaritasi/editori; real authorization Dantes `scripts/core.py` / `ruxsat_bormi` orqali enforce qilinadi.

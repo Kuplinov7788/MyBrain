@@ -1,10 +1,53 @@
 ---
 type: implementation-plan
-updated: 2026-09-16
+updated: 2026-09-25
 status: active-observability-and-evals
 ---
 
 # Beluga — talablar va etaplar
+
+## 2026-09-25 — BelugaCat Kanban migratsiyasi
+
+- [o‘zgartirildi: Hermes] FruVisi v1.3.9 plugin’i tekshirilgan commit `a7d7bdcfcb3552bc5c0b460c25b818bfd8e7b7c0` bilan umumiy `~/.hermes` muhitiga o‘rnatildi va yoqildi. Hermes dashboard `127.0.0.1:9119`da qayta ishga tushdi.
+- [o‘zgartirildi: board] Bo‘sh `beluga-cat` board yaratilib joriy board qilindi; mavjud `default` bo‘sh board o‘z holida qoldi. FruVisi demo’dagi uchta namuna vazifa va CEO/HR/Finance/Marketing profil namunalari ko‘chirilmagan.
+- [o‘zgartirildi: Beluga] Owner private-chat flag’i Telegram hostda tekshirilgan chat/sender ID’dan tuziladi. `kanban` toolset faqat shu private owner turnida beriladi va `HERMES_KANBAN_BOARD=beluga-cat` bilan cheklanadi; group va `/task` turnlarida Kanban toolset yo‘q. Yangi karta `blocked` holatida yaratilishi, dispatcher/gateway ishga tushmasligi qoida qilindi.
+- [tekshirildi: CLI/health] Plugin enabled, `beluga-cat` board bo‘sh va joriy; dashboard HTML `HTTP 200`, Beluga restartidan keyin Telegram/Hermes/RAG true, job queue 0. `py_compile` va `git diff --check` o‘tdi.
+- [cheklov] Dashboard plugin API’ga brauzer sessiyasiz so‘rov `401 Unauthorized` qaytardi. Telegram’da jonli Kanban tool-call sinovi qilinmadi; dispatcher/gateway yoqilmadi.
+- Tafsilot va davomiy kontekst: [[Last Session]].
+
+## 2026-09-24 — RAG ustuvor diagnostikasi
+
+- [tekshirildi: CLI] Lokal RAG server health `ok`, 838 chunk, model/reranker loaded; reindex LaunchAgent 600 soniyalik interval bilan ishlaydi, 15:10 dagi indeks yangi MyBrain qaydlarini qamragan.
+- [tekshirildi: real qidiruv] So‘nggi Remotion upload recovery mazmuni `Last Session` va `Beluga Plan`dan topildi; Beluga `context.build` uni 3 ta source-labelled RAG blok sifatida owner promptiga qo‘shdi. RAG eval 5/5, hit@k 1.0, MRR 0.9.
+- [xulosa] Hozirgi RAG oqimida nosozlik topilmadi; shu diagnostikada kod/servis o‘zgarmadi. Answer faithfulness va jonli Telegram javobi alohida sifat tekshiruvi bo‘lib qoladi.
+
+## 2026-09-24 — Beluga/Hermes to‘liq lokal ko‘rik
+
+- [tekshirildi: CLI/runtime] Beluga worker running, Telegram true, Hermes backend `openai-codex/gpt-5.6-terra`, queue/running/review 0, RAG ok. Hermes v0.21.4, config v46, OpenAI Codex auth logged in. Remotion MCP 6 tool va Telegram personal MCP 6 tool bilan ulanadi; Hermes personal `send_message` tool’ini exclude qiladi. Hermes `origin/main`da ko‘rik paytida 17 ta yangi commit bor edi; bu auditda yana update qilinmadi.
+- [topildi va tuzatildi: kod] `render_media` yuborishdan oldin durable `action_attempt` qo‘ymagan, shuning uchun worker crash/restart oralig‘ida upload qayta ishlanishi mumkin edi. Endi attempt oldindan yoziladi. Oxirgi render har keyingi so‘rovga feedback sifatida berilardi; endi faqat bevosita keyingi owner job kontekst oladi. Upload faqat owner private chat, trusted output ichidagi format signature’i mos PNG/MP4 uchun ruxsatli.
+- [tekshirildi: test/eval/runtime] 139/139 unit test, offline production eval 32/32, Uzbek routing 40/40, RAG relevance 5/5 (hit@5 1.0, MRR 0.9), Python compile, Node syntax va `git diff --check` o‘tdi. Hermes doctor va ikkala MCP ulanish testi o‘tdi. Worker restartdan keyin running, Telegram true, yangi observer child fresh, queue/running 0. Bular live Telegram delivery sifatini isbotlamaydi.
+- [cheklov] 19 ta tarixiy failed job saqlangan. Hermes TUI’da oldingi 4 theme/color test failure bor; Desktop keng testi avval uzoq davom etgani uchun to‘xtatilgan. NPM production audit 0 advisory; dev dependency auditda 10 advisory bor. Jonli Remotion upload va owner correction flow bu ko‘rikda tashqi Telegram xabar bilan sinalmadi.
+
+## 2026-09-24 — Tabiiy owner correction flow
+
+- [o‘zgartirildi: Beluga] Private ownerning “bu noto‘g‘ri”, “xato qilding”, “keyingi safar”, “bunday qilma” kabi aniq feedbacki oxirgi yakunlangan owner job bilan, reply-to bo‘lsa mos bot javobi bilan bog‘lanadi. Hermes noaniq feedbackda bitta aniq savol beradi; umumiy lesson aniq bo‘lsa `learning_candidate` qaytaradi.
+- [xavfsizlik] Candidate faqat private `experience.json`ga yoziladi, darhol confirmed bo‘lmaydi va keyingi promptni boshqarmaydi. Bir job qayta ishlansa dalil soni ortmaydi. Correction turn tashqi contact send yoki boshqa action’ga aylantirilmaydi. Candidate’da username, URL yoki uzun raqamlar qabul qilinmaydi.
+- [tekshirildi: test/runtime] 134/134 unit test, offline production eval 32/32, Uzbek routing 40/40, Python compile, Node syntax va `git diff --check` o‘tdi. Izolyatsiyalangan Hermes probe’da aniq correction `learning_candidate` berdi, noaniq “Bu noto‘g‘ri” esa lesson yozmasdan savol berdi. Worker restartdan keyin `running`, Telegram true, Hermes backend selected, queue/running 0, observer fresh. Jonli Telegram correction oqimi hali sinalmagan.
+- [keyingi bosqich] Candidate’larni tabiiy tilda ko‘rish/tuzatish/o‘chirish va evaluator orqali tasdiqlash; live owner-private sinov alohida bajariladi.
+
+## 2026-09-23 — Hermes/Beluga live audit
+
+- [tekshirildi: job store + Telegram] Oxirgi Remotion topshirig‘i `job-678231070` `done`; Telegram chatda natija va izohi ko‘rinadi. Hermes `remotion-js-infographic` skill `enabled`, Beluga buyrug‘i skill’ni preload qiladi.
+- [memory audit correction] Oldingi owner feedback rasm ostida ham o‘qishga qulay izoh bo‘lishini so‘ragan; Hermes skill faqat “short caption” deb tor yozilgandi. Beluga prompt, Hermes skill v0.1.1 va Obsidian workflow mos ravishda to‘liq, qisqa formatlangan izohni 1024 belgilik Telegram caption ichida berishni talab qiladi.
+- [tekshirildi: health] O‘zgarishlardan so‘ng mavjud Beluga worker qayta ishga tushirildi; `status.py`: worker/Telegram/Hermes backend/RAG/observer ishlayapti; 0 queued, 0 running, 0 review. Observer 1061 dialog sanagan, scan holatiga qarab snapshotlar soni 200 yoki 250 bo‘lgan; bu to‘liq tarix emas. 1070 lokal chat kontekstidan 825 tasida review bor; 3 ta auto-reply scope va 1 draft scope mavjud.
+- [aniqlandi va tuzatildi] Background analyzer muvaffaqiyatli scan’dan keyin oldingi `RuntimeError` belgisini tozalamagan, shu sabab status stale xato ko‘rsatishi mumkin edi. Normal scan stale belgini olib tashlaydi; xato qaytalansa yangi xato qayta yoziladi. Regression test qo‘shildi; restartdan keyin analysis `idle`, xatosiz, 6 completed / 240 pending deb tasdiqlandi.
+- [tarixiy xatolar] Job store’da 19 ta `failed` task bor; eng so‘nggisi 2026-09-22 dagi provider quota xatosi, oldingi backend/contract xatolari ham saqlangan. Ular avtomatik qayta ishga tushirilmadi va tashqi yuborishlar takrorlanmadi.
+- [tekshirildi: test/eval] 129/129 unit test, production eval 32/32, Uzbek routing 40/40, RAG retrieval hit@5 1.0 / MRR 0.9, Python compile, Node syntax, git diff checks o‘tdi.
+- [Hermes dependency fix] Audit-fix orqali buzuvchi bo‘lmagan package yangilanishlari qilindi; browser/web/UI workspace auditida zaiflik qolmadi. `electron` 40.10.6, `electron-builder` 26.16.1, `vitest` 4.1.11. `apps/desktop` workspace’da 8 ta yuqori darajadagi Electron advisory qoldi; to‘liq tuzatish `electron@44.4.5` major upgrade talab qiladi, majburan bajarmadim.
+- [Hermes test holati] Web workspace 295/295, root tests 69/69 passed. TUI typecheck/build o‘tdi, lekin 4 color/theme testi; Desktop UI’da 2 localStorage testi yiqildi. Bu muhitda kuzatildi; dependency yangilanishi sabab bo‘lganini alohida tasdiqlamadim. CLI ishlaydi, `openai-codex` auth login.
+- [Hermes auth] Doctor Nous Portal refresh-token sessiyasi bekor qilinganini ko‘rsatdi; Beluga undan foydalanmaydi va Codex auth login, shuning uchun Beluga’ga ta’sir qilmaydi. Portal’ni tiklash uchun interaktiv qayta login kerak.
+
+[tekshirildi: `status.py`, Telegram read-only, SQLite metadata, `hermes status`, `hermes doctor`, `hermes skills list`]
 
 ## 2026-09-10 — Telegram/Hermes audit
 
@@ -161,6 +204,23 @@ Noaniq vaziyatlarda Emirhandan so‘raladi. Insoniy ohang bot ekanini inkor qili
 TezCode topiclariga test javoblari yuborilmaydi. Avval kichik testlar. Mac va PC bir botni boshqarish tartibi runtime tanlanganda belgilanadi; takroriy javob bo‘lmasligi test qilinadi.
 
 ## Etap jurnali
+
+### 2026-09-20 — Hermes’ga Remotion MCP ulanishi
+
+- [foydalanuvchi qarori] Remotion skill emas, Hermes’ning native MCP yo‘li tanlandi;
+  Beluga Telegram transporti va delivery policy host bo‘lib qoladi.
+- [tekshirildi: Hermes CLI] `~/.hermes/config.yaml`ga trusted local `remotion` stdio
+  serveri qo‘shildi. `hermes mcp test remotion` 4 ta toolni topdi: health,
+  composition list, MP4 render va PNG still.
+- [o‘zgartirildi: Beluga] `hermes_agent.py` oddiy chat va task toolsetlariga
+  `remotion`ni qo‘shadi; prompt Remotion’dan faqat explicit video/render ishlarida
+  foydalanish va local artifactni Telegram delivery deb hisoblamaslikni belgilaydi.
+  README va Hermes session worker ham yangilandi/restart qilindi.
+- [tekshirildi: test/CLI] Beluga `124/124` test, Python compile, Node syntax,
+  `git diff --check`, MCP test va Hermes model smoke o‘tdi. Model composition
+  discovery’dan `Ready`, `1280x720`, `60 FPS`, `2.00 sec` natijasi qaytdi.
+- [cheklov] Render qilingan fayl hozircha local Remotion output papkasida qoladi;
+  Telegram `sendVideo` delivery yo‘li hali qo‘shilmagan. Bu keyingi alohida increment.
 
 ### 2026-09-16 — One-time owner command authority
 
