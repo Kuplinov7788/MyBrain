@@ -715,3 +715,9 @@ Emirhan Codex’ni loyiha uchun emas, kundalik qulay ishlatish uchun sozlashni s
 - [o‘zgartirildi: FruVisi] Ruscha `Права доступа` paneli qo‘shildi: reader → data owner yo‘nalishida `Чтение`, `Запись`, `Подтверждение` toggle’lari. O‘qish ruxsati yashil punktir chiziq bilan ko‘rsatiladi.
 - [o‘zgartirildi: skill] `/Users/protochka/.codex/skills/skill-permission/SKILL.md` yaratildi. U deny-by-default, minimal scope, approval va audit qoidalarini belgilaydi.
 - [cheklov] FruVisi siyosat xaritasi/editori; real authorization Dantes `scripts/core.py` / `ruxsat_bormi` orqali enforce qilinadi.
+
+## 2026-09-28 — Uysot Sales qaydlarini Dantes bilan yuritish
+
+- [foydalanuvchi qarori] Har yangi mazmunli, tekshirilgan Uysot/Sales ma’lumotini MyBrain kanonik Sales qaydiga va Dantes repo’dagi tegishli loyiha hujjatiga qo‘shib borish. Credential/mijoz PII ko‘chirmaslik; Salesga yuborish alohida aniq ruxsatsiz bajarilmaydi.
+- [yozildi] Dantes repo `docs/UYSOT-SALES-DASHBOARD-KUZATUVLARI-2026-09-28.md`; MyBrain Dantes loyiha qaydi va Sales qaydi yangilandi. `uysot-sales` skillida keyingi safar ikki manbani yangilash tartibi qayd etildi.
+- [cheklov] Lokal fayllar o‘zgardi; commit/push so‘ralmadi va bajarilmadi.

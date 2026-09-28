@@ -79,6 +79,12 @@ Panel maketini yoki kodini boshlashdan avval maqsadli biznesni aniqlash: Dantes 
 - [joriy tanlov] Agar bir repo asosidan boshlash kerak bo'lsa, **FruVisi'ni Hermes dashboard ichidagi 2D org-chart + Kanban UI prototipi sifatida olish (UI-asos 8/10; Dantes'ga tayyor holati 5/10)**; Paperclip'dan esa KPI/approval/cost overview g'oyalarini olish. Haqiqiy biznes cockpit uchun ularni Dantes `xodim.json`/`core.py`/DB bilan bitta manbali qatlamga moslashtirish lozim.
 - [tekshiruv chegarasi] Ushbu baho public README/docs va lokal Dantes hujjatlariga asoslangan. FruVisi klonlanmadi, o'rnatilmadi yoki Hermes 0.20.4'da ishga tushirilmadi; moslik va xavfsiz mapping hali isbotlanmagan.
 
+## 2026-09-28 — Uysot Sales dashboard kuzatuvi
+
+- [tekshirildi: Uysot UI] Menejer akkauntlari, loyiha xonadonlari, 2026-yil sotuv statistikasi, CRM voronkasi, sentabr qarzdorlik va to‘lov grafigi ko‘rildi; sanasi, qiymatlari va cheklovlari Dantes repo’dagi `docs/UYSOT-SALES-DASHBOARD-KUZATUVLARI-2026-09-28.md`da.
+- [xulosa] Uysotda qarzdorlik mas’uli va to‘lov turi/summasi ko‘rinsa ham, undirish, to‘lovni tasdiqlash va AI vakolatlari aniqlanmagan. Sales/Finance jarayonni tasdiqlashi kerak.
+- [qaror] Yangi mazmunli, tekshirilgan Uysot/Sales ma’lumotlari MyBrain Sales qaydi va Dantes loyihasidagi tegishli hujjatda saqlanadi. Salesga o‘zidan-o‘zi xabar yuborilmaydi.
+
 ## Manbalar
 
 - [Dantes repo](/Users/protochka/dantes/README.md), [arxitektura](/Users/protochka/dantes/ARXITEKTURA.md), [xodimlar standarti](/Users/protochka/dantes/xodimlar/README.md), [dashboard launcher](/Users/protochka/dantes/scripts/dantes_dashboard.cmd).

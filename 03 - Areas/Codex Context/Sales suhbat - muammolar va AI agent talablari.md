@@ -102,6 +102,8 @@ Konsultant kartasi: ism, lavozim, ish vaqti, aloqa, qaysi jarayon va ma’lumotn
 - [tekshirildi: Chrome Uysot UI, 2026-09-28] `Статистика → CRM` joriy oy filtrida voronka bosqichlari, yutilgan lead’lar va yo‘qotish sabablari 0 ko‘rsatdi. Yo‘qotish sabablari ro‘yxatida byudjet yetmasligi, sharoitdan qoniqmaslik, raqobatchidan xarid qilish variantlari bor. Bu sabablar CRM konfiguratsiyasida mavjud, real kuzatilgan sabab ekanini yoki oldingi 2 lead bilan bir davr/filtr ekanini isbotlamaydi.
 - [tekshirildi: Chrome Uysot UI, 2026-09-28] `Статистика → Задолженность` UZS, barcha ЖК va kunlik ko‘rinishda sentabr 2026 qatorini/chartini ko‘rsatdi; 28-sentabr nuqtasi 2 695 058 041 UZS, 29–30-sentabr hali 0. Jadvalda 11 sahifa bor (10 tadan ko‘rsatish bilan 110 ta jadval qatori bo‘lishi mumkin). Bu shaxsiy qarzdorlar ro‘yxatini emas, dashboarddagi ko‘lamni qisqacha qayd etish uchun.
 - [tekshirildi: Chrome Uysot UI, 2026-09-28] `Статистика → Платежи` UZS, barcha ЖК, sentabr 2026 daily ko‘rinishda 1 648 008 366 UZS sarlavha summasini berdi; kunlar va naqd/karta/bank/transfer/Click/boshqa kesimlari bor. Sarlavha yig‘indisining aynan qaysi sanagacha ekani va kechikkan/kelajak kunlar hisobga kirishi UI’dan aniq emas; Sales/Finance bilan ta’rifini tasdiqlash kerak.
+- [foydalanuvchi qarori: 2026-09-28] Yangi mazmunli, tekshirilgan Uysot/Sales ma’lumotlari kanonik Obsidian Sales qaydida va Dantes loyihasidagi tegishli hujjatda saqlansin. Salesga xabar yuborish alohida aniq so‘rovsiz bajarilmaydi.
+- [tayyorlandi: 2026-09-28] Dantes repo uchun dashboard kuzatuvlari mijozlarning shaxsiy yozuvlarisiz `dantes/docs/UYSOT-SALES-DASHBOARD-KUZATUVLARI-2026-09-28.md`ga jamlandi.
 
 ## Suhbatdan keyin
 

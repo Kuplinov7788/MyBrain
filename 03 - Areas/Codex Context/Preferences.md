@@ -30,6 +30,7 @@ source: Emirhan bilan bevosita suhbat
 - Doimiy afzalliklar shu faylda, sessiya holati Last Session’da, loyiha qarorlari tegishli kontekstda saqlansin. Davom ettirishdan oldin tegishli qaydni o‘qi; o‘zgaruvchan holatni qayta tekshir. Yetishmagan ma’lumotni to‘qima.
 - Xato yoki eskirgan ma’lumot aniqlansa, tuzatishni sana va sabab bilan qayd et. Qayd yozilgach qayta o‘qi, linklar va git diff’ni tekshir. Maxfiy credential va keraksiz shaxsiy chat dump’larini saqlama.
 - Maqsad: kontekst yo‘qolishi va hallucination xavfini kamaytirish. Bu xatosizlik kafolati yoki doimiy fon yozuvchisi emas; lokal yozuv remote sync isboti emas.
+- [2026-09-28] Dantes/Sales/Uysot bo‘yicha har bir yangi mazmunli, tekshirilgan fakt yoki qarorni MyBrain’dagi kanonik Sales qaydiga va Dantes loyihasidagi tegishli hujjatga yozib bor. Foydalanuvchi fakti, dashboard/API kuzatuvi, xulosa va ochiq savolni alohida belgilash; credential va mijozlarning shaxsiy ma’lumotlarini ko‘chirmaslik. Dantes repo o‘zgarsa `AGENTS.md`ni tekshir; avtomatik commit/push qilma.
 
 ## Manbalar
 
