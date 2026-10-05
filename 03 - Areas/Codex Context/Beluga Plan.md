@@ -704,3 +704,29 @@ Hermes kursi va video transcriptlari endi [[Hermes Hub]] orqali yagona oqimga ul
 - Telegramdagi `Invalid review list` sababli `Opam bilan suhbatni davom ettir` joblari `ValueError` bilan yiqilgani tekshirildi. Background review validatori noto‘g‘ri scalar/list elementlarini tozalab, foydali stringlarni saqlaydi; worker restart qilindi. Yangi ikki continuation buyruği real personal delivery orqali `sent` qaytardi. 91 test o‘tdi.
 
 - Owner monitoringida Opamning “qaysi marojniyni yaxshi ko‘raman?” savoli `ask_owner`ga tushib, javobni ushlab qolgan. Bu consequential masala emasligi uchun prompt yangilandi: delegated chatda noma’lum oddiy preference’ni contactning o‘zidan muloyim so‘rash mumkin. Fon worker yangi draftni revision guard bilan saqlab, personal delivery `sent` qildi (message 474902); Telegram/observer/RAG qayta tekshirildi.
+
+## 2026-10-03 — BelugaCat owner access kengaytirildi
+
+- [foydalanuvchi ruxsati] Emirhan barcha agent tool/imkoniyatlari va chatlarga access ochilishini so‘radi.
+- [o‘zgartirildi: Beluga kodi] Host tekshirgan private owner turnlari va owner tasklari Hermes `all,telegram_personal,remotion,kanban` toolsetini tanlaydi. Texnik ish doirasi owner so‘ragan lokal loyihalarga kengaytirildi; loyiha AGENTS qoidalari bajariladi. Group turnlari restricted toolsetda qoladi, group a’zolari owner vakolatini olmaydi.
+- [o‘zgartirildi: runtime policy] `state/authorized-groups.json`da `all_groups_enabled=true`; bot qatnashgan va update oladigan guruhlarda mention/reply qabul qilinadi. Oldingi aniq disabled/topic siyosati ustun; oldingi policy private backupga saqlandi. Telegram akkauntiga ochiq chatlarni so‘rov bo‘yicha o‘qish oldindan ruxsatlangan.
+- [qamrov] Installed tool access ochildi; yetishmayotgan login, OS ruxsati va integratsiyalar avtomatik yaratilmaydi. Direct Telegram send host orqali; umumiy access mavjud per-chat auto-reply siyosatini o‘zgartirmadi.
+- [tekshirildi: CLI] 142/142 unit test; Python compile va git diff --check o‘tdi. Worker restart: launchctl running, Telegram true, yangi observer PID/fresh true, queue/running/review 0, RAG ok. 22 tarixiy failed job bor. Jonli yangi group send yoki barcha tool’larni bittadan ishga tushirish sinovi qilinmagan.
+- [fayllar] Beluga AGENTS.md, README.md, hermes_agent.py, group_policy.py va tests/test_access_scope.py. Oldingi unrelated o‘zgarishlar saqlandi, commit/push qilinmadi.
+
+## 2026-10-03 — Remotion media uchun guruh destination qo‘shildi
+
+- [foydalanuvchi so‘rovi] Beluga «render_media faqat joriy chatga» cheklovini olib tashlash so‘raldi.
+- [o‘zgartirildi: kod] render_media recipient_id orqali guruh ID/@username/nomini qabul qiladi. Host owner private chatidan aniq yuborish topshirig‘ini tekshiradi, nomni yagona guruhga resolve qiladi, Bot API getChat turi va enabled policy’ni tekshiradi. Bot guruhda bo‘lishi va media yuborish huquqiga ega bo‘lishi kerak. Guruhdagi owner current-chat media so‘rovi ham qabul qilinadi.
+- [saqlandi: delivery invariants] Trusted PNG/MP4 format/path, durable action_attempt, aniq recipient, group a’zolariga owner vakolati berilmasligi. Boshqa guruhga origin reply ID yuborilmaydi; render receipt target chat ID bilan saqlanadi. Noaniq nom/draft/disabled target yubormaydi.
+- [tekshirildi: CLI] 147/147 test, Python compile va git diff --check o‘tdi. Yangi test destination saqlanishi, host upload argumentlari, attempt-before-send, cross-chat reply ID, noaniq guruh/draft/nonowner/disabled target holatlarini tekshiradi. Worker restartdan keyin launchctl running, Telegram true, observer yangi PID/fresh; queue/running/review 0. Jonli tashqi group media yuborish sinovi qilinmadi.
+- [alohida health kuzatuvi] status.py tekshiruvda RAG ok:false qaytardi; bu vazifada RAG o‘zgartirilmadi va sababi tekshirilmadi.
+- [foydalanish] «Backend terminlari rasmini [guruh nomi yoki ID]ga yubor». Hech bir guruhga bu sessiyada media yuborilmadi.
+
+## 2026-10-03 — Remotion guruhga personal account orqali yuboriladi
+
+- [foydalanuvchi aniqlashtirdi] Guruhga rasm/video faqat Emirhanning nomidan yuborilishi kerak; bot qo‘shishni talab qiladigan oqim kerak emas.
+- [tuzatildi: kod] Cross-chat render_media guruhni send_named resolve_only orqali personal Telegram akkauntda topadi va PNG/MP4ni shu akkauntdan send_file orqali yuboradi. Bot API getChat/send_media cross-group yo‘lida ishlatilmaydi. Guruhga kirish/yozish huquqi personal akkauntda bo‘lishi kerak; avtomatik join qilinmaydi. Joriy owner-bot chatdagi preview oldingi upload yo‘lida qoladi.
+- [saqlandi] Aniq owner yuborish buyrug‘i, yagona recipient, require_group, trusted render path/signature/50MB, symlink escape himoyasi, action_attempt va receipt tekshiruvlari.
+- [tekshirildi: CLI] 148/148 test; Python compile va git diff --check. Test personal delivery tanlanishini, Bot API ishlatilmasligini, target receipt va path/format tekshiruvini qamraydi. Worker running, yangi observer fresh, Telegram true, queue/running/review 0, RAG ok. Oldingi RAG ok:false kuzatuvi hozir qayta tekshiruvda ok:true.
+- [cheklov] Jonli tashqi guruhga test xabari yuborilmadi.

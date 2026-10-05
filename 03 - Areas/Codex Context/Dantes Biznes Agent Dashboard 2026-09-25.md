@@ -87,6 +87,14 @@ Panel maketini yoki kodini boshlashdan avval maqsadli biznesni aniqlash: Dantes 
 - [Sales javobi: 2026-09-28] Bitta sotuvchi barcha loyihalarni yuritadi; qarz mas’uli mijozga bir necha ogohlantirish beradi, keyin direktorga eskalatsiya qiladi. Suhbatdosh to‘lovlarni tekshirib Uysotga kiritadi; mijozlarga korporativ raqamdan qo‘ng‘iroq qiladi. Tafsilotlar Dantes Uysot kuzatuv hujjatida.
 - [tuzatish] `Продажа` sahifasidagi 4 raqamini Sales noto‘g‘ri deb aytdi; tasdiqlangan sotuv soni emas. “Finance” avvalgi savolda asossiz qo‘llangan.
 
+## 2026-09-29 — Guruh moliyasi talabi va Uysot Sales qamrovi
+
+- [foydalanuvchi yuborgan Dantes talabi] Barcha kompaniyalar uchun alohida va konsolidatsiyalangan moliya, ichki o‘tkazmalarni ikki marta sanamaslik, kredit/lizing, shartnomalar, to‘lov nazorati, pul oqimi prognozi va dalilli rahbar hisobotlari kerak.
+- [ishchi qamrov] Bizning Sales/Uysot qismimiz mijoz to‘lovlari, shartnoma/jadval/qoldiq, qarzdorlik va kechikish, loyiha/xonadon bog‘lanishini tekshirib, umumiy moliyaga manbali ma’lumot beradi. Guruh xarajatlari, bank/1C, kredit/lizing va ichki o‘tkazmalarni birlashtirish alohida moliya yo‘nalishiga kiradi.
+- [taklif] Avval Venera bilan Uysot’dagi haqiqat manbalari va KPI’larni tasdiqlash; keyin read-only Sales ma’lumot oqimi; undan so‘nggina boshqa kompaniyalar, 1C/bank integratsiyasi va konsolidatsiya.
+- [tekshirildi: Dantes repo hujjatlari, 2026-09-29] `moliyachi` 3-faza/rejalashtirilgan, `integrator1c` 4-faza/rejalashtirilgan. Umumiy finance dashboard ishlayapti deb hisoblanmaydi.
+- Tafsilot: [[Sales suhbat - muammolar va AI agent talablari]] va `dantes/docs/UYSOT-SALES-DASHBOARD-KUZATUVLARI-2026-09-28.md`.
+
 ## Manbalar
 
 - [Dantes repo](/Users/protochka/dantes/README.md), [arxitektura](/Users/protochka/dantes/ARXITEKTURA.md), [xodimlar standarti](/Users/protochka/dantes/xodimlar/README.md), [dashboard launcher](/Users/protochka/dantes/scripts/dantes_dashboard.cmd).
@@ -95,3 +103,7 @@ Panel maketini yoki kodini boshlashdan avval maqsadli biznesni aniqlash: Dantes 
 - [Julian Goldie Agent OS public candidate](https://github.com/nilhemdot/agent-os).
 - [Hermes Web Dashboard](https://hermes-agent.nousresearch.com/docs/user-guide/features/web-dashboard), [Hermes Kanban](https://hermes-agent.nousresearch.com/docs/user-guide/features/kanban).
 - [FruVisi](https://github.com/Fruxano/fruvisi), [Hermes MCP](https://hermes-agent.nousresearch.com/docs/user-guide/features/mcp), [Obsidian MCP server](https://github.com/Vasallo94/obsidian-mcp-server), [Hermes Dashboard graph candidate](https://github.com/mojomast/hermesdashboard).
+
+## Sales uchun bosqichma-bosqich reja — 2026-09-29
+
+- [taklif] [[Dantes Sales bosqichma-bosqich reja 2026-09-29]] — jarayon va manbani tasdiqlashdan nazoratli pilot va guruh moliyasiga ulashgacha 7 bosqich; Veneraga 8 ta savol. Savollar yuborilmadi; agent implementatsiyasi bu topshiriqda boshlanmadi.

@@ -732,3 +732,115 @@ Emirhan Codex’ni loyiha uchun emas, kundalik qulay ishlatish uchun sozlashni s
 - [foydalanuvchi aniqlashtirdi] Uch faol akkaunt — o‘zining, konsultantning va Dantes CEO’niki; amalda bitta sotuvchi barcha loyihalarni yuritadi. Sales bo‘limining jami xodimlar soni va vazifalari savolga qo‘shilsin.
 - [dalil] 14.09.2026 foydalanuvchi skrinshoti klient/to‘lov turi/summa ustunli, bank to‘lovlari sahifasini ko‘rsatadi; 2 sahifa. Bu to‘lov tafsiloti, xonadon savdosi bilan bog‘lovchi ID/ustun skrinshotda yo‘q. PII ko‘chirilmadi.
 - [tayyorlandi, yuborilmadi] Sales follow-up savollari qayta tuzildi: jami xodim/rollar, ogohlantirish tartibi, to‘lov→kontrakt/xonadon bog‘lanishi, sotilgan xonadonlar jadvali, CRM qo‘ng‘iroq qaydi, AI vazifasi va xabar tasdig‘i.
+- [foydalanuvchi tuzatdi] Sales bo‘limida faqat Venera ishlaydi; Uysot akkauntlarida Dantes, Venera va Sotuvchi Sitora bor. Sitora akkauntining ayni paytdagi foydalanuvchisi/faolligi noma’lum. Headcount savolini qayta bermaslik, faqat akkaunt/rol farqini aniqlashtirish.
+- [skill o‘rnatildi] Global Codex `humanizer` skill v3.1.0, MIT, manba `blader/humanizer`; katalogda faqat `SKILL.md` o‘rnatildi. Keyingi sessiyadan foydalanishga tayyor.
+
+## 2026-09-28 — Venera bilan Uysot jarayonini yozib olish
+
+- [foydalanuvchi rejasi] Emirhan Venera bilan uchrashib, uning Uysot’da qanday ishlashini boshidan oxirigacha ekran yozuviga oladi.
+- Yozuvni ko‘rib, amaldagi jarayonni qadamlar, sahifalar, mas’ullar, ma’lumot oqimi va tasdiq nuqtalari bo‘yicha tahlil qilamiz; keyin faqat qolgan noaniqliklardan savollar tuzamiz.
+- Savollar hozircha yuborilmaydi. Mijozlarning shaxsiy ma’lumotlarini yozuvda ko‘rsatmaslikka harakat qilish.
+- Batafsil reja: [[Sales suhbat - muammolar va AI agent talablari]] · Dantes hujjati `dantes/docs/UYSOT-SALES-DASHBOARD-KUZATUVLARI-2026-09-28.md`.
+
+## 2026-09-29 — Uysot videosini ko‘rib chiqish
+
+- [tekshirildi: video, 14:00 dan oxirigacha] Uysot loyihalar/xonadon xaritasi, shartnoma tafsiloti, to‘lovlar, qarzdorlik, mijozlar, lead bozori, CRM, agentlar, o‘zgarishlar, Excel konstruktor va statistik modullar ko‘rsatildi.
+- Shartnoma ekranida mijoz/xonadon ma’lumoti va to‘lov tarixi, to‘lov jadvalida shartnoma maydoni ko‘rinadi. Shartnoma raqami to‘lovni xonadonga bog‘lash uchun tekshiriladigan asosiy kalit.
+- Ekranlar ketma-ketligi to‘liq Sales jarayonining xronologiyasi ekani tasdiqlanmagan. O‘zbekcha audio mahalliy `ru-RU` modelida ishonchli transkripsiya bo‘lmadi; og‘zaki izohni fakt sifatida ishlatmadim.
+- Mijoz PII va Telegram yozishmalari qaydga ko‘chirilmagan. Sales savollari tayyorlanadi, lekin hozircha yuborilmaydi.
+- Batafsil qayd: [[Sales suhbat - muammolar va AI agent talablari]] va `dantes/docs/UYSOT-SALES-DASHBOARD-KUZATUVLARI-2026-09-28.md`.
+
+## 2026-09-29 — Dantesning guruh moliyasi talabi
+
+- [foydalanuvchi yubordi] Dantes barcha kompaniyalar bo‘yicha alohida va guruh moliyasi, kredit/lizing, shartnomalar, to‘lov nazorati, pul oqimi prognozi hamda dalilli boshqaruv hisobotlarini so‘ragan.
+- [qamrov xulosasi] Bizning Uysot/Sales qismimiz mijoz to‘lovlari, shartnoma qoldig‘i/grafigi, qarzdorlik va kechikish, loyiha/xonadon bilan bog‘langan ma’lumotlar manbai bo‘ladi; bu guruhning barcha moliyaviy hisob-kitoblarini qamramaydi.
+- Dantes repo’dagi `moliyachi` agent specification 3-faza/rejalashtirilgan, `integrator1c` 4-faza/rejalashtirilgan; shuning uchun moliyaviy umumiy dashboard hozir ishlayapti deb aytmaymiz.
+- Taklif qilingan tartib: avval Venera bilan Uysot jarayoni/source-of-truth/KPI; so‘ng Uysot read-only feed va Sales hisoboti; keyin boshqa kompaniyalar, 1C/bank integratsiyasi, konsolidatsiya va prognoz. Agent to‘lovni bajarmaydi; vakolatli odam tasdiqlaydi.
+- To‘liq qamrov: [[Sales suhbat - muammolar va AI agent talablari]] va Dantes repo `docs/UYSOT-SALES-DASHBOARD-KUZATUVLARI-2026-09-28.md`.
+
+## 2026-09-29 — Sales uchun amaliy ish rejasi
+
+- [foydalanuvchi so‘rovi] Sales bo‘yicha etapma-etap ish va savollar yozildi: [[Dantes Sales bosqichma-bosqich reja 2026-09-29]].
+- 7 bosqich: jarayon → ma’lumot xaritasi → API/eksport → bir loyiha/davrda solishtirish → birinchi agent vazifasi → nazoratli pilot → guruh moliyasiga ulash. Har bosqichning tayyor natijasi ko‘rsatilgan.
+- Veneraga 8 ta savol draft sifatida; ilgari aytilgan javoblar qayta so‘ralmaydi. Keyingi qadam: Emirhan savollarni ko‘rib chiqadi, kelgan javoblardan xarita va manba tekshiruvi davom etadi. Yuborish alohida so‘rovsiz bajarilmaydi.
+- Dantes nusxasi: `docs/UYSOT-SALES-ISH-REJASI-2026-09-29.md`.
+
+## 2026-09-29 — 8 savol Computer Use bilan tekshirildi
+
+- [tekshirildi: Uysot UI] To‘lov jadvali va qarzdorlik sahifalari, loyihalarning qurilish tashkiloti, CRM izoh/vazifalari va SMS sozlamalari ko‘rildi. To‘lovdan bir kun oldingi SMS yoqilgan, qarzdorlik xabari o‘chiq; yetkazilganlik tasdiqlanmadi. Uysot’da hech narsa o‘zgartirilmadi, xabar yuborilmadi.
+- [ochiq] Sotuv sanasi/status qoidasi, yuridik sotuvchi/pul oluvchi, bank tasdig‘i, amaldagi eslatma va CRM tartibi, tuzatish vakolati hamda ish ustuvorligi Veneradan aniqlanadi. 8 eski savol o‘rniga 7 aniqlashtirish savoli: [[Uysot 8 savol UI tekshiruvi 2026-09-29]].
+- Dantes nusxasi: `docs/UYSOT-SALES-SAVOLLAR-UI-TEKSHIRUVI-2026-09-29.md`.
+- [Venera tasdiqladi] Oylik sotuvlar shartnoma tuzilgan sana (`Дата`) va barcha shartnoma statuslari bo‘yicha hisoblanadi.
+- [Venera tasdiqladi] Kompaniyalar to‘g‘ri; Harorat Invest MCHJ loyihasining nomi Park Residence.
+- [Venera tasdiqladi] SMS abonent tarmoqdan tashqarida bo‘lsa yetib bormaydi; to‘lov kelishilgan kunda tushmasa, mijozlarga haftasiga 1–2 marta qo‘ng‘iroq qilinadi va bir necha qo‘ng‘iroqdan keyin masala direktorga uzatiladi. Uysot qarzdorlik SMS sozlamasi o‘chiq ko‘ringani bilan yuborish manbasi orasidagi farq ochiq.
+
+## 2026-09-30 — Sales ochiq savollari
+
+- Ochiq: 3) to‘lovni tasdiqlash hujjati/manbasi va saqlash joyi; 5) CRM’da suhbat va keyingi qo‘ng‘iroq qaydi; 6) to‘lov/shartnoma xatosini kim va qanday tasdiq bilan tuzatishi, refund qaydi; 7) eng ko‘p vaqt/xato keltiradigan vazifalar va AI ustuvorligi.
+- Savollar rus tilida, har birining sarlavhasi va agent uchun sababi bilan tayyor: [[Uysot 8 savol UI tekshiruvi 2026-09-29]].
+- [ ] Veneradan javoblar kelgach, Emirhan ularni Codex’ga yuboradi; birgalikda talablarni yakunlaymiz.
+- Bugungi Obsidian eslatma: [[2026-09-30]]. Bu lokal qayd, bildirishnoma o‘rnatilgani emas.
+
+## 2026-10-02 — Venera javoblari taqsimlandi
+
+- [foydalanuvchi yubordi: Venera javobi] 3: cheklar Uysot’ga yuklanmaydi; Venera bank ko‘chirmasi asosida to‘lovlarni kiritadi. Haqiqiy tushum tasdig‘i kompaniya hisobvarag‘i bank ko‘chirmasi; saqlash joyi/kirish tartibi ochiq.
+- [foydalanuvchi yubordi: Venera javobi] 5: CRM savdo ofisidan aniqlanadi, mijozlar bilan asosan ular ishlaydi; suhbat/keyingi qo‘ng‘iroq qaydi joyi noma’lum. Bu oldingi Venera-only Sales qaydi bilan rol chegarasini aniqlashtirishni talab qiladi.
+- [foydalanuvchi yubordi: Venera javobi] 6: Venera shartnoma, kiritish/tuzatish amallarini bajaradi; mijoz kartasidagi tarixda sana va muallif qayd etiladi, Excel konstruktor kamroq ma’lumot beradi. Audit mustaqil tekshirilmadi; tasdiqlovchi va refund qaydi ochiq.
+- [ochiq] 7-savol: vaqt/xato keltiradigan vazifalar va AI ustuvorligi javobsiz. SMS yuborish manbasi ham ochiq.
+- [saqlandi] [[Uysot 8 savol UI tekshiruvi 2026-09-29]], [[Sales suhbat - muammolar va AI agent talablari]] va Dantes `docs/UYSOT-SALES-SAVOLLAR-UI-TEKSHIRUVI-2026-09-29.md`.
+
+## 2026-10-03 — Aniqlashtirish savollari Beluga botga yuborildi
+
+- [foydalanuvchi so‘rovi] Venera javobidagi ochiq joylardan savollar tayyorlash va Beluga botga yuborish.
+- [tayyorlandi] Ruscha 10 savol: bank ko‘chirmasi/cheklar saqlanishi, bank–Uysot solishtirishi va tafovutlar, CRM qaydlari va ofis/Venera rollari, tuzatish tasdig‘i, refund, audit tafsilotlari, AI ustuvorligi. Batafsil: [[Uysot 8 savol UI tekshiruvi 2026-09-29]].
+- [tekshirildi: Telegram MCP] Recipient preview BelugaCat Assistent for Emirhan (@BelugaCat_Asisstent_bot) ekanini ko‘rsatdi; confirm=True yuborish muvaffaqiyatini tasdiqladi. Draft boshqa chatlarga yuborilmasligi matnda ko‘rsatildi. Botning keyingi ishlovi tekshirilmagan.
+
+## 2026-10-03 — BelugaCat owner access kengaytirildi
+
+- [foydalanuvchi ruxsati] Emirhan barcha agent tool/imkoniyatlari va chatlarga access ochilishini so‘radi.
+- [o‘zgartirildi: Beluga kodi] Host tekshirgan private owner turnlari va owner tasklari Hermes `all,telegram_personal,remotion,kanban` toolsetini tanlaydi. Texnik ish doirasi owner so‘ragan lokal loyihalarga kengaytirildi; loyiha AGENTS qoidalari bajariladi. Group turnlari restricted toolsetda qoladi, group a’zolari owner vakolatini olmaydi.
+- [o‘zgartirildi: runtime policy] `state/authorized-groups.json`da `all_groups_enabled=true`; bot qatnashgan va update oladigan guruhlarda mention/reply qabul qilinadi. Oldingi aniq disabled/topic siyosati ustun; oldingi policy private backupga saqlandi. Telegram akkauntiga ochiq chatlarni so‘rov bo‘yicha o‘qish oldindan ruxsatlangan.
+- [qamrov] Installed tool access ochildi; yetishmayotgan login, OS ruxsati va integratsiyalar avtomatik yaratilmaydi. Direct Telegram send host orqali; umumiy access mavjud per-chat auto-reply siyosatini o‘zgartirmadi.
+- [tekshirildi: CLI] 142/142 unit test; Python compile va git diff --check o‘tdi. Worker restart: launchctl running, Telegram true, yangi observer PID/fresh true, queue/running/review 0, RAG ok. 22 tarixiy failed job bor. Jonli yangi group send yoki barcha tool’larni bittadan ishga tushirish sinovi qilinmagan.
+- [fayllar] Beluga AGENTS.md, README.md, hermes_agent.py, group_policy.py va tests/test_access_scope.py. Oldingi unrelated o‘zgarishlar saqlandi, commit/push qilinmadi.
+
+## 2026-10-03 — Remotion media uchun guruh destination qo‘shildi
+
+- [foydalanuvchi so‘rovi] Beluga «render_media faqat joriy chatga» cheklovini olib tashlash so‘raldi.
+- [o‘zgartirildi: kod] render_media recipient_id orqali guruh ID/@username/nomini qabul qiladi. Host owner private chatidan aniq yuborish topshirig‘ini tekshiradi, nomni yagona guruhga resolve qiladi, Bot API getChat turi va enabled policy’ni tekshiradi. Bot guruhda bo‘lishi va media yuborish huquqiga ega bo‘lishi kerak. Guruhdagi owner current-chat media so‘rovi ham qabul qilinadi.
+- [saqlandi: delivery invariants] Trusted PNG/MP4 format/path, durable action_attempt, aniq recipient, group a’zolariga owner vakolati berilmasligi. Boshqa guruhga origin reply ID yuborilmaydi; render receipt target chat ID bilan saqlanadi. Noaniq nom/draft/disabled target yubormaydi.
+- [tekshirildi: CLI] 147/147 test, Python compile va git diff --check o‘tdi. Yangi test destination saqlanishi, host upload argumentlari, attempt-before-send, cross-chat reply ID, noaniq guruh/draft/nonowner/disabled target holatlarini tekshiradi. Worker restartdan keyin launchctl running, Telegram true, observer yangi PID/fresh; queue/running/review 0. Jonli tashqi group media yuborish sinovi qilinmadi.
+- [alohida health kuzatuvi] status.py tekshiruvda RAG ok:false qaytardi; bu vazifada RAG o‘zgartirilmadi va sababi tekshirilmadi.
+- [foydalanish] «Backend terminlari rasmini [guruh nomi yoki ID]ga yubor». Hech bir guruhga bu sessiyada media yuborilmadi.
+
+## 2026-10-03 — Remotion guruhga personal account orqali yuboriladi
+
+- [foydalanuvchi aniqlashtirdi] Guruhga rasm/video faqat Emirhanning nomidan yuborilishi kerak; bot qo‘shishni talab qiladigan oqim kerak emas.
+- [tuzatildi: kod] Cross-chat render_media guruhni send_named resolve_only orqali personal Telegram akkauntda topadi va PNG/MP4ni shu akkauntdan send_file orqali yuboradi. Bot API getChat/send_media cross-group yo‘lida ishlatilmaydi. Guruhga kirish/yozish huquqi personal akkauntda bo‘lishi kerak; avtomatik join qilinmaydi. Joriy owner-bot chatdagi preview oldingi upload yo‘lida qoladi.
+- [saqlandi] Aniq owner yuborish buyrug‘i, yagona recipient, require_group, trusted render path/signature/50MB, symlink escape himoyasi, action_attempt va receipt tekshiruvlari.
+- [tekshirildi: CLI] 148/148 test; Python compile va git diff --check. Test personal delivery tanlanishini, Bot API ishlatilmasligini, target receipt va path/format tekshiruvini qamraydi. Worker running, yangi observer fresh, Telegram true, queue/running/review 0, RAG ok. Oldingi RAG ok:false kuzatuvi hozir qayta tekshiruvda ok:true.
+- [cheklov] Jonli tashqi guruhga test xabari yuborilmadi.
+
+## 2026-10-04 — Sessiya yakuniy saqlandi
+
+- [foydalanuvchi so‘rovi] Qilingan ish va o‘zgarishlarni Obsidian’ga saqlash. Yakuniy xulosa: [[Sessiya xulosasi 2026-10-04]].
+- Venera javoblari/CRM tuzatishi, Beluga access va Remotion personal-group delivery qarori birlashtirildi. Oxirgi test/runtime dalili 2026-10-03 sifatida belgilandi; jonli group send ochiq.
+
+## 2026-10-04 — Va’da sanasi Excel jadvalida yuritilishi
+
+- [Venera javobi, Emirhan yubordi] Shartnomadagi oylik to‘lov sanasi Uysot’da nazorat uchun ishlatiladi. To‘lov tushmasa mas’ul xodim qo‘ng‘iroq qiladi. Mijoz aytgan yangi to‘lov sanasi keyingi nazorat uchun Excel jadvaliga yoziladi.
+- [ochiq] Excel jadvali Uysot ichidagi konstruktor, yuklab olingan fayl yoki tashqi jadval ekanligi aytilmagan. Jadval manzili, shartnoma kaliti va kirish formati ochiq. Va’da sanasi shartnoma sanasini rasman o‘zgartirishi tasdiqlanmagan.
+- [tekshirish urinish: 2026-10-04] Computer Use inventory’da browser tablari yo‘q; native Google Chrome access «Computer Use was not approved» bilan rad etildi. Jonli Uysot sahifalari tekshirilmadi. Lokal route katalogidagi Excel eksport yo‘llari va oldingi Excel konstruktor UI kuzatuvi aynan shu jadval joylashuvini isbotlamaydi.
+
+## 2026-10-04 — Uysot MCP orqali tekshiruv
+
+- [tekshirildi: MCP stdio] Lokal server initialize javobi `uysot-readonly` v0.1.0. `uysot_read_endpoint` `/v1/debt/` uchun UYSOT_API_TOKEN configured emasligi va account request bajarilmaganini qaytardi. Jonli akkaunt ma’lumoti olinmadi.
+- [tekshirildi: MCP katalog] uysot_list_subroutes Excel uchun 12 eksport path qaytardi; bu public frontend katalogi, va’da sanalari jadvalining joylashuvi dalili emas.
+- [ochiq] Jadval Uysot konstruktoridami yoki tashqi fayldami — tasdiqlanmagan. Jonli MCP o‘qish uchun rasmiy token ulanishi zarur. Credential qaydga yozilmadi.
+
+## 2026-10-05 — Dantes memory alohida vaultga migratsiya qilindi
+
+- [foydalanuvchi so‘rovi] Dantes bo‘yicha barcha memorylarni yangi Obsidian vaultga yig‘ish.
+- [tekshirildi: lokal fayllar] `/Users/protochka/DantesBrain` yaratildi: 218 manba/snapshot, asosiy loyiha/Sales qaydlari, tegishli sessiya tarixi, repo hujjatlari, agent yo‘riqnomalari va Uysot API tadqiqoti. Inventar `migration-manifest.json`da.
+- Kanonik Dantes memory yangi vaultda. Preferences va uysot-sales skill yo‘nalishi yangilandi. Eski qaydlar, kod, runtime va credentiallar o‘z joyida. Commit/push qilinmadi.
+- Keyingi qadam: yangi vault `00 - Dantes Context.md`dan boshlash; va’da sanalari Excel jadvali va shartnoma kalitini aniqlash.

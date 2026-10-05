@@ -46,3 +46,9 @@ source: Emirhan bilan bevosita suhbat
 - Sessiya timezone: `Asia/Tashkent`; bu foydalanuvchining jismoniy joylashuvi isboti emas.
 - Global ko‘rsatma: `/Users/protochka/.codex/AGENTS.md`.
 - Shaxsiy skilllar: `/Users/protochka/.codex/skills/`.
+
+## Dantes xotirasi — 2026-10-05
+
+- [foydalanuvchi qarori] Dantes loyiha memorylari alohida yangi Obsidian vaultga migratsiya qilinsin.
+- [tekshirildi: lokal fayllar] Kanonik Dantes vault: `/Users/protochka/DantesBrain`. Avval [joriy kontekst](/Users/protochka/DantesBrain/00%20-%20Dantes%20Context.md), so‘ng tegishli memoryni o‘qi. Sales kanonik qaydi yangi vaultdagi `01 - Memory/Sales suhbat - muammolar va AI agent talablari.md`.
+- Dantes uchun yangi fakt/qarorlar yangi vaultga yoziladi; eski MyBrain Dantes qaydlari tarixiy manba sifatida saqlandi. Kod repo `/Users/protochka/dantes`da; hujjat snapshoti avtomatik sync emas.

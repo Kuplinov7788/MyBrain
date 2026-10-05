@@ -114,9 +114,117 @@ Konsultant kartasi: ism, lavozim, ish vaqti, aloqa, qaysi jarayon va ma’lumotn
 - [foydalanuvchi aniqlashtirdi: 2026-09-28] Uch faol akkaunt — Emirhanning o‘ziniki, konsultantniki va Dantes CEO’niki; bitta sotuvchi barcha loyihalarni yuritadi. Sales jamoasidagi jami xodimlar soni va har birining vazifasi aniqlashtirilishi kerak.
 - [tekshirildi: foydalanuvchi yuborgan skrinshot] 14.09.2026 oynasi to‘lov tafsilotlari jadvali: mijoz, to‘lov turi, summa; ko‘rinadigan to‘lovlar bank orqali va 2 sahifa bor. Bu payment transaction dalili; xonadon/kontrakt bilan bog‘lanishi skrinshotda yo‘q. Mijoz PII ko‘chirilmadi.
 - [tayyorlandi, yuborilmadi] Yangilangan savollarga Sales bo‘limining headcount/rol taqsimoti va to‘lovni kontrakt/xonadonga bog‘laydigan Uysot jadvali haqidagi savollar qo‘shildi.
+- [foydalanuvchi tuzatdi: 2026-09-28] Sales bo‘limida faqat Venera ishlaydi. Uysot akkauntlarida Dantes, Venera va “sotuvchi Sitora” bor. Sitora akkauntining egasi/statusi va faol ishlatilishi noma’lum; bu izoh avvalgi akkaunt taqsimoti haqidagi taxminlarni almashtiradi.
+- [tuzatildi, yuborilmadi] Salesda jami xodimlar sonini yana so‘rash bekor qilindi; faqat Venera ishlashi aytildi. Qolgan savol — Uysotdagi uch akkauntning amaldagi foydalanuvchisi/roli, ayniqsa Sotuvchi Sitora akkaunti.
 
 ## Suhbatdan keyin
 
 Javoblarni shu qaydga qo‘shish. Muammolarni ta’siri, takrorlanishi va kerakli ma’lumotning mavjudligi bo‘yicha saralash. Birinchi AI vazifasini shu dalillardan tanlash; qarzdorlik agenti hozircha tanlangan yechim emas. Keyingi safar javobsiz savollarni ajratib berish.
 
 Bog‘liq: [[Dantes Biznes Agent Dashboard 2026-09-25]] · [[Last Session]]
+
+## Venera bilan ekran yozuvi — keyingi ish rejasi
+
+- [foydalanuvchi qarori: 2026-09-28] Emirhan Venera bilan uchrashuv o‘tkazib, Venera Uysot’dagi ish jarayonini boshidan oxirigacha tushuntirgan paytda ekran yozuvini oladi.
+- [keyingi qadam] Yozuv kelgach, jarayonni bosqichlarga ajratib tahlil qilish: qaysi sahifada nima qilinadi, kim bajaradi, ma’lumot qayerdan olinadi va keyingi qadam nimaga bog‘liq. Ko‘ringan faktlarni noaniq joylardan alohida belgilash.
+- [tayyorlanadi, hali bajarilmadi] Tahlildan keyingina Veneraga beriladigan aniqlashtirish savollarini tuzish. Savollarni yuborish alohida so‘ralmaguncha yubormaslik.
+- [qayd] Sales’da faqat Venera ishlashi aytilgan; Uysot akkauntlari soni xodimlar soniga tenglashtirilmaydi.
+- [amaliy eslatma] Yozuvda jarayon qadamlari, ishlatiladigan Uysot sahifalari/filtrlari, mas’ullar, ma’lumot kiritish va tasdiqlash, xato yoki kechikish bo‘lsa nima qilinishini tushuntirish foydali. Mijozlarning ism/telefon kabi ma’lumotlarini kerak bo‘lmasa ko‘rsatmaslik yoki berkitish.
+
+## Uysot ekran yozuvi tahlili — 2026-09-29
+
+- [tekshirildi: foydalanuvchi videosi, 14:00 dan oxirigacha; lokal kadrlar] Ekranda `Проекты` va xonadonlar xaritasi, `Договоры` va tanlangan shartnoma tafsiloti, `Платежи`, `Задолженность`, `Клиенты`, `Рынок лидов`, `Система CRM`, `Агенты`, `Изменения`, `Excel конструктор`, shuningdek Boss statistikasi (`Проекты`, `Платежи`, `Задолженность`, `ЖК`, `Продажа`) ko‘rsatildi. Bu yozuvdagi demo ketma-ketligi; kundalik ishning aniq tartibi deb olinmaydi.
+- [tekshirildi: video, shartnoma tafsiloti va to‘lov sahifasi] Shartnoma tafsilotida mijoz va xonadon/uy ma’lumoti hamda to‘lovlar tarixi bir ekranda ko‘rinadi. To‘lovlar ro‘yxatida `Договор` maydoni ham ko‘rinadi. Shu sabab shartnoma raqami — to‘lovni xonadon/sotuvga bog‘lash uchun tekshiriladigan asosiy kalit.
+- [tekshirildi: video, qarzdorlik sahifalari] Jadvalda shartnoma, mijoz, qarz summasi, kechikish, sana, penya va mas’ul kabi ustunlar ko‘rindi; grafik/statistika va batafsil ro‘yxatlar alohida ekranlarda.
+- [tekshirildi: video, lead va CRM sahifalari] `Рынок лидов`da lead’lar va shartnoma statistikasi, alohida `Система CRM`da voronka ko‘rindi. Video kiruvchi murojaatdan shartnomagacha bo‘lgan to‘liq handoff’ni isbotlamaydi.
+- [xulosa, tasdiqlanmagan] Ko‘rsatilgan ekranlarga qarab taxminiy ma’lumot oqimi: loyiha/xonadon tanlash → shartnoma → to‘lovlar → qarzdorlik nazorati; lead/CRM esa murojaatlar oqimi bo‘lishi mumkin. Venera og‘zaki tasdiqlamaguncha bu faqat ishchi gipoteza.
+- [cheklov] Audio yo‘lagi ajratilib, macOS’ning qurilmadagi `ru-RU` nutq tanishi bilan bo‘laklab tekshirildi. Uzbekcha izoh ishonchli chiqmadi; ruscha natijalar parcha-parcha bo‘lgani uchun ularni Veneraning tasdiqlangan gapi yoki qoidasi sifatida ishlatmadim. To‘liq og‘zaki izoh hali tasdiqlanmagan.
+- [maxfiylik] Yozuvda mijozlar jadvali ham ko‘rinadi; ism, telefon va individual summalar ushbu qaydga ko‘chirilmaydi. Shuningdek, ekran ulashish paytida Telegram oynasi qisqa ko‘rindi; chat mazmuni qayd qilinmadi.
+- [keyingi aniqliklar] Veneradan (1) lead kelganidan shartnoma imzolanguncha amaliy qadamlar, (2) xonadon bron/sotildi holati qayerda va qaysi harakat bilan o‘zgarishi, (3) to‘lovni kim kiritib/tekshirishi va tuzatishi, (4) qarz eslatmasi/eskalatsiyasi qanday yurishi, (5) CRM’da qo‘ng‘iroq va keyingi vazifa qayd etiladimi, (6) qaysi hisobot sotilgan xonadon uchun ishonchli ekanini aniqlash kerak. Savollar hali Veneraga yuborilmadi.
+
+## Dantes guruh moliyasi talabi va Sales/Uysot qamrovi — 2026-09-29
+
+- [foydalanuvchi yuborgan talab] Dantes barcha kompaniyalar uchun alohida va guruh bo‘yicha moliyaviy ko‘rinish, ichki o‘tkazmalarni ikki marta sanamaslik, kredit/lizing, shartnomalar, to‘lovlar, pul oqimi prognozi va rahbar hisobotlarini so‘ragan.
+- [xulosa, ishchi qamrov] Bizning hozirgi Sales/Uysot ishi bu katta talabning ma’lumot manbalaridan biri: Uysot’dagi mijoz to‘lovlari, shartnoma va to‘lov jadvali, xonadon/loyiha, mijoz qarzi va kechikish, mas’ul, lead/CRM natijalari. Shartnoma ID/raqami bilan `to‘lov → shartnoma → xonadon/loyiha` bog‘lanishini Venera bilan tasdiqlash zarur.
+- [qamrov chegarasi] Uysot Sales qismi guruhning foyda-zarari, kompaniya xarajatlari/kassa qoldig‘i, ichki o‘tkazmalar eliminatsiyasi, kredit/lizing shartnomalari, bank rekvizitlari va ko‘chirmalari, to‘lov topshirig‘ini tayyorlash/yuborish hamda guruh cash-flow prognozini yolg‘iz ta’minlamaydi. Bular uchun moliya bo‘limi/1C/bank va boshqa kompaniyalar ma’lumotlari kerak.
+- [xavfsizlik chegarasi] Bizning agent Uysot’dan faqat ruxsat etilgan o‘qish va hisobotga xizmat qilishi kerak; pul o‘tkazmaslik, to‘lovni yakunlamaslik, shartnomani o‘zgartirmaslik. To‘lovga vakolatli xodim tasdig‘i alohida inson nazorati bo‘lib qoladi.
+- [Dantes repo tekshiruvi: 2026-09-29] `xodimlar/moliyachi/AGENTS.md` Moliyachini 3-faza/rejalashtirilgan va Dantes uchungina restricted deb belgilaydi; manbalar 1C (read-only), bank ko‘chirmasi va byudjet, kirish CSV. `integrator1c` 4-faza/rejalashtirilgan, 1C ga yozish taqiqlangan. `HOLAT.md` 2026-09-13 da moliya papkalarini bo‘sh deb qayd qilgan; bu dated holat, bugungi data availability isboti emas. Demak, umumiy finance capability production’da bor deb hisoblamaslik.
+- [taklif: bosqichlar] 1) Venera bilan Sales jarayoni va Uysot’dagi haqiqat manbasini tasdiqlash; 2) Uysot ma’lumotlari uchun ID/maydon/filter/source/time ko‘rsatadigan read-only Sales feed va faktlarga tayangan kunlik/haftalik qarz-to‘lov-shartnoma hisoboti; 3) keyin boshqa kompaniyalar + 1C/bank ma’lumotlarini moliya egasi bilan ulab, ichki o‘tkazmalarni bartaraf etish; 4) kredit/lizing, to‘lov kalendari va guruh prognozini keyingi alohida qamrov sifatida loyihalash.
+- [ochiq qaror] Sales feed’ni qaysi formatda berish (API yoki tasdiqlangan eksport), kim moliyaviy data owner va tasdiqlovchi, qaysi kompaniyalar/valyutalar/qaysi davrlar qamralishi, KPI ta’riflari va ichki transferlarni aniqlovchi kalitlar hali noma’lum.
+
+## Sales ish rejasi — 2026-09-29
+
+- [tayyorlandi: taklif, yuborilmadi] 7 bosqichli ish rejasi va Veneraga 8 ta savol [[Dantes Sales bosqichma-bosqich reja 2026-09-29]] qaydida. Dastlab jarayon/manba/KPI, keyin ma’lumot xaritasi va API/eksport tekshiruvi, bir loyiha/davrda solishtirish, birinchi vazifa va nazoratli pilot, so‘ng guruh moliyasiga ulash.
+- Ishlab chiqish hali boshlanmagan; Venera avval aytgan xodim/to‘lov mas’uli/eskalatsiya javoblarini qayta so‘ramaymiz.
+
+## 2026-09-29 — 8 savol Computer Use bilan tekshirildi
+
+- [tekshirildi: Uysot UI] To‘lov jadvali va qarzdorlik sahifalari, loyihalarning qurilish tashkiloti, CRM izoh/vazifalari va SMS sozlamalari ko‘rildi. To‘lovdan bir kun oldingi SMS yoqilgan, qarzdorlik xabari o‘chiq; yetkazilganlik tasdiqlanmadi. Uysot’da hech narsa o‘zgartirilmadi, xabar yuborilmadi.
+- [ochiq] Sotuv sanasi/status qoidasi, yuridik sotuvchi/pul oluvchi, bank tasdig‘i, amaldagi eslatma va CRM tartibi, tuzatish vakolati hamda ish ustuvorligi Veneradan aniqlanadi. 8 eski savol o‘rniga 7 aniqlashtirish savoli: [[Uysot 8 savol UI tekshiruvi 2026-09-29]].
+- Dantes nusxasi: `docs/UYSOT-SALES-SAVOLLAR-UI-TEKSHIRUVI-2026-09-29.md`.
+- [Venera tasdiqladi] Oylik sotuvlar shartnoma tuzilgan sana (`Дата`) va barcha shartnoma statuslari bo‘yicha hisoblanadi.
+- [Venera tasdiqladi] Kompaniyalar to‘g‘ri ko‘rsatilgan; Harorat Invest MCHJ loyihasining nomi Park Residence. Oldingi savoldagi “Harorat Invest” loyiha nomi tuzatiladi.
+- [Venera tasdiqladi] SMS abonent aloqa tarmog‘idan tashqarida bo‘lsa yetib bormaydi. Kelishilgan kuni to‘lov tushmasa, mijozga haftasiga 1–2 marta qo‘ng‘iroq qilinadi; bir necha qo‘ng‘iroqdan keyin masala direktorga beriladi. Uysot’dagi qarzdorlik SMS sozlamasi o‘chiq ko‘ringani bilan bu javob orasidagi farq (SMS qayerdan jo‘natilishi) ochiq.
+
+## 2026-10-02 — Venera javoblari: 3, 5 va 6-savollar
+
+Manba: Emirhan ushbu suhbatda Veneraning javobini yubordi. Quyidagilar suhbatdosh ma’lumoti; bank hujjatlari yoki Uysot audit yozuvlari bu bosqichda mustaqil tekshirilmagan.
+
+### 3. To‘lovni tasdiqlash — qisman javob olindi
+
+- [Venera javobi, Emirhan yubordi] Cheklar Uysot’ga yuklanmaydi. Mijozlar turli banklar va bank ilovalari orqali to‘laydi; Venera bank ko‘chirmalari asosida to‘lov ma’lumotini Uysot’ga kiritadi.
+- [Venera javobi, Emirhan yubordi] Kompaniyaning hisob-kitob hisobvarag‘i bo‘yicha bank ko‘chirmasi pulning haqiqatda tushganini tasdiqlovchi manbadir.
+- [ochiq] Ko‘chirmalar qayerda saqlanishi, ularni olish tartibi va agent uchun ruxsatlangan format/kirish aniqlanmagan.
+- [xulosa: agent talabi] Uysot yozuvi va bank ko‘chirmasi bilan solishtirilgan to‘lov holati alohida ko‘rsatilishi kerak; bank manbasi bo‘lmasa mustaqil bank tasdig‘i bor deb aytilmaydi.
+
+### 5. CRM va qo‘ng‘iroqlar qaydi — savdo ofisidan aniqlanadi
+
+- [Venera javobi, Emirhan yubordi] CRM masalasini savdo ofisida aniqlashtirish kerak: mijozlar bilan asosan ular ishlaydi.
+- [ochiq] Suhbat natijasi va keyingi qo‘ng‘iroq sanasi qayerda yuritilishi hali javobsiz. Ushbu savol savdo ofisiga yo‘naltiriladi; CRM’da to‘liq tarix bor deb qabul qilinmaydi.
+- [aniqlashtirish] Oldingi «Sales’da faqat Venera ishlaydi» qaydi bilan mijozlar bilan ishlaydigan savdo ofisining roli farqi ochiq; yangi javobdan xodimlar soni chiqarilmaydi.
+
+### 6. O‘zgartirishlar, mas’ul va audit — qisman javob olindi
+
+- [Venera javobi, Emirhan yubordi] Har bir mijoz anketasida uning shartnomasiga oid ma’lumotlar ko‘rinadi. O‘zgarishlar, to‘lov qo‘shish yoki o‘chirish tizimda sana va amalni bajargan shaxs bilan qayd etiladi.
+- [Venera javobi, Emirhan yubordi] Excel konstruktor orqali ham jadval tuzish mumkin, ammo undagi hisobotda ma’lumot kamroq bo‘ladi.
+- [Venera javobi, Emirhan yubordi] Shartnomalar bilan bog‘liq barcha amallar, ma’lumot kiritish va tuzatishlarni Venera bajaradi.
+- [ochiq] Alohida kimning tasdig‘i kerakligi, shartnomani bekor qilish tartibi va qaytarilgan pul (refund) qayerda qayd qilinishi aniq bayon qilinmagan.
+- [xulosa: agent talabi] Audit uchun mijoz/shartnoma kartasidagi tarixni tekshirish kerak; Excel eksporti barcha audit maydonlarini qamraydi deb hisoblanmaydi. Veneraning amaliy roli agentga yozish vakolati bermaydi.
+
+### 7. AI ustuvorligi — javob olinmagan
+
+- [ochiq] Eng ko‘p vaqt oladigan yoki xato keltiradigan ikki vazifa va birinchi avtomatlashtirish vazifasi ushbu javobda ko‘rsatilmagan.
+
+Qolgan aniqliklar: bank ko‘chirmasi saqlash/kirish tartibi; savdo ofisining CRM qaydlari; tuzatish/bekor qilish tasdig‘i va refund qaydi; AI ustuvorligi. SMS yuborish manbasi bo‘yicha oldingi ochiq farq ham saqlanadi.
+
+Batafsil savollar: [[Uysot 8 savol UI tekshiruvi 2026-09-29]].
+
+## 2026-10-03 — Aniqlashtirish savollari Beluga botga yuborildi
+
+- [foydalanuvchi so‘rovi] Venera javobidagi ochiq joylardan savollar tayyorlash va Beluga botga yuborish.
+- [tayyorlandi] Ruscha 10 savol: bank ko‘chirmasi/cheklar saqlanishi, bank–Uysot solishtirishi va tafovutlar, CRM qaydlari va ofis/Venera rollari, tuzatish tasdig‘i, refund, audit tafsilotlari, AI ustuvorligi. Batafsil: [[Uysot 8 savol UI tekshiruvi 2026-09-29]].
+- [tekshirildi: Telegram MCP] Recipient preview BelugaCat Assistent for Emirhan (@BelugaCat_Asisstent_bot) ekanini ko‘rsatdi; confirm=True yuborish muvaffaqiyatini tasdiqladi. Draft boshqa chatlarga yuborilmasligi matnda ko‘rsatildi. Botning keyingi ishlovi tekshirilmagan.
+
+## 2026-10-03 — CRM savoli aniqlashtirildi
+
+- [qayta o‘qildi: 2026-09-29 UI qaydi] Uysot CRM lead kartasida `Примечание`, `Задание`, vazifa sanasi va mas’ul uchun joy mavjud. Suhbat natijasini izohga, keyingi qo‘ng‘iroqni sanali vazifaga yozish imkoniyati oldin kuzatilgan.
+- [cheklov] Va’da qilingan to‘lov sanasi uchun alohida maydon va amaldagi muntazam to‘ldirish tasdiqlanmagan. Route katalogidagi CRM/task yo‘llari bu faktlarni isbotlamaydi.
+- [bugungi tekshiruv cheklovi] Browser connector app-server xatosi berdi; native Google Chrome Computer Use ruxsati yo‘q deb qaytdi. Shu sabab jonli UI qayta tekshirilmadi.
+- [tuzatildi: taklif] Savol «qayerda yoziladi?» o‘rniga: «В Uysot CRM есть примечания и задачи с датой. Сотрудники офиса продаж записывают там результаты звонков и дату следующего контакта? Где фиксируют обещанную клиентом дату оплаты?» Texnik imkoniyat bilan amaldagi foydalanish alohida aniqlanadi.
+
+## 2026-10-04 — CRM amaliyoti bo‘yicha foydalanuvchi tuzatishi
+
+- [foydalanuvchi aniqlashtirdi: shu sessiya] CRM izohlariga suhbat natijalarini yozishmaydi. Bu haqda qayta savol berilmaydi.
+- [ochiq] Qayta qo‘ng‘iroq va mijoz va’da qilgan to‘lov sanasi qayerda yuritilishi aniqlanmagan. Ma’lumot mavjud bo‘lsa havola so‘ralgan ruscha draft tayyorlandi; Veneraga yuborilgani tasdiqlanmagan.
+
+## 2026-10-04 — Va’da sanasi Excel jadvalida yuritilishi
+
+- [Venera javobi, Emirhan yubordi] Shartnomadagi oylik to‘lov sanasi Uysot’da nazorat uchun ishlatiladi. To‘lov tushmasa mas’ul xodim qo‘ng‘iroq qiladi. Mijoz aytgan yangi to‘lov sanasi keyingi nazorat uchun Excel jadvaliga yoziladi.
+- [ochiq] Excel jadvali Uysot ichidagi konstruktor, yuklab olingan fayl yoki tashqi jadval ekanligi aytilmagan. Jadval manzili, shartnoma kaliti va kirish formati ochiq. Va’da sanasi shartnoma sanasini rasman o‘zgartirishi tasdiqlanmagan.
+- [tekshirish urinish: 2026-10-04] Computer Use inventory’da browser tablari yo‘q; native Google Chrome access «Computer Use was not approved» bilan rad etildi. Jonli Uysot sahifalari tekshirilmadi. Lokal route katalogidagi Excel eksport yo‘llari va oldingi Excel konstruktor UI kuzatuvi aynan shu jadval joylashuvini isbotlamaydi.
+
+## 2026-10-04 — Uysot MCP orqali tekshiruv
+
+- [tekshirildi: MCP stdio] Lokal server initialize javobi `uysot-readonly` v0.1.0. `uysot_read_endpoint` `/v1/debt/` uchun UYSOT_API_TOKEN configured emasligi va account request bajarilmaganini qaytardi. Jonli akkaunt ma’lumoti olinmadi.
+- [tekshirildi: MCP katalog] uysot_list_subroutes Excel uchun 12 eksport path qaytardi; bu public frontend katalogi, va’da sanalari jadvalining joylashuvi dalili emas.
+- [ochiq] Jadval Uysot konstruktoridami yoki tashqi fayldami — tasdiqlanmagan. Jonli MCP o‘qish uchun rasmiy token ulanishi zarur. Credential qaydga yozilmadi.

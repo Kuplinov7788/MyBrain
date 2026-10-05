@@ -127,3 +127,8 @@ Tekshiruv: ikkala yangi skill `quick_validate.py` orqali `Skill is valid!` natij
 - [tekshirildi: CLI] visualize 1.0.37, figma 11.0.0, spreadsheets/pdf/presentations 26.909.12148 installed, enabled. Figma toollari joriy sessiyada exposed; akkaunt amaliy sinovi qilinmagan.
 - [qaror] Boshlang‘ich darslar suhbat ichida: jadval, sxema va interaktiv o‘quv misoli. Yangi plugin o‘rnatishga hozir imkoniyat bo‘shlig‘i aniqlanmadi.
 - Dars davomiyligi: [[Last Session|Oxirgi sessiya]].
+
+## 2026-10-04 — MCP va skill tekshiruvi
+
+- [tekshirildi: CLI/MCP/fayl] To‘liq dalil va cheklovlar: [[MCP va Skill Audit 2026-10-04]]. Telegram, Remotion smoke, RAG, Node REPL, Figma/Sites/Pets read-only sinovlar o‘tdi. Native Chrome approval, GitHub connector, Uysot stdio/token va Android adb ochiq.
+- 49 skill fayli o‘qildi; strict validator 34 passed, 15 vendor format e’tirozi. Skill workflow’lari to‘liq E2E sinalmagan.

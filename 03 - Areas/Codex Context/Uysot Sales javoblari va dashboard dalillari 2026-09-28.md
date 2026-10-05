@@ -9,7 +9,7 @@ status: Sales javobi olindi; aniqlashtiruvchi savollar tayyor, yuborilmagan
 ## Hisobot xulosasi
 
 - Sales javobiga ko‘ra, hozir **1 sotuvchi barcha loyihalar bilan ishlaydi**.
-- Emirhan aniqlashtirdi: uch faol akkaunt — o‘zining, konsultantning va Dantes CEO’niki; bitta sotuvchi barcha loyihalarni yuritadi. Sales bo‘limining jami xodimlari soni ochiq qolmoqda.
+- Emirhan keyin tuzatdi: Sales bo‘limida hozir **faqat Venera ishlaydi**. Uysot akkauntlarida Dantes, Venera va “sotuvchi Sitora” bor. Sitora akkauntidan hozir kim foydalanishi noma’lum; headcount savoli endi qayta berilmaydi.
 - Qarzdorlikdagi mas’ul xodim mijoz bilan ishlaydi; bir necha ogohlantirish natija bermasa direktor **Jonibek Komiljonovich**ga eskalatsiya qilinadi.
 - Suhbatdosh to‘lovlarni o‘zi tekshiradi va Uysotga kiritadi; mijozlarga korporativ telefon raqamidan qo‘ng‘iroq qiladi.
 - Bizning oldingi ikki xulosamiz xato bo‘lgan: akkaunt/rol soni sotuvchilar soni deb olindi; `Продажа`dagi `4` haqiqiy sotuv deb aytildi. Sales `4` noto‘g‘ri ma’lumot deb tasdiqladi.
@@ -44,7 +44,7 @@ Skrinshotlar shu suhbatda inline ko‘rsatildi; fayl qilib eksport qilinmadi va 
 
 ## Salesga ko‘rsatish uchun yangilangan qisqa savollar
 
-1. Sales bo‘limida jami nechta xodim ishlaydi? Har birining vazifasi va Uysotdagi roli qanday?
+1. Sales’da faqat Venera ishlashini tushundim. Uysotda Dantes, Venera va Sotuvchi Sitora nomida akkaunt bor ekan. Sitora akkauntidan hozir kim va nima maqsadda foydalanadi?
 2. “Bir necha ogohlantirish” odatda nechta va qancha muddat oralig‘ida beriladi? Qo‘ng‘iroq natijasi Uysotga yoziladimi?
 3. 14-sentabr jadvalidagi to‘lovni qaysi jadvaldan shartnoma, loyiha va xonadonga bog‘laymiz?
 4. Sotilgan xonadonlarni ko‘rsatadigan ishonchli Uysot jadvali qaysi? Unda sotuv sanasi, xonadon va status qaysi ustunlarda?
