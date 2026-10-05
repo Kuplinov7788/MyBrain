@@ -10,6 +10,10 @@ Maqsad: Emirhan har safar o‘zini tanishtirmasdan, o‘zbekcha topshiriq berib,
 
 Kontekstlar markaziy xaritasi: [[Context MOC|Barcha kontekstlar xaritasi]].
 
+## 2026-10-05 — Dantes vaultiga vositalarni yo‘naltirish
+
+[tekshirildi: fayl/test] Dantes/Sales uchun besh Codex va ikki Hermes skill DantesBrain’ga yo‘naltirildi. Uysot MCP stdio transporti newline JSON bilan moslashtirildi; eski Content-Length ham saqlandi. RAG indexer ikkala vaultni o‘qiydi va sakkiz eski MyBrain Dantes nusxasini qayta indekslamaydi. To‘liq dalil va cheklovlar: [Dantes vositalari va xotirasi](</Users/protochka/DantesBrain/05 - Integrations/Tools and Memory.md>). Obsidian UI access rad etilgan; ilovada yangi vault ochilgani tasdiqlanmadi. Commit/push bajarilmadi.
+
 ## 2026-09-05 tekshiruvi
 
 Biznes arxitekturasi uchun o‘rnatilgan skilllar: `business-model`, `startup-canvas`, `monetization-strategy`, `org-design`, `drawio-bpmn`. Beshala `SKILL.md` fayli to‘liq o‘qildi va format validatsiyasidan o‘tdi. `drawio-bpmn` dagi validatorga mos kelmagan `version` frontmatter maydoni olib tashlandi. Saytdagi `business-model-designer` repo ichida skill emas, command bo‘lgani uchun unga yaqin ishlaydigan `business-model` tanlandi.

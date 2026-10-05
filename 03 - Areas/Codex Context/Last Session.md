@@ -1,7 +1,14 @@
 ---
 type: session-handoff
-updated: 2026-09-25
+updated: 2026-10-05
 ---
+
+## 2026-10-05 — Dantes skill/MCP va RAG migratsiyasi
+
+- [foydalanuvchi so‘rovi] Dantes/Sales alohida vault qamrovini ko‘rib chiqish, skill/MCP’larni moslashtirish va Obsidian’da ochish.
+- [tekshirildi: fayl/test] Oldingi 218 snapshot hash’i mos. Beshta Codex va ikkita Hermes skill DantesBrain’ga yo‘naltirildi; Uysot MCP newline/legacy transport sinovlari o‘tdi. RAG indexer yangi vaultni o‘qiydi va eski sakkiz Dantes nusxasini chetlab o‘tadi.
+- [cheklov] CUA Obsidian ilovasiga kirishni rad etdi; Obsidian registry’da hozir faqat MyBrain. UI’da “Open folder as vault” orqali DantesBrain ochilishi kerak. MCP yangi runtime sessiyasi va Uysot jonli account access alohida tekshiruv.
+- Dantesga tegishli batafsil natija: [Vositalar va xotira](</Users/protochka/DantesBrain/05 - Integrations/Tools and Memory.md>). Runtime/credentials ko‘chirilmagan; commit/push qilinmadi.
 
 ## 2026-09-25 — AI Profit Boardroom va Hermes Agent Revenue Kit
 
