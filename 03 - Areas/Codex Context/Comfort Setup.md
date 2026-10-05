@@ -132,3 +132,17 @@ Tekshiruv: ikkala yangi skill `quick_validate.py` orqali `Skill is valid!` natij
 
 - [tekshirildi: CLI/MCP/fayl] To‘liq dalil va cheklovlar: [[MCP va Skill Audit 2026-10-04]]. Telegram, Remotion smoke, RAG, Node REPL, Figma/Sites/Pets read-only sinovlar o‘tdi. Native Chrome approval, GitHub connector, Uysot stdio/token va Android adb ochiq.
 - 49 skill fayli o‘qildi; strict validator 34 passed, 15 vendor format e’tirozi. Skill workflow’lari to‘liq E2E sinalmagan.
+
+## 2026-10-05 — Computer Use amaliy tekshiruvi
+
+- [foydalanuvchi talabi] Computer Use’ni sozlash.
+- [tekshirildi: CLI] unified-computer-use, browser va chrome 26.930.31730; computer-use 1.0.1001365 — installed, enabled.
+- [tekshirildi: cua_repl] Sessiyada vosita exposed; app va browser inventari qaytdi. Kalkulyator ochildi, tugma bosish va klaviatura orqali `2 + 2 = 4` bajarildi; accessibility holati va screenshot natijani tasdiqladi.
+- [tekshirildi: cua_repl] Chrome extension ulangan; mavjud rasmiy Computer Use sahifasi o‘qildi. Brauzerda yozish/yuborish sinovi qilinmadi.
+- [qaror] Qo‘shimcha o‘rnatish yoki config o‘zgarishi kerak bo‘lmadi. Boshqa ilovalar va locked use sinalmagan; barcha ilovalarga doimiy ruxsat berilmadi.
+- Foydalanish: “Chrome’da shu saytni och”, “Computer Use bilan shu ilovadagi oynani tekshir”.
+- [Rasmiy Computer Use hujjati](https://learn.chatgpt.com/docs/computer-use). Lokal qayd remote sync isboti emas; commit/push bajarilmadi.
+
+### Chrome plugin qo‘shimcha sinovi — 2026-10-05
+
+- [tekshirildi: cua_repl] Chrome extension ulangan. Alohida sinov tabida example.com ochildi, Learn more havolasi bosildi va IANA Example Domains sahifasiga o‘tilgani URL/accessibility holati bilan tasdiqlandi. Sinov tabi yopildi. Tab ochish, sahifani o‘qish va havola bosish sinaldi; form kiritish va hisobga kirish sinalmagan.
