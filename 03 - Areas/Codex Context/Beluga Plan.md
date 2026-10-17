@@ -6,6 +6,12 @@ status: active-observability-and-evals
 
 # Beluga — talablar va etaplar
 
+## 2026-10-06 — Lokal Mem0 qo‘shildi
+
+- [tekshirildi: kod/test] Mem0 OSS 2.2.1 owner-only semantic memory, mavjud lokal embedding bilan. MyBrain hujjat/RAG manbasi bo‘lib qoldi; owner facts candidate sifatida saqlanadi. 153 test, production 32/32, routing 40/40 va real Mem0 lifecycle o‘tdi.
+- [tekshirildi: runtime] Worker restartdan keyin Telegram/observer/RAG/Mem0 health ijobiy. RAG relevance 5/5, MRR 0.9. Jonli Telegram Mem0 answer sinovi hali yo‘q.
+- Tafsilot va cheklovlar: [[Beluga Mem0 and RAG]].
+
 ## 2026-09-25 — BelugaCat Kanban migratsiyasi
 
 - [o‘zgartirildi: Hermes] FruVisi v1.3.9 plugin’i tekshirilgan commit `a7d7bdcfcb3552bc5c0b460c25b818bfd8e7b7c0` bilan umumiy `~/.hermes` muhitiga o‘rnatildi va yoqildi. Hermes dashboard `127.0.0.1:9119`da qayta ishga tushdi.

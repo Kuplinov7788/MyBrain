@@ -8,6 +8,8 @@ source: Emirhan bilan bevosita suhbat
 
 ## Muloqot va qulaylik
 
+- [2026-10-06, foydalanuvchi tasdiqladi] Hamkor/mijozga aniqlashtirish savollarini qisqa salom va oldingi mavzu eslatmasi bilan tuz. Har raqamlangan savoldan keyin nima uchun so‘ralayotganini amaliy bir jumlada yoz; tegishli tizim sahifasi ma’lum bo‘lsa tekshirilgan havolasini savolga qo‘sh. Javoblangan savollarni takrorlama, foydalanuvchi chiqarib tashlaganlarini qaytarma; ortiqcha maqtov va cho‘zilgan kirish bo‘lmasin. Skill: `/Users/protochka/.codex/skills/contextual-questions/SKILL.md`.
+
 - Ism: Emirhan. Asosiy muloqot tili o‘zbekcha; kod va texnik terminlar inglizcha.
 - Mustaqil o‘rgangan mobile/frontend dasturchi; React Native, Expo, TypeScript, React. TezCode va WeWatch bilan bog‘liq.
 - Kundalik yordam so‘rovlarini loyiha ishlari deb talqin qilma. 2026-09-05 da pluginlarni aynan shaxsiy qulaylik uchun sozlashni so‘radi.

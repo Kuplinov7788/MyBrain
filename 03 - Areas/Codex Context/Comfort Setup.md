@@ -10,6 +10,10 @@ Maqsad: Emirhan har safar o‘zini tanishtirmasdan, o‘zbekcha topshiriq berib,
 
 Kontekstlar markaziy xaritasi: [[Context MOC|Barcha kontekstlar xaritasi]].
 
+## 2026-10-08 — Mars Core MCP
+
+[tekshirildi: MCP/test] Beluga private owner/task uchun 5 Mars Core tool ulandi; 591 frontend route katalogi, 163/163 unit test. [ochiq] Account login talab qilinadi; jonli API read/write tekshirilmagan. To‘liq holat: [[Mars Core MCP]].
+
 ## 2026-10-05 — Dantes vaultiga vositalarni yo‘naltirish
 
 [tekshirildi: fayl/test] Dantes/Sales uchun besh Codex va ikki Hermes skill DantesBrain’ga yo‘naltirildi. Uysot MCP stdio transporti newline JSON bilan moslashtirildi; eski Content-Length ham saqlandi. RAG indexer ikkala vaultni o‘qiydi va sakkiz eski MyBrain Dantes nusxasini qayta indekslamaydi. To‘liq dalil va cheklovlar: [Dantes vositalari va xotirasi](</Users/protochka/DantesBrain/05 - Integrations/Tools and Memory.md>). Obsidian UI access rad etilgan; ilovada yangi vault ochilgani tasdiqlanmadi. Commit/push bajarilmadi.

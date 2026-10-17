@@ -1,7 +1,42 @@
 ---
 type: session-handoff
-updated: 2026-10-05
+updated: 2026-10-17
 ---
+
+## 2026-10-17 — Dantes Sales Telegram Hermes pilot
+
+- [tekshirildi: Hermes/MCP/Telethon] Alohida Sales akkaunti `qarzdorlikchi` lokal Hermes profiliga Saved-only MCP orqali ulandi. Hermes 2 toolni topdi; MCP statusi ishladi, begona recipient rad etildi, Saved sinov xabari qayta o'qildi (ID 253). 5/5 sintetik test, 23/23 Dantes xavfsizlik testi va diff check o'tdi.
+- [cheklov] Hermes agent chat AI provider sozlanmagani sabab ishlamadi. Mijoz/guruh yuborishi, kontakt importi, gateway/cron va Uysot full sync yo'q. Batafsil [Dantes Sales qarzdorlik qaydi](</Users/protochka/DantesBrain/01 - Memory/Sales qarzdorlik eslatma oqimi 2026-10-14.md>).
+- [2026-10-17 push xavfi tekshiruvi] Repo shablonida Telegram MCP default o'chirildi; shu Mac'dagi lokal profil yoqilganicha qoldi. Push hali bajarilmadi, credential/sessiya repoda yo'q. Yangi mashina uchun lokal yo'l va credential alohida sozlanadi.
+
+## 2026-10-16 — Dantes Telethon aloqa kanali
+
+- [foydalanuvchi aniqlashtirdi] Emirhan Sales agenti uchun Telethon ulashga alohida telefon raqami olgan. Raqam saqlanmadi; Telegram akkaunti/login va jonli ulanish hali tasdiqlanmagan.
+- [davom ettirish] DantesBrain'dagi [Sales qarzdorlik eslatma oqimi](</Users/protochka/DantesBrain/01 - Memory/Sales qarzdorlik eslatma oqimi 2026-10-14.md>) qaydi va Dantes `xodimlar/qarzdorlikchi/` holatidan boshlash. Keyingi ish — yangi akkaunt va Telethon sessiyasini tekshirish, sintetik kontakt bilan xavfsiz sinov; mijozga yuborish yoqilmagan.
+- [2026-10-16 davomiyligi] Sales akkaunti telefonda ochildi, uning Telegram API ID/hash'i yaratildi (qiymatlar saqlanmadi). Dantes repo'da alohida interaktiv Telethon login helperi tayyorlandi; login va jonli sessiya hali bajarilmadi. Batafsil DantesBrain Sales qarzdorlik qaydida.
+- [tekshirildi: 2026-10-16] Sales Telethon login bajarildi: alohida lokal sessiya, `authorized=True`, user akkaunt va saqlangan raqam mos. Kontakt import, mijoz mapping, DM yuborish va Hermes transport ulanishi hali bajarilmadi. Batafsil DantesBrain Sales qarzdorlik qaydida.
+- [2026-10-16, foydalanuvchi tuzatishi/test] Hermes'ga Telegram tool ulash to'xtatildi. Sales akkauntidan faqat o'z Saved Messages chatiga bitta sintetik sinov yuborildi; Telethon receipt va qayta o'qish mos. Boshqa chatga yuborilmadi, Hermes profil/config o'zgarmadi. Batafsil DantesBrain Sales qarzdorlik qaydida.
+
+## 2026-10-14 — Dantes Sales qarz snapshoti
+
+- [tekshirildi: Uysot UI/PostgreSQL] Uysot qarzdorlik eksportidan 114 qator (104 shartnoma raqami, 3 loyiha) Dantes `dantes_agent` lokal PostgreSQL bazasidagi `sales_debt_snapshot` jadvaliga import qilindi.
+- [cheklov] OpenAPI fayli draft va response schema noma’lum; import `partial`, canonical klient/shartnoma/badal jadvallari bo‘sh. Avtomatik eslatma yuborilmaydi; stable Uysot ID, to‘liq to‘lov grafigi va yuridik kompaniya scope’i tasdiqlanishi kerak.
+- Dantes loyihasining batafsil qaydi: DantesBrain’dagi kanonik Sales xotirasi va repodagi `docs/SALES-QARZDORLIK-ESLATMA-REJA-2026-10-14.md`.
+
+## 2026-10-08 — Mars Core MCP Beluga uchun tayyorlandi
+
+- [foydalanuvchi so‘rovi] Mars Core access va so‘rov bo‘yicha operatsiyalarni Beluga MCP orqali bajarish.
+- [tekshirildi: kod/MCP/test] 591 frontend route katalogi, 5 stdio tool, owner-private/task scope, preview va single-use durable write. Hermes MCP connection o‘tdi; yangi 10 test va jami 163/163 test, compile va diff check o‘tdi. Worker idle holatda restart qilindi.
+- [ochiq] MCP login sozlanmagan; account_status shuni qaytardi. Owner lokal login helperdan kirgach account/groups/schedule jonli tekshiruv talab qiladi. Barcha operatsiyalar, uploads/downloads yoki admin vakolatlari ishlaydi deb tasdiqlanmagan.
+- Batafsil: [[Mars Core MCP]]. Commit/push qilinmadi, oldingi unrelated fayllar saqlandi.
+
+## 2026-10-06 — Beluga Mem0 integratsiyasi va RAG tekshiruvi
+
+- [foydalanuvchi ruxsati] Mem0 Beluga’ga o‘rnatish, Obsidian oqimini moslashtirish va RAG tekshirish.
+- [tekshirildi: kod/CLI] Mem0 OSS 2.2.1 isolated venv’da; lokal Qdrant/history va mavjud RAG embedding endpointi. Private owner prompt Mem0 + RAG oladi; owner context-update faktlari candidate sifatida saqlanadi. Group/background Mem0 owner bazasidan foydalanmaydi. MyBrain kanonik qaydlar bo‘lib qoladi; wholesale mirror yo‘q.
+- [tekshirildi: test/runtime] 153/153 unit test, production 32/32, routing 40/40; real Mem0 add/search/dedup/delete va source labels o‘tdi. RAG 2434 chunk, relevance 5/5, MRR 0.9; DantesBrain ham retrieval’da. Worker restartdan keyin Telegram/observer/RAG/Mem0 health ijobiy, queue/running/review 0.
+- [cheklov] Jonli Telegram Mem0 conversation va javob sifati hali sinalmagan. Qo‘shimcha Mem0 LLM inference o‘chiq; Hermes ajratgan bounded facts saqlanadi. Commit/push qilinmadi; oldingi unrelated o‘zgarishlar saqlandi.
+- Batafsil, boshqarish/o‘chirish: [[Beluga Mem0 and RAG]].
 
 ## 2026-10-05 — Dantes skill/MCP va RAG migratsiyasi
 

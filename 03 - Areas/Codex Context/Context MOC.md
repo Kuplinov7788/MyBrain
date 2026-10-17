@@ -14,6 +14,8 @@ Bu sahifa MyBrain’dagi loyiha va vosita kontekstlarini bir joydan ochish uchun
 - [[Telegram Setup|Telegram MCP tekshiruvi]]
 - [[Last Session|Oxirgi sessiya]]
 - [[Beluga Agent Report|Beluga Agent imkoniyat va o‘zgarishlar hisoboti]]
+- [[Beluga Mem0 and RAG|Beluga lokal Mem0 va RAG tekshiruvi]]
+- [[Mars Core MCP|Mars Core — Beluga MCP va login holati]]
 - [[Beluga Communication Lessons|Beluga communication lessonlari]]
 - [[Operating System|Birlashtirilgan Codex + MyBrain ish tizimi]]
 - [[Hermes Setup|Hermes sozlash va rivojlantirish xaritasi]]
