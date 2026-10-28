@@ -1,9 +1,23 @@
 ---
 type: session-handoff
-updated: 2026-10-17
+updated: 2026-10-22
 ---
 
+## 2026-10-22 — Dantes Sales davom ettirish nuqtasi
+
+- [foydalanuvchi ma'qulladi, 2026-10-21] Sitora, Venera va Dantes uchun ikonali, qalin sarlavha/summali kunlik Telegram otchot ko'rinishi tanlandi. Sintetik namunalar faqat Dantes Construction Saved Messages'iga yuborilib qayta o'qildi: ID 276–278. Hech bir rol yoki mijoz chatiga yuborilmadi. Obsidian nusxasi: [Otchot shablonlari](</Users/protochka/DantesBrain/01 - Memory/Otchot shablonlari 2026-10-21.md>).
+- [foydalanuvchi qarori] Sitora agentdan faqat ruxsatli faol qarzdorlarni ko'ra olishi, katta aylanma/umumiy moliyaviy raqamlarni ololmasligi kerak; Venera keng read qamroviga ega. Bu [ruxsat matritsasi](</Users/protochka/dantes/docs/SALES-AGENT-RUXSAT-MATRITSASI-2026-10-21.md>)da yozilgan, ammo runtime'da hali enforce qilinmagan.
+- [tekshirildi: Git, 2026-10-22] Shablonlar, permission rejasi va status bo'yicha qarz jami tuzatishi `feat/sales-qarzdorlik-agent` branchida `1517123` commit bilan GitHub'ga push qilingan; remote head mos. Boshqa dirty fayllar commitga olinmagan. Obsidian qaydlari lokal saqlangan.
+- [keyingi ish] Ishonchli Sitora/Venera/Dantes actor IDlarini va Sitora qator scope'ini bog'lash; read-only DB tool'da rol, qator va maydon permissionini tekshirish; undan keyin Hermes'da oddiy tilda savol-javobni faqat xavfsiz pilotda sinash. So'nggi Uysot snapshot `partial`; to'liq/yangi sync va permission bo'lmaguncha agentga jonli shaxsiy qarzdor ro'yxati yoki avtomatik yuborish ochilmaydi.
+
 ## 2026-10-17 — Dantes Sales Telegram Hermes pilot
+
+- [2026-10-21 Uysot DB] Lokal `dantes_agent`ga 275 mijoz, 308 shartnoma, 338 uy, 8 805 badal qatori va 3 433 individual payment yangilandi. 308/308 shartnomada faol payment yig'indisi `paidAmount`ga, kechikkan summa jadvalga mos. Ichki `sales_daily_report.py` otchoti Dantes Construction Saved Messages'ida ID 266 bilan sinab qayta o'qildi. Repo kod/migratsiya `feat/sales-qarzdorlik-agent` branchiga `b753f47` commit bilan push qilindi; boshqa eski dirty fayllar olinmadi. Run `partial`; cron/VPS va mijozga yuborish yo'q. Batafsil [Uysot API-DOC](</Users/protochka/DantesBrain/05 - Integrations/Uysot/API-DOC.md>).
+- [2026-10-20 Uysot DB, tarixiy] Open API PAT va READ grantlari tasdiqlandi. Ilk lokal import 275 mijoz, 308 shartnoma, 338 uy, 8 805 faol badal qatori edi; payment hali olinmagan edi.
+
+- [2026-10-19 Uysot API] Rasmiy <https://apidoc.app.uysot.uz/> topildi: Open API hosti `api.service.app.uysot.uz`, header `X-Open-Api-Token`, kompaniya PAT'i `uysot_pat_...`. Oldingi Bearer `/v1/debt` 401 sinovi ichki API'da edi. Emirhan yuborgan yangi JWT private `0600` faylda oldingisini almashtirdi; rasmiy read-only `GET /v1/open-api/token/info` `401` qaytardi. Open API access hali yo'q; DB sync/cron yoqilmadi. Batafsil [Uysot API-DOC](</Users/protochka/DantesBrain/05 - Integrations/Uysot/API-DOC.md>).
+- [2026-10-19 Uysot API qo'shimcha] Yangi JWT ichki `/v1/debt`ga Bearer va X-API-Key bilan ham `401` qaytardi. Rasmiy docs'da Open API huquqli xodim application/PAT'ni kabinetda chiqarishi aytilgan; supportga yana yozishdan oldin shu imkoniyatni tekshirish yo'li tavsiya etildi.
+- [2026-10-20 Uysot access] Venera superadmin UI'dagi Integratsiya/API va Security/permissions sahifalarida Open API application/PAT yaratish joyi ko'rinmadi. Rasmiy Uysot MCP'ni lokal Hermes'ga OAuth bilan ulash sinovi registration'da `invalid_redirect_uri` bilan rad etildi, config saqlanmadi; docs dynamic MCP clientga REST client/contract/payment grantlari berilmasligini ko'rsatadi. Hali live sync yo'q. Batafsil [Uysot API-DOC](</Users/protochka/DantesBrain/05 - Integrations/Uysot/API-DOC.md>).
 
 - [tekshirildi: Hermes/MCP/Telethon] Alohida Sales akkaunti `qarzdorlikchi` lokal Hermes profiliga Saved-only MCP orqali ulandi. Hermes 2 toolni topdi; MCP statusi ishladi, begona recipient rad etildi, Saved sinov xabari qayta o'qildi (ID 253). 5/5 sintetik test, 23/23 Dantes xavfsizlik testi va diff check o'tdi.
 - [cheklov] Hermes agent chat AI provider sozlanmagani sabab ishlamadi. Mijoz/guruh yuborishi, kontakt importi, gateway/cron va Uysot full sync yo'q. Batafsil [Dantes Sales qarzdorlik qaydi](</Users/protochka/DantesBrain/01 - Memory/Sales qarzdorlik eslatma oqimi 2026-10-14.md>).
