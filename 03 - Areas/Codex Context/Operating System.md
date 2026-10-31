@@ -1,11 +1,30 @@
 ---
 type: operating-model
-updated: 2026-09-05
+updated: 2026-10-30
 ---
 
 # Emirhan Codex + MyBrain ish tizimi
 
+## 2026-10-30 — joriy arxitektura yo'nalishi
+
+[foydalanuvchi qarori] 11 bosqichli arxitektura Codexga moslashtirildi:
+[[Codex ish arxitekturasi - 11 bosqich]]. Shu hujjat katta tizim ishida
+kanonik reja: audit/brief, qoidalar, memory, skill/MCP, retrieval,
+agent loop, automation va o'lchanadigan yaxshilanish sikli.
+
+Bu yangilanish hujjat va routing darajasida; global config, yangi cron/MCP
+va self-improvement daemon yoqilmadi. Quyidagi 2026-09-05 paket holati tarixiy;
+RAG/Telegram/sync haqidagi eski bandlar bugungi health isboti emas.
+
+
 Desktopdagi ikki arxivdan foydali g‘oyalar MyBrain va Codex’ga moslashtirildi.
+
+## 2026-10-30 — Obsidian qatlamining amaliy kengayishi
+
+5 yangi Codex skill va mavjud context skillining routing/log yangilanishi:
+[[AITMPL Obsidian - Codex moslashtirish 2026-10-30]]. Markdown, Bases, Canvas, Clipper va scoped vault audit
+uchun lokal vositalar tayyor. Bu Obsidian MCP yoki background memory servisi
+emas; manbaga mos asosiy vosita hali lokal fayl o'qish/yozish.
 
 ## Birlashtirilgan qatlamlar
 

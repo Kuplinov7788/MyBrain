@@ -1,6 +1,6 @@
 ---
 type: setup-audit
-updated: 2026-09-05
+updated: 2026-10-30
 scope: shaxsiy kundalik qulaylik
 ---
 
@@ -9,6 +9,20 @@ scope: shaxsiy kundalik qulaylik
 Maqsad: Emirhan har safar o‘zini tanishtirmasdan, o‘zbekcha topshiriq berib, qaydlar, brauzer, kompyuter va hujjatlar bilan ishlashi.
 
 Kontekstlar markaziy xaritasi: [[Context MOC|Barcha kontekstlar xaritasi]].
+
+## 2026-10-30 — Obsidian format va maintenance skilllari
+
+[tekshirildi: source/skill validator/test] app.aitmpl.com katalogi va pinned
+GitHub manbasidan 4 format skill Codexga moslashtirildi: obsidian-markdown,
+obsidian-bases, json-canvas, obsidian-clipper-template-creator. 7 ops role
+bitta obsidian-vault-maintenance skilliga aylantirildi; auto-subagent emas.
+Mavjud obsidyan-skill routing/log usuli yangilandi. 6 skill valid, helper
+8/8 synthetic test. MyBrain Codex scope'da read-only audit; source va
+cheklovlar: [[AITMPL Obsidian - Codex moslashtirish 2026-10-30]].
+
+Yangi MCP/hook/cron yoki memory server yoqilmadi; yangi skilllar keyingi
+turn'da discoverable. .base/.canvas parse tekshirildi, UI render/import
+alohida. Eski setup jadvali bugungi full inventory/health dalili emas.
 
 ## 2026-10-08 — Mars Core MCP
 

@@ -1,6 +1,6 @@
 ---
 type: moc
-updated: 2026-09-25
+updated: 2026-10-30
 ---
 
 # Kontekstlar xaritasi
@@ -8,6 +8,8 @@ updated: 2026-09-25
 Bu sahifa MyBrain’dagi loyiha va vosita kontekstlarini bir joydan ochish uchun markaziy xarita.
 
 ## Shaxsiy Codex konteksti
+
+- [[Obsidian audit 2026-10-31|Obsidian amaldagi holati — audit]]
 
 - [[Preferences|Emirhan profili va ishlash afzalliklari]]
 - [[Comfort Setup|Plugin, MCP va skilllar holati]]
@@ -18,6 +20,8 @@ Bu sahifa MyBrain’dagi loyiha va vosita kontekstlarini bir joydan ochish uchun
 - [[Mars Core MCP|Mars Core — Beluga MCP va login holati]]
 - [[Beluga Communication Lessons|Beluga communication lessonlari]]
 - [[Operating System|Birlashtirilgan Codex + MyBrain ish tizimi]]
+- [[Codex ish arxitekturasi - 11 bosqich|Codex arxitekturasi — 11 bosqich, loop va baholash]]
+- [[AITMPL Obsidian - Codex moslashtirish 2026-10-30|Obsidian skilllari — AITMPL auditi va Codex moslashtirish]]
 - [[Hermes Setup|Hermes sozlash va rivojlantirish xaritasi]]
 - [[AI Profit Boardroom Analysis 2026-09-25|AI Profit Boardroom tahlili]]
 - [[Hermes Course - TezCode Learning|Hermes kursi — TezCode Learning xulosasi]]

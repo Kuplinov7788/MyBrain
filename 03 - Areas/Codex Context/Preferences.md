@@ -1,6 +1,6 @@
 ---
 type: preferences
-updated: 2026-09-13
+updated: 2026-10-30
 source: Emirhan bilan bevosita suhbat
 ---
 
@@ -54,3 +54,13 @@ source: Emirhan bilan bevosita suhbat
 - [foydalanuvchi qarori] Dantes loyiha memorylari alohida yangi Obsidian vaultga migratsiya qilinsin.
 - [tekshirildi: lokal fayllar] Kanonik Dantes vault: `/Users/protochka/DantesBrain`. Avval [joriy kontekst](/Users/protochka/DantesBrain/00%20-%20Dantes%20Context.md), so‘ng tegishli memoryni o‘qi. Sales kanonik qaydi yangi vaultdagi `01 - Memory/Sales suhbat - muammolar va AI agent talablari.md`.
 - Dantes uchun yangi fakt/qarorlar yangi vaultga yoziladi; eski MyBrain Dantes qaydlari tarixiy manba sifatida saqlandi. Kod repo `/Users/protochka/dantes`da; hujjat snapshoti avtomatik sync emas.
+
+## Codex arxitekturasi — 2026-10-30
+
+- [foydalanuvchi qarori] 11 bosqichli AI ish arxitekturasi Codexning o'zi
+  uchun moslashtirilib, Obsidian'da saqlansin. Kanonik reja:
+  [[Codex ish arxitekturasi - 11 bosqich]].
+- Katta tizimni o'zgartirishda avval audit va brief; muhim savollar,
+  nazorat vazifasi, dalilli eval va rollback bo'lsin. Har oddiy so'rovga
+  katta setup qo'llanmaydi. brief/grill-me skill manbalari hali topilmagan;
+  hujjat saqlanishi ularning o'rnatilganini yoki cron yoqilganini anglatmaydi.

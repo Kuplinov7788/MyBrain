@@ -1,0 +1,121 @@
+{
+  "nodes": [
+    {
+      "id": "area",
+      "type": "group",
+      "x": -40,
+      "y": -40,
+      "width": 1400,
+      "height": 880,
+      "label": "Codex + Obsidian",
+      "color": "5"
+    },
+    {
+      "id": "title",
+      "type": "text",
+      "x": 0,
+      "y": 0,
+      "width": 1320,
+      "height": 100,
+      "text": "# Codex + Obsidian\nKanonik qaydlar → kerakli skill → dalilli tekshiruv. Fon servis emas."
+    },
+    {
+      "id": "context",
+      "type": "file",
+      "x": 0,
+      "y": 180,
+      "width": 360,
+      "height": 240,
+      "file": "03 - Areas/Codex Context/Context MOC.md"
+    },
+    {
+      "id": "skills",
+      "type": "text",
+      "x": 470,
+      "y": 180,
+      "width": 360,
+      "height": 240,
+      "text": "## Format va maintenance\n- Markdown\n- Bases\n- Canvas\n- Web Clipper\n- Scoped vault audit"
+    },
+    {
+      "id": "audit",
+      "type": "text",
+      "x": 940,
+      "y": 180,
+      "width": 360,
+      "height": 240,
+      "text": "## Tekshiruv\nRead-only audit → nomzodlar → kerakli tuzatish → readback/link/parse tekshiruvi.\n\n8 helper testi; yangi skilllar valid."
+    },
+    {
+      "id": "architecture",
+      "type": "file",
+      "x": 0,
+      "y": 540,
+      "width": 360,
+      "height": 240,
+      "file": "03 - Areas/Codex Context/Codex ish arxitekturasi - 11 bosqich.md"
+    },
+    {
+      "id": "report",
+      "type": "file",
+      "x": 470,
+      "y": 540,
+      "width": 360,
+      "height": 240,
+      "file": "03 - Areas/Codex Context/AITMPL Obsidian - Codex moslashtirish 2026-10-30.md"
+    },
+    {
+      "id": "boundary",
+      "type": "text",
+      "x": 940,
+      "y": 540,
+      "width": 360,
+      "height": 240,
+      "text": "## Joylashuv\nMyBrain — shaxsiy\nDantesBrain — Dantes/Sales\n\nPrivate DB/token/session Git yoki shared contextga kirmaydi. Yangi MCP/cron yoqilmagan."
+    }
+  ],
+  "edges": [
+    {
+      "id": "e1",
+      "fromNode": "context",
+      "toNode": "skills",
+      "fromSide": "right",
+      "toSide": "left"
+    },
+    {
+      "id": "e2",
+      "fromNode": "skills",
+      "toNode": "audit",
+      "fromSide": "right",
+      "toSide": "left"
+    },
+    {
+      "id": "e3",
+      "fromNode": "context",
+      "toNode": "architecture",
+      "fromSide": "bottom",
+      "toSide": "top"
+    },
+    {
+      "id": "e4",
+      "fromNode": "audit",
+      "toNode": "report",
+      "fromSide": "bottom",
+      "toSide": "top"
+    },
+    {
+      "id": "e5",
+      "fromNode": "architecture",
+      "toNode": "report",
+      "fromSide": "right",
+      "toSide": "left"
+    },
+    {
+      "id": "e6",
+      "fromNode": "report",
+      "toNode": "boundary",
+      "fromSide": "right",
+      "toSide": "left"
+    }
+  ]
+}

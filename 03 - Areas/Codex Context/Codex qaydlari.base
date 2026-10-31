@@ -1,0 +1,19 @@
+filters:
+  and:
+    - 'file.ext == "md"'
+    - 'file.inFolder("03 - Areas/Codex Context")'
+properties:
+  type:
+    displayName: Turi
+  status:
+    displayName: Holati
+  updated:
+    displayName: Yangilangan
+views:
+  - type: table
+    name: Codex qaydlari
+    order:
+      - file.name
+      - type
+      - status
+      - updated
