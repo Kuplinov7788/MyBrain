@@ -1,9 +1,16 @@
 ---
 type: operating-model
-updated: 2026-10-30
+updated: 2026-10-31
 ---
 
 # Emirhan Codex + MyBrain ish tizimi
+
+## 2026-10-31 — joriy ishlash qoidasi
+
+- Joriy handoff: [[Last Session]]; avvalgi yozuvlar [[Session History/Last Session archive through 2026-10-31]].
+- Daily: DAILY/Emirhan, template: Templates/Daily Note Template. Native config yozildi; ochiq Obsidian oynasida amaliy yaratish tekshiruvi qolgan.
+- RAG CPU/batch 8 bilan qayta quriladi; fail-fast va parallel build lock bor. Jonli natija va cheklovlar [[Obsidian audit 2026-10-31]]da.
+- Git interval sozlamasi muvaffaqiyatli remote backup dalili emas; commit/push alohida tekshiriladi. Pastdagi eski paket holati tarixiy.
 
 ## 2026-10-30 — joriy arxitektura yo'nalishi
 

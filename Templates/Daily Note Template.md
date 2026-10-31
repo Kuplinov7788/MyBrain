@@ -1,18 +1,24 @@
+---
+type: daily
+updated: "{{date:YYYY-MM-DD}}"
+---
+
 # {{date:YYYY-MM-DD}} — {{date:dddd}}
 
 ## Bugungi maqsadlar
 - [ ]
-- [ ]
-- [ ]
 
-## Yozuvlar
+## Bajarilgan ishlar
+<!-- Vazifa → natija → tekshirish dalili yoki tegishli qayd. -->
 
+## Qarorlar va o‘rganilganlar
 
-## O'rgangan narsalarim
-
-
-## Ertaga nima qilish kerak?
+## Ochiq ishlar
 - [ ]
 
----
-Tags: #daily
+## Keyingi qadam
+
+## Manbalar
+<!-- Tegishli loyiha qaydiga havola; maxfiy ma’lumot va raw chat nusxasini yozmang. -->
+
+#daily

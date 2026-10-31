@@ -98,3 +98,38 @@ Bu bandlar taklif; audit davomida runtime, plugin config yoki tarix tuzilishi
 almashtirilmadi. Strukturaviy qayta auditda MyBrain 118 Markdown,
 missing/ambiguous/outside wikilink = 0. Script Markdown-style havolalar,
 anchorlar, YAML schema va haqiqiy UI ishlashini qamramaydi.
+
+## Tuzatishlar — 2026-10-31
+
+- User “Go” bilan tuzatishlarga ruxsat berdi.
+- embed_index.py default device=cpu, batch=8; MPS memory bypass ishlatilmadi. Session History retrieval og‘irligi kamaytirildi.
+- embed-reindex.sh fail-fast, parallel build lock, server health timeout va faqat muvaffaqiyatdan keyingi last-success.txt yozuvini qo‘llaydi. Indexer avvaldan atomik almashtirishdan foydalanadi.
+- /health yuklangan indeks mtime/age/stale (>1800 soniya) ko‘rsatkichlarini beradi; server ok maydoni xizmat mavjudligini bildiradi, freshlik uchun index_stale alohida tekshiriladi.
+- 2 sintetik regression test: build failure exit 23 → restart yo‘q/eski indeks saqlanadi/lock tozalanadi; parallel build rad etiladi. Bash syntax/Python compile o‘tdi.
+- Last Session oldingi 114448 bayt matni Session History/Last Session archive through 2026-10-31.md fayliga aynan saqlandi; joriy handoff 25 qator.
+- Daily va Templates config mavjud yo‘llarga yozildi. Root’dagi eski daily ko‘chirilmagan. UI reload/create tekshiruvi qolgan.
+- Runtime rollback nusxalari: /Users/protochka/.codex/backups/obsidian-fix-2026-10-31/. Git commit/push qilinmadi.
+- Birinchi jonli CPU build tekshiruvi davom etmoqda; yakun natijasi pastda yangilanadi.
+
+### Git sync qayta tekshiruvi
+
+Auditdagi “remote’da yangi qaydlar yo‘q” avvalgi kuzatuv keyin o‘zgardi:
+2026-10-31 11:58 +05 da Obsidian auto-backup 57e2e246db9fde59d82cf2b95dabdb79fec610c6
+commitini yaratdi. git ls-remote orqali GitHub main shu commitga tengligi
+tekshirildi. Agent qo‘lda commit/push buyrug‘ini bermadi. Undan keyingi
+hisobot/Operating System tahrirlari alohida lokal o‘zgarish bo‘lib qolgan;
+ular ham remote’da deb da’vo qilinmaydi. DantesBrain backup holati o‘zgarmadi.
+
+### Jonli RAG natijasi
+
+2026-10-31 11:59:50 +05: CPU build SUCCESS, 2828 chunk, yangi indeks
+mtime 11:59:38, server model/reranker loaded, index_stale=false.
+Haqiqiy 11-bosqich qidiruvi tegishli yangi Preferences parchasini qaytardi.
+Birinchi build fayllarni handoff qisqartirishdan avval o‘qigan; joriy
+handoff snapshoti ham olinishi uchun takroriy build ishga tushirildi.
+
+Yakuniy qayta build: 2026-10-31 12:02:05 +05 SUCCESS; 2839 chunk,
+index_stale=false. Haqiqiy search yangi 25 qatorli Last Session’dan
+“Joriy sessiya / Maqsad” parchasini qaytardi. Restartdan keyingi dastlabki
+searchda reranker warmup tugamagan (reranked=false); fallback qidiruv javob berdi.
+Oxirgi natija qaydlari shu builddan keyin yozildi, navbatdagi davriy buildda olinadi.
